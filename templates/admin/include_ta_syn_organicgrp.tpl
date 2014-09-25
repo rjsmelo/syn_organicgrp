@@ -1,5 +1,5 @@
 {remarksbox type="tip" title="{tr}Tip{/tr}"}{tr}Welcome to the Tiki Organic Group Addon{/tr}{/remarksbox}
-<form action="tiki-admin.php?page=ta_tikiorg_organicgrp" method="post">
+<form action="tiki-admin.php?page=ta_syn_organicgrp" method="post">
 	<div class="row">
 		<div class="form-group col-lg-12 clearfix">
 			<div class="pull-right">
@@ -9,12 +9,12 @@
 	</div>
 	{tabset name="admin_ta_tikisample_helloworld"}
 	{tab name="{tr}Main features{/tr}"}
-	{preference name=ta_tikiorg_organicgrp_on}
-	{preference name=ta_tikiorg_organicgrp_listprivate}
+	{preference name=ta_syn_organicgrp_on}
+	{preference name=ta_syn_organicgrp_listprivate}
 	{/tab}
 	{tab name="{tr}Terminology to use{/tr}"}
-	{preference name=ta_tikiorg_organicgrp_sterm}
-	{preference name=ta_tikiorg_organicgrp_pterm}
+	{preference name=ta_syn_organicgrp_sterm}
+	{preference name=ta_syn_organicgrp_pterm}
 	{/tab}	{/tabset}
 	<div class="row">
 		<div class="form-group col-lg-12 clearfix">

@@ -1,10 +1,10 @@
 {assign var=white value="_"|explode:$activity.namespace}
-{assign var="grpname" value="tikiorg_organicgrp_{$white[2]}"}
+{assign var="grpname" value="syn_organicgrp_{$white[2]}"}
 {activityframe activity=$activity heading="
 <div class='active resource'><hr/></div>
-{tr _0=$activity.user|userlink}%0 Updated a wiki page in <a href=\"tikiorg_organicgrp_grouphomepage?itemId={$white[1]}\">{$grpname|addongroupname}</a>{/tr}"}
+{tr _0=$activity.user|userlink}%0 Updated a wiki page in <a href=\"syn_organicgrp_grouphomepage?itemId={$white[1]}\">{$grpname|addongroupname}</a>{/tr}"}
 	<div class="active_part2">
-		<img src="addons/tikiorg_organicgrp/img/icon-document.png" alt="Document"/>
+		<img src="addons/syn_organicgrp/img/icon-document.png" alt="Document"/>
 		<div class="avt_title1">
 			<p><a href="{$activity.object}?organicgroup={$white[2]}">{if $activity.object|nonamespace|truncate:11:'':true != "whiteboard_"}{$activity.object|nonamespace}{else}{$activity.object|addongroupname} Whiteboard{/if}</a>
 			</p><br/>

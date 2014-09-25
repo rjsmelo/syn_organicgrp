@@ -7,7 +7,7 @@ objects:
       event_type: tiki.user.groupjoin
       rule_type: advanced
       rule: |
-        (if (equals args.is_organic 1) (event-trigger tikiorg.organicgrp.groupjoin (map
+        (if (equals args.is_organic 1) (event-trigger syn.organicgrp.groupjoin (map
         (user args.object)
         (type args.type)
         (object args.object)
@@ -17,14 +17,14 @@ objects:
         (private args.is_private)
         (organic args.is_organic)
         (aggregate (hash args.type args.object args.group))
-        (feed (str tikiorg_organicgrp))
+        (feed (str syn_organicgrp))
         )))
       notes: User joins group
   -
     type: activity_stream_rule
     ref: act_groupjoin_rec
     data:
-      event_type: tikiorg.organicgrp.groupjoin
+      event_type: syn.organicgrp.groupjoin
       rule_type: record
       rule: (event-record event args)
       notes:
@@ -35,7 +35,7 @@ objects:
       event_type: tiki.user.groupleave
       rule_type: advanced
       rule: |
-        (if (equals args.is_organic 1) (event-trigger tikiorg.organicgrp.groupleave (map
+        (if (equals args.is_organic 1) (event-trigger syn.organicgrp.groupleave (map
         (user args.object)
         (type args.type)
         (object args.object)
@@ -45,14 +45,14 @@ objects:
         (private args.is_private)
         (organic args.is_organic)
         (aggregate (hash args.type args.object args.group))
-        (feed (str tikiorg_organicgrp))
+        (feed (str syn_organicgrp))
         )))
       notes: User leaves group
   -
     type: activity_stream_rule
     ref: act_groupleave_rec
     data:
-      event_type: tikiorg.organicgrp.groupleave
+      event_type: syn.organicgrp.groupleave
       rule_type: record
       rule: (event-record event args)
       notes:
@@ -63,7 +63,7 @@ objects:
       event_type: tiki.forumpost.create
       rule_type: advanced
       rule: |
-        (if (equals 1 1) (event-trigger tikiorg.organicgrp.forumpost (map
+        (if (equals 1 1) (event-trigger syn.organicgrp.forumpost (map
         (user args.user)
         (type args.type)
         (object args.object)
@@ -71,14 +71,14 @@ objects:
         (title args.title)
         (aggregate (hash args.type args.object))
         (content args.content)
-        (feed (str tikiorg_organicgrps))
+        (feed (str syn_organicgrps))
         )))
       notes: Forum post created
   -
     type: activity_stream_rule
     ref: act_forumpost_rec
     data:
-      event_type: tikiorg.organicgrp.forumpost
+      event_type: syn.organicgrp.forumpost
       rule_type: record
       rule: (event-record event args)
       notes:
@@ -89,7 +89,7 @@ objects:
       event_type: tiki.forumpost.reply
       rule_type: advanced
       rule: |
-        (if (equals 1 1) (event-trigger tikiorg.organicgrp.forumreply (map
+        (if (equals 1 1) (event-trigger syn.organicgrp.forumreply (map
         (user args.user)
         (type args.type)
         (object args.object)
@@ -100,14 +100,14 @@ objects:
         (aggregate (hash args.type args.parent_id))
         (aggregateself (hash args.type args.object))
         (content args.content)
-        (feed (str tikiorg_organicgrp))
+        (feed (str syn_organicgrp))
         )))
       notes: Forum post reply
   -
     type: activity_stream_rule
     ref: act_forumreply_rec
     data:
-      event_type: tikiorg.organicgrp.forumreply
+      event_type: syn.organicgrp.forumreply
       rule_type: record
       rule: (event-record event args)
       notes:
@@ -118,20 +118,20 @@ objects:
       event_type: tiki.wiki.update
       rule_type: advanced
       rule: |
-        (if (equals (substring args.namespace 0 19) (str tikiorg_organicgrp_)) (event-trigger tikiorg.organicgrp.wikiupdate (map
+        (if (equals (substring args.namespace 0 19) (str syn_organicgrp_)) (event-trigger syn.organicgrp.wikiupdate (map
         (user args.user)
         (type args.type)
         (object args.object)
         (namespace args.namespace)
         (aggregate (hash args.type args.object))
-        (feed (str tikiorg_organicgrp))
+        (feed (str syn_organicgrp))
         )))
       notes: Wiki page updated in group namespace
   -
     type: activity_stream_rule
     ref: act_wikiupdate_rec
     data:
-      event_type: tikiorg.organicgrp.wikiupdate
+      event_type: syn.organicgrp.wikiupdate
       rule_type: record
       rule: (event-record event args)
       notes:

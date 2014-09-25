@@ -2,16 +2,16 @@
 objects:
   -
     type: category
-    ref: cat_tikiorg_organicgrp
+    ref: cat_syn_organicgrp
     data:
-      name: addon_tikiorg_organicgrp
+      name: addon_syn_organicgrp
       parent:
   -
     type: category
     ref: cat_organicgrps
     data:
       name: Organic Groups
-      parent: $profileobject:cat_tikiorg_organicgrp$
+      parent: $profileobject:cat_syn_organicgrp$
   -
     type: category
     ref: cat_public_grp
@@ -29,5 +29,5 @@ permissions:
     objects:
       -
         type: category
-        id: $profileobject:cat_tikiorg_organicgrp$
+        id: $profileobject:cat_syn_organicgrp$
         allow: [ admin_categories ]

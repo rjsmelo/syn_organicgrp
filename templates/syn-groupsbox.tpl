@@ -3,7 +3,7 @@
 		{$result.tracker_field_og_creator|avatarize}
 	</div>
 	<div class="group_title">
-		<h3><a href="tikiorg_organicgrp_grouphomepage?itemId={$result.object_id}">{$result.tracker_field_og_title|escape}</a> {if $result.tracker_status == 'p'}(Private){/if}</h3>
+		<h3><a href="syn_organicgrp_grouphomepage?itemId={$result.object_id}">{$result.tracker_field_og_title|escape}</a> {if $result.tracker_status == 'p'}(Private){/if}</h3>
 		<p>Created by {$result.tracker_field_og_creator|userlink}</p>
 	</div>
 	<p>{$result.og_descrip|nl2br}</p>
@@ -16,7 +16,7 @@
 			{filter exact="0" field="parent_thread_id"}
 			{filter exact="{/literal}{$result.tracker_field_og_forum_ID}{literal}" field="parent_object_id"}
 			{sort mode="modification_date_desc"}
-			{output template="addons/tikiorg_organicgrp/templates/tikiorg-groups_recdisc.tpl"}
+			{output template="addons/syn_organicgrp/templates/syn-groups_recdisc.tpl"}
 		{/literal}
 		{/wikiplugin}
 	{/if}

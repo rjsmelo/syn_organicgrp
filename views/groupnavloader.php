@@ -1,6 +1,6 @@
 <?php
 
-namespace tikiaddon\tikiorg\organicgrp;
+namespace tikiaddon\syn\organicgrp;
 
 function groupnavloader($data, $params)
 {
@@ -8,7 +8,7 @@ function groupnavloader($data, $params)
 		return 'Please specify parameter: from';
 	}
 
-	$app = \TikiAddons::get('tikiorg_organicgrp');
+	$app = \TikiAddons::get('syn_organicgrp');
 	$api = new \TikiAddons_Api_Group;
 
 	if (!isset($_REQUEST['organicgroup']) && !empty($_REQUEST['page'])) {
@@ -34,13 +34,13 @@ function groupnavloader($data, $params)
 
 	// if og is private, always redirect to home page
 	if (isset($_REQUEST['organicgroup'])) {
-		$ogname = 'tikiorg_organicgrp_' . $_REQUEST['organicgroup'];
+		$ogname = 'syn_organicgrp_' . $_REQUEST['organicgroup'];
 		global $user;
-		if ($_REQUEST['page'] != 'tikiorg_organicgrp_grouphomepage' && $api->organicGroupIsPrivate($ogname) && !\TikiLib::lib('user')->user_is_in_group($user, $ogname)) {
-			header( 'Location: tiki-index.php?page=tikiorg_organicgrp_grouphomepage&itemId=' . $_REQUEST['organicgroup']);
+		if ($_REQUEST['page'] != 'syn_organicgrp_grouphomepage' && $api->organicGroupIsPrivate($ogname) && !\TikiLib::lib('user')->user_is_in_group($user, $ogname)) {
+			header( 'Location: tiki-index.php?page=syn_organicgrp_grouphomepage&itemId=' . $_REQUEST['organicgroup']);
 		}
 	}
 
 	$app->smarty->assign('groupnavfrom', $params['from']);
-	return $app->smarty->fetch('tikiorg-groupnavloader.tpl');
+	return $app->smarty->fetch('syn-groupnavloader.tpl');
 }

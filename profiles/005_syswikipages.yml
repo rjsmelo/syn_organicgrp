@@ -5,7 +5,7 @@ objects:
     ref: wiki_creategroup
     data:
       mode: create_or_update
-      name: tikiorg_organicgrp_creategroup
+      name: syn_organicgrp_creategroup
       hide_title: y
       content: wikicontent:creategroup
       description:
@@ -14,7 +14,7 @@ objects:
     ref: wiki_joingroups
     data:
       mode: create_or_update
-      name: tikiorg_organicgrp_joingroups
+      name: syn_organicgrp_joingroups
       hide_title: y
       content: wikicontent:joingroups
       description:
@@ -23,7 +23,7 @@ objects:
     ref: wiki_mygroups
     data:
       mode: create_or_update
-      name: tikiorg_organicgrp_mygroups
+      name: syn_organicgrp_mygroups
       hide_title: y
       content: wikicontent:mygroups
       description:
@@ -32,7 +32,7 @@ objects:
     ref: wiki_grouphomepage
     data:
       mode: create_or_update
-      name: tikiorg_organicgrp_grouphomepage
+      name: syn_organicgrp_grouphomepage
       hide_title: y
       content: wikicontent:grouphomepage
       description:
@@ -41,7 +41,7 @@ objects:
     ref: wiki_groupsearchpage
     data:
       mode: create_or_update
-      name: tikiorg_organicgrp_groupsearchpage
+      name: syn_organicgrp_groupsearchpage
       hide_title: y
       content: wikicontent:groupsearchpage
       description:
@@ -50,7 +50,7 @@ objects:
     ref: wiki_groupmembers
     data:
       mode: create_or_update
-      name: tikiorg_organicgrp_groupmembers
+      name: syn_organicgrp_groupmembers
       hide_title: y
       content: wikicontent:groupmembers
       description:
@@ -59,7 +59,7 @@ objects:
     ref: wiki_managegrp
     data:
       mode: create_or_update
-      name: tikiorg_organicgrp_managegrp
+      name: syn_organicgrp_managegrp
       hide_title: y
       content: wikicontent:managegrp
       description:

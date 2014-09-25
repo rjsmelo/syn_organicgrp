@@ -1,16 +1,16 @@
 {strip}
 	<div>
-	{include file="tikiorg-groupnav.tpl"}
+	{include file="syn-groupnav.tpl"}
 	{jq}$('.here_grouphome').removeClass('btn-default').addClass('btn-info');{/jq}
 	{foreach item=result from=$results}
-		{assign var=grpname value="tikiorg_organicgrp_`$result.object_id`"}
-		{assign var=mgrpname value="tikiorg_organicgrp_managers_`$result.object_id`"}
-		{assign var=pgrpname value="tikiorg_organicgrp_pending_`$result.object_id`"}
+		{assign var=grpname value="syn_organicgrp_`$result.object_id`"}
+		{assign var=mgrpname value="syn_organicgrp_managers_`$result.object_id`"}
+		{assign var=pgrpname value="syn_organicgrp_pending_`$result.object_id`"}
 		{if $result.tracker_status == 'o' || $grpname|in_group}
 			<div class="row">
-				<form name="commSearch" method="post" action="./tikiorg_organicgrp_groupsearchpage?organicgroup={$result.object_id}&cat={$result.tracker_field_og_categoryID}&forgetlastsearch=y">
+				<form name="commSearch" method="post" action="./syn_organicgrp_groupsearchpage?organicgroup={$result.object_id}&cat={$result.tracker_field_og_categoryID}&forgetlastsearch=y">
 					<div class="col-md-12">
-						<input type="text" name="default[content]" placeholder="Search within this {$prefs.ta_tikiorg_organicgrp_sterm}..." class="searchField">
+						<input type="text" name="default[content]" placeholder="Search within this {$prefs.ta_syn_organicgrp_sterm}..." class="searchField">
 						<input type="submit" value="Search" name="submit" class="btn btn-primary">
 					</div>
 				</form>
@@ -25,7 +25,7 @@
 						{filter content="0" field="parent_thread_id"}
 						{filter content="{/literal}{$result.tracker_field_og_forum_ID}{literal}" field="parent_object_id"}
 						{sort mode="modification_date_desc"}
-						{output template="addons/tikiorg_organicgrp/templates/tikiorg-forum_list_title.tpl"}
+						{output template="addons/syn_organicgrp/templates/syn-forum_list_title.tpl"}
 						{ALTERNATE()}<p class="emptyinfo">No post available.</p>{ALTERNATE}
 					{/literal}
 					{/wikiplugin}

@@ -5,7 +5,7 @@
 {filter exact="$profileobject:004_og_tracker:trk_og$" field="tracker_id"}
 {filter exact="{{itemId}}" field="object_id"}
 {sort mode="modification_date_desc"}
-{output template="addons/tikiorg_organicgrp/templates/tikiorg-grouphome.tpl"}
+{output template="addons/syn_organicgrp/templates/syn-grouphome.tpl"}
 {ALTERNATE()}
 {REMARKSBOX(type="error" title="Private")}
 You are not allowed to view this item.

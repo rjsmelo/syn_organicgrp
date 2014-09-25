@@ -5,7 +5,7 @@ objects:
     ref: wiki_creategroupfail
     data:
       mode: create
-      name: tikiorg_organicgrp_creategroupfail
+      name: syn_organicgrp_creategroupfail
       content: wikicontent:creategroupfail
       description:
 permissions:

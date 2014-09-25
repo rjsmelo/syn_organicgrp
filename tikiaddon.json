@@ -1,6 +1,6 @@
 {
 	"name": "Tiki Organic Groups",
-	"package": "tikiorg/organicgrp",
+	"package": "syn/organicgrp",
 	"version": "0.1",
 	"url": "http://doc.tiki.org/OrganicGroups",
 	"smarty": true,
@@ -12,11 +12,11 @@
 			"tracker": "trk_og",
 			"public_catroot": "cat_public_grp",
 			"private_catroot": "cat_private_grp",
-			"managementpage": "tikiorg_organicgrp_managegrp",
-			"homepage": "tikiorg_organicgrp_grouphomepage"
+			"managementpage": "syn_organicgrp_managegrp",
+			"homepage": "syn_organicgrp_grouphomepage"
 		},
 		"navbar": {
-			"tpl": "tikiorg-groupnavloader.tpl"
+			"tpl": "syn-groupnavloader.tpl"
 		}
 	}
 }

@@ -1,10 +1,10 @@
 {foreach item=result from=$results}
-	{assign var=grpname value="tikiorg_organicgrp_`$result.object_id`"}
+	{assign var=grpname value="syn_organicgrp_`$result.object_id`"}
 	{if $grpname|in_group}
 		{if $result.tracker_status == 'o'}
-			{include file="tikiorg-groupsbox.tpl" private="n"}
+			{include file="syn-groupsbox.tpl" private="n"}
 		{elseif $result.tracker_status == 'p'}
-			{include file="tikiorg-groupsbox.tpl" private="y"}
+			{include file="syn-groupsbox.tpl" private="y"}
 		{/if}
 	{/if}
 {/foreach}

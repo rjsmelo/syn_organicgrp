@@ -9,7 +9,7 @@
 		{"type":"wiki_page", "ref":"wiki_groupsearchpage", "profile":"005_syswikipages"},
 		{"type":"wiki_page", "ref":"wiki_groupmembers", "profile":"005_syswikipages"},
 		{"type":"wiki_page", "ref":"wiki_managegrp", "profile":"005_syswikipages"},
-		{"type":"category", "ref":"cat_tikiorg_organicgrp", "profile":"002_og_categories"},
+		{"type":"category", "ref":"cat_syn_organicgrp", "profile":"002_og_categories"},
 		{"type":"activity", "ref":"act_groupjoin", "profile":"007_groupcoreactivities"},
 		{"type":"activity", "ref":"act_groupjoin_rec", "profile":"007_groupcoreactivities"},
 		{"type":"activity", "ref":"act_groupleave", "profile":"007_groupcoreactivities"},
