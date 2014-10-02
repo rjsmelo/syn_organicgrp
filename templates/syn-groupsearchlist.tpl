@@ -2,7 +2,7 @@
 		{if $result@iteration is odd}
 			<div class="row">
 		{/if}
-		<div class="col-md-6 panel panel-default">
+		<div class="col-md-6">
 			{assign var=grpname value="syn_organicgrp_`$result.object_id`"}
 			{include file="syn-groupsbox.tpl" private="{if $result.status == 'o'}n{elseif $result.status == 'p'}y{/if}"}
 		</div>

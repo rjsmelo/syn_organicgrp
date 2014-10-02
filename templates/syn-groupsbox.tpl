@@ -6,7 +6,7 @@
 		</div>
 		<div class="col-md-12 group-content">
 			<h3><a href="syn_organicgrp_grouphomepage?itemId={$result.object_id}">{$result.tracker_field_og_title|escape}</a></h3>
-			<p>{$result.og_descrip|nl2br}</p>
+			<p>{$result.tracker_field_og_description|truncate:200}</p>
 		</div>
 	</div><!--
 	--><div class="col-sm-2 summary-content vcenter">
