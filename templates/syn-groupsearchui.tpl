@@ -1,6 +1,7 @@
 {literal}
-<div class="field">
-	{input _filter="tracker_field_og_title,tracker_field_og_description" type="text" class="fullWidthtext" placeholder="Search {/literal}{$prefs.synergiqcore_gr_grp_term}...{literal}"}{input type="Submit" value="Search" class="custom_Search"}
-</div>
-<p class="group_list_dis">Only the {/literal}{$prefs.ta_syn_organicgrp_sterm}{literal} title and description are used for search results.</p>
+	<div class="col-md-12">
+		<div class="input-group">
+			{input _filter="tracker_field_og_title,tracker_field_og_description,tracker_field_groupState" type="text" class="form-control" placeholder="Search Projects....."}<span class="input-group-btn">{input type="Submit" value="Search" class="btn btn-default"}</span>
+		</div>
+	</div>
 {/literal}
