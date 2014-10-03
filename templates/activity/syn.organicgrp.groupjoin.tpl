@@ -1,15 +1,16 @@
-{activityframe activity=$activity heading="
-<div class='active user'><hr/></div>
-{tr _0=$activity.user|userlink}%0 joined {$prefs.ta_syn_organicgrp_sterm|a_or_an}{/tr}"}
-	<div class="active_part2">
-		<div class="avt_title1">
-			{ifsearchexists type="trackeritem" id="{$activity.organicgroupid|escape}"}
-				<a href="syn_organicgrp_grouphomepage?itemId={$activity.organicgroupid|escape}">{$activity.organicgroupname|escape}</a><br/>
-				<br/>
-			{/ifsearchexists}
-			{ifsearchnotexists type="trackeritem" id="{$activity.organicgroupid|escape}"}
-			{$activity.organicgroupname|escape} (deleted)
-			{/ifsearchnotexists}
+<div class="activity_border"></div>
+<div class="clearfix pad-bottom-xl pad-top-xl">
+	<div class="pull-left">
+		<span class="activitytime">{$activity.modification_date|date_format:'%H:%M'}</span><span class="fa fa-user activity_icon"></span>
+	</div>
+	<div class="activity_popover popover right col-md-9">	
+		<div class="arrow"></div> 
+		<div class="popover-content">
+			{activityframe activity=$activity heading="{tr _0=$activity.user|username _1=$activity.user}<a href='profile?view_user=%1'>%0</a> uploaded a resource.{/tr}"}
+			<div class="well well-sm mar-top-xl">
+				<p><a href="#">{$activity.organicgroupname}</a> has been uploaded to the repository.</p>
+			</div>
+			{/activityframe}
 		</div>
 	</div>
-{/activityframe}
+</div>

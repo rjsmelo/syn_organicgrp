@@ -1,27 +1,16 @@
-{activityframe activity=$activity heading="
-<div class='active forum'><hr/></div>
-<img class='commentimg' src='addons/syn_organicgrp/img/chat-bubble1.png' alt='event'/>
-{if isset($activity.aggregate.user) && $activity.aggregate.user|count > 1}
-    {foreach $activity.aggregate.user as $t_user}
-        {if $t_user@last} and {/if}{$t_user|userlink}{if !$t_user@last}, {/if}
-    {/foreach}
-{else}
-    {$activity.user|userlink}
-{/if}
-{tr}has replied to a topic{/tr} {if $activity.topictitle|escape}({$activity.topictitle|escape}){/if} {tr}in{/tr}
-<a href=tiki-view_forum.php?forumId={$activity.forum_id|escape}>{$activity.object|forumname|addongroupname}</a>"}
-
-	<div class="active_part2">
-		<img src="addons/syn_organicgrp/img/chat-bubble-copy.png" alt="forum"/>
-		<div class="avt_title1">
-			{*ifsearchexists type="forum post" id="{$activity.object|escape}"*}
-				<a href="tiki-view_forum_thread.php?comments_parentId={$activity.object|escape}">{if !$activity.title}{tr}Reply to{/tr} {$activity.topictitle|escape}{/if}{$activity.title|escape}</a> <br/>
-			{$activity.content|truncate:80}<br/>
-			{*/ifsearchexists*}
-			{* If forum deepindexing is off, this ifsearchnotexists/ifsearchexists do not work for replies
-			{ifsearchnotexists type="forum post" id="{$activity.object|escape}"}
-			{$activity.title|escape} (deleted)
-			{/ifsearchnotexists}*}
+<div class="activity_border"></div>
+<div class="clearfix pad-bottom-xl pad-top-xl">
+	<div class="pull-left">
+		<span class="activitytime">{$activity.modification_date|date_format:'%H:%M'}</span><span class="fa fa-comment activity_icon"></span>
+	</div>
+	<div class="activity_popover popover right col-md-9">	
+		<div class="arrow"></div> 
+		<div class="popover-content">
+			{activityframe activity=$activity heading="{tr _0=$activity.user|username _1=$activity.user}<a href='profile?view_user=%1'>%0</a> commented on <a href='#'>{$activity.topictitle}</a>{/tr}"}
+			<div class="well well-sm mar-top-xl">
+				<p>"{$activity.content}"</p>
+			</div>
+			{/activityframe}
 		</div>
 	</div>
-{/activityframe}
+</div>
