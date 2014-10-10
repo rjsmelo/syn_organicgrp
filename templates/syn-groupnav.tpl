@@ -36,21 +36,15 @@
 	{if $grpname|in_group || $result.tracker_status eq 'o'}
 	<div class="row mar-bottom-lg">
 		<ul class="nav nav-pills">
-			<li class="active"><a href="syn_organicgrp_grouphomepage?itemId={$result.object_id}"><span class="fa fa-home"></span> Home</a></li>
-			<li><a href="syn_organicgrp_forum?forumId={$result.tracker_field_og_forum_ID}&organicgroup={$result.object_id}"><span class="fa fa-comments"></span> Forums</a></li>
-			<li><a href="syn_organicgrp_{$result.object_id}:_:whiteboard_{$result.object_id}?organicgroup={$result.object_id}&cat={$result.tracker_field_og_categoryID}">Whiteboard</a></li>
-			<li><a href="#"><span class="fa "></span> Events</a></li>
-			<li><a href="#"><span class="fa fa-file-text-o"></span> Wiki</a></li>
-			<li><a href="#"><span class="fa fa-file"></span> Files</a></li>
-			<li><a href="#"><span class="fa fa-laptop"></span> Live Conferencing</a></li>
-		  	<li><a href="syn_organicgrp_groupmembers?organicgroup={$result.object_id}&cat={$result.tracker_field_og_categoryID}"><span class="fa fa-users"></span> Members</a></li>
+			<li id="home"><a href="syn_organicgrp_grouphomepage?itemId={$result.object_id}"><span class="fa fa-home"></span> Home</a></li>
+			<li id="forum"><a href="syn_organicgrp_forum?forumId={$result.tracker_field_og_forum_ID}&organicgroup={$result.object_id}"><span class="fa fa-comments"></span> Forums</a></li>
+			<li id="white"><a href="syn_organicgrp_{$result.object_id}:_:whiteboard_{$result.object_id}?organicgroup={$result.object_id}&cat={$result.tracker_field_og_categoryID}">Whiteboard</a></li>
+			<li id="events"><a href="#"><span class="fa "></span> Events</a></li>
+			<li id="wiki"><a href="#"><span class="fa fa-file-text-o"></span> Wiki</a></li>
+			<li id="files"><a href="syn_organicgrp_groupfiles?itemId={$result.tracker_field_og_forum_ID}"><span class="fa fa-file"></span> Files</a></li>
+			<li id="live"><a href="#"><span class="fa fa-laptop"></span> Live Conferencing</a></li>
+		  	<li id="members"><a href="syn_organicgrp_groupmembers?organicgroup={$result.object_id}&cat={$result.tracker_field_og_categoryID}"><span class="fa fa-users"></span> Members</a></li>
 		</ul>
-		<div class="btn-group hide">
-			<a href="syn_organicgrp_grouphomepage?itemId={$result.object_id}"><button type="button" class="here_grouphome btn btn-default">Home</button></a>
-			<a href="syn_organicgrp_{$result.object_id}:_:whiteboard_{$result.object_id}?organicgroup={$result.object_id}&cat={$result.tracker_field_og_categoryID}"><button type="button" class="here_groupboard btn btn-default">Whiteboard</button></a>
-			<a href="tiki-view_forum.php?forumId={$result.tracker_field_og_forum_ID}"><button type="button" class="here_groupforum btn btn-default">Forum</button></a>
-			<a href="syn_organicgrp_groupmembers?organicgroup={$result.object_id}&cat={$result.tracker_field_og_categoryID}"><button type="button" class="here_groupmembers btn btn-default">Members</button></a>
-		</div>
 	</div>
 	{/if}
 
@@ -62,3 +56,12 @@
 		</div>
 	{/if}
 {/foreach}
+{if $smarty.get.page eq "syn_organicgrp_grouphomepage"}
+{jq}
+	$('#home').addClass('active');
+{/jq}
+{elseif $smarty.get.page eq "syn_organicgrp_groupfiles"}
+{jq}
+	$('#files').addClass('active');
+{/jq}
+{/if}

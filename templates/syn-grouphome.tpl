@@ -20,7 +20,7 @@
 				</form>
 			</div>
 
-			<div class="col-md-8">
+			<div class="col-md-8 projectlist">
 				<h3>Recent Activity</h3>
 				{wikiplugin _name="activitystream" auto="1"}
 				{literal}
