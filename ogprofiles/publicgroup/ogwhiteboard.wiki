@@ -1,2 +1,3 @@
 {addon package="syn/organicgrp" view="groupnavloader" from="whiteboard"}
 ~tc~ Do not edit above this line to preserve the Group menu ~/tc~
+{WYSIWYG(height="300px")}{WYSIWYG}
