@@ -36,12 +36,12 @@
 	{if $grpname|in_group || $result.tracker_status eq 'o'}
 	<div class="row mar-bottom-lg">
 		<ul class="nav nav-pills">
-			<li id="home"><a href="syn_organicgrp_grouphomepage?itemId={$result.object_id}"><span class="fa fa-home"></span> Home</a></li>
-			<li id="forum"><a href="syn_organicgrp_forum?forumId={$result.tracker_field_og_forum_ID}&organicgroup={$result.object_id}"><span class="fa fa-comments"></span> Forums</a></li>
+			<li id="home"><a href="syn_organicgrp_grouphomepage?itemId={$result.object_id}&cat={$result.tracker_field_og_categoryID}"><span class="fa fa-home"></span> Home</a></li>
+			<li id="forum"><a href="syn_organicgrp_forum?forumId={$result.tracker_field_og_forum_ID}&organicgroup={$result.object_id}&cat={$result.tracker_field_og_categoryID}"><span class="fa fa-comments"></span> Forums</a></li>
 			<li id="white"><a href="syn_organicgrp_{$result.object_id}:_:whiteboard_{$result.object_id}?organicgroup={$result.object_id}&cat={$result.tracker_field_og_categoryID}">Whiteboard</a></li>
-			<li id="events"><a href="syn_organicgrp_event?eventId={$result.tracker_field_og_forum_ID}&organicgroup={$result.object_id}"><span class="fa "></span> Events</a></li>
+			<li id="events"><a href="syn_organicgrp_event?eventId={$result.tracker_field_og_forum_ID}&organicgroup={$result.object_id}&cat={$result.tracker_field_og_categoryID}"><span class="fa "></span> Events</a></li>
 			<li id="wiki"><a href="#"><span class="fa fa-file-text-o"></span> Wiki</a></li>
-			<li id="files"><a href="syn_organicgrp_groupfiles?itemId={$result.tracker_field_og_forum_ID}"><span class="fa fa-file"></span> Files</a></li>
+			<li id="files"><a href="syn_organicgrp_groupfiles?itemId={$result.tracker_field_og_forum_ID}&cat={$result.tracker_field_og_categoryID}"><span class="fa fa-file"></span> Files</a></li>
 			<li id="live"><a href="#"><span class="fa fa-laptop"></span> Live Conferencing</a></li>
 		  	<li id="members"><a href="syn_organicgrp_groupmembers?organicgroup={$result.object_id}&cat={$result.tracker_field_og_categoryID}"><span class="fa fa-users"></span> Members</a></li>
 		</ul>
@@ -67,5 +67,13 @@
 {elseif $smarty.get.page eq "syn_organicgrp_groupmembers"}
 {jq}
 	$('#members').addClass('active');
+{/jq}
+{elseif $smarty.get.page eq "syn_organicgrp_forum"}
+{jq}
+	$('#forum').addClass('active');
+{/jq}
+{elseif $smarty.get.page eq "syn_organicgrp_event"}
+{jq}
+	$('#events').addClass('active');
 {/jq}
 {/if}
