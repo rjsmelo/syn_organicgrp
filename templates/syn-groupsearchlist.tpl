@@ -1,12 +1,8 @@
 {foreach $results as $result}
-		{if $result@iteration is odd}
-			<div class="row">
-		{/if}
 		<div class="col-md-6">
 			{assign var=grpname value="syn_organicgrp_`$result.object_id`"}
-			{include file="syn-groupsbox.tpl" private="{if $result.status == 'o'}n{elseif $result.status == 'p'}y{/if}"}
+			{if not $grpname|in_group}
+				{include file="syn-groupsbox.tpl" private="{if $result.status == 'o'}n{elseif $result.status == 'p'}y{/if}"}
+			{/if}
 		</div>
-		{if $result@iteration is even}
-			</div>
-		{/if}
 {/foreach}
