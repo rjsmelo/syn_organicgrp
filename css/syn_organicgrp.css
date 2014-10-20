@@ -59,3 +59,7 @@
 	height: 27px !important;
 	display: inline-block;
 }
+/* spacing between buttons */
+.button-bar {
+  margin-right: 5px;
+}
