@@ -1,15 +1,56 @@
 ~tc~This page is system generated. Do not edit manually~/tc~
+{HTML()}
+<div class="row">
+<div class="col-lg-9">
+{HTML}
 !Create {showpref pref=ta_syn_organicgrp_sterm}
-{DIV(class="btn-group")}
-  <a href="syn_organicgrp_joingroups"><button type="button" class="btn btn-default">Join {showpref pref=ta_syn_organicgrp_pterm}</button></a><a href="syn_organicgrp_mygroups"><button type="button" class="btn btn-default">{showpref pref=ta_syn_organicgrp_pterm} I'm In</button></a>
+{DIV()}
+  <a href="syn_organicgrp_joingroups" class="btn btn-default button-bar">Join {showpref pref=ta_syn_organicgrp_pterm}</a><a href="syn_organicgrp_mygroups" class="btn btn-default">{showpref pref=ta_syn_organicgrp_pterm} I'm In</a>
 {DIV}
 {TABS(name="group_create_tabs" tabs="Public (open to all)|Private (needs approval to join)" toggle="y")}
+{HTML()}
+<div class="col-lg-12" id="loading">
+{HTML}
 !!Create a New Public {showpref pref=ta_syn_organicgrp_sterm}
-{DATACHANNEL(channel="syn_organicgrp_newpublicgroup" buttonLabel="Create" emptyCache="all" returnErrorURI="syn_organicgrp_creategroupfail" returnURI="syn_organicgrp_grouphomepage?itemId=%trkitem_og%&notify=y")}groupname,Name
+{DATACHANNEL(channel="syn_organicgrp_newpublicgroup" buttonLabel="Create" id="loading" emptyCache="all" returnErrorURI="syn_organicgrp_creategroupfail" returnURI="syn_organicgrp_grouphomepage?itemId=%trkitem_og%&notify=y")}groupname,Name
 groupdescription,Description
-creator,hidden={{user}}{DATACHANNEL}/////
+creator,hidden={{user}}{DATACHANNEL}
+{HTML()}
+</div>
+{HTML}
+/////
+{HTML()}
+<div class="col-lg-12"  id="loading">
+{HTML}
 !!Create a New Private {showpref pref=ta_syn_organicgrp_sterm}
 {DATACHANNEL(channel="syn_organicgrp_newprivategroup" buttonLabel="Create" emptyCache="all" returnErrorURI="syn_organicgrp_creategroupfail" returnURI="syn_organicgrp_grouphomepage?itemId=%trkitem_og%&notify=y")}groupname,Name
 groupdescription,Description
 creator,hidden={{user}}{DATACHANNEL}
+{HTML()}
+</div>
+{HTML}
 {TABS}
+{HTML()}
+</div>
+</div>
+<div class="modal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title">Chargement en cours...</h4>
+			</div>
+			<div class="modal-body">
+				<div class="progress">
+					<div class="progress-bar progress-bar-success progress-bar-striped active"  role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{HTML}
+
+{JQ()}
+$( "#loading input[type='submit']" ).click(function() {
+$(".modal").show();
+});
+{JQ}
