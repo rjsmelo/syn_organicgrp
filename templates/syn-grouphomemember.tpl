@@ -9,11 +9,11 @@
 			</div> 
 			<div class="col-xs-9">
 				<h5 class="align-top">{$result.tracker_field_firstname} {$result.tracker_field_lastname}</h5>
-				<ul class="list-group clear-stack">
+				<ul class="fa-ul clear-stack">
 				  {if $result.tracker_field_city}
-				  	<li class="list-group-item"><span class="fa fa-map-marker fa-fw"></span>{$result.tracker_field_city}</li>
+				  	<li><span class="fa-li fa fa-map-marker fa-fw"></span>{$result.tracker_field_city}</li>
 				  {/if}
-				  <li class="list-group-item"><span class="fa fa-book fa-fw"></span>
+				  <li><span class="fa-li fa fa-book fa-fw"></span>
 				    {wikiplugin _name="list"}
                         {literal}
                             {filter type="trackeritem"}
@@ -26,10 +26,10 @@
 				  </li>
 				  <!--Placeholder to keep size of box thew same throughout -->
 				  {if $result.tracker_field_city}{else}
-				  	<li class="list-group-item"><span class="fa"></span></li>
+				  	<li><span class="fa-li fa"></span></li>
 				  {/if}
 				  {if $result.tracker_field_siteWeb}{else}
-				  	<li class="list-group-item"><span class="fa"></span></li>
+				  	<li><span class="fa-li fa"></span></li>
 				  {/if}
 				</ul>
 			</div>
