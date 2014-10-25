@@ -1,15 +1,7 @@
-{activityframe activity=$activity heading="
-<div class='active user'><hr/></div>
-{tr _0=$activity.user|userlink}%0 joined {$prefs.ta_syn_organicgrp_sterm|a_or_an}{/tr}"}
-	<div class="active_part2">
-		<div class="avt_title1">
-			{ifsearchexists type="trackeritem" id="{$activity.organicgroupid|escape}"}
-				<a href="syn_organicgrp_grouphomepage?itemId={$activity.organicgroupid|escape}">{$activity.organicgroupname|escape}</a><br/>
-				<br/>
-			{/ifsearchexists}
-			{ifsearchnotexists type="trackeritem" id="{$activity.organicgroupid|escape}"}
-			{$activity.organicgroupname|escape} (deleted)
-			{/ifsearchnotexists}
-		</div>
-	</div>
-{/activityframe}
+{assign "username" "{$activity.user|username}"}
+{assign "user_id" "{$activity.user}"}
+
+{assign "heading" "<a href='profile?view_user={$user_id}'>{$username}</a> joined the group <a href='#'>{$activity.organicgroupname}</a>"}
+{assign "content" "{$activity.organicgroupname}</a> is pleased to welcome its new member."}
+
+{include file="./syn.general.activity.tpl" icon="fa-sign-in" heading="{$heading}" content="{$content}"}

@@ -1,18 +1,15 @@
-{if ($groupnavfrom == 'forum' || $section == 'forums') && $forum_info.name|truncate:19:'':true eq 'syn_organicgrp_'}
-	{if !isset($groupTrackerItemId)}{assign var=groupTrackerItemId value=$forum_info.name|addonitemid}{/if}
-	{jq}$('.here_groupforum').removeClass('btn-default').addClass('btn-info');{/jq}
+{if ($groupnavfrom == 'forum')}
+	{if !isset($groupTrackerItemId)}{assign var=groupTrackerItemId value=$smarty.request.organicgroup}{/if}
 {elseif ($groupnavfrom == 'whiteboard')}
 	{if !isset($groupTrackerItemId)}{assign var=groupTrackerItemId value=$smarty.request.organicgroup}{/if}
-	{jq}$('.here_groupboard').removeClass('btn-default').addClass('btn-info');{/jq}
+{elseif ($groupnavfrom == 'events')}
+	{if !isset($groupTrackerItemId)}{assign var=groupTrackerItemId value=$smarty.request.organicgroup}{/if}
 {elseif ($groupnavfrom == 'files')}
 	{if !isset($groupTrackerItemId)}{assign var=groupTrackerItemId value=$smarty.request.organicgroup}{/if}
-	{jq}$('.here_groupfiles').removeClass('btn-default').addClass('btn-info');{/jq}
 {elseif ($groupnavfrom == 'home')}
 	{if !isset($groupTrackerItemId)}{assign var=groupTrackerItemId value=$smarty.request.organicgroup}{/if}
-	{jq}$('.here_grouphome').removeClass('btn-default').addClass('btn-info');{/jq}
 {elseif ($groupnavfrom == 'members')}
 	{if !isset($groupTrackerItemId)}{assign var=groupTrackerItemId value=$smarty.request.organicgroup}{/if}
-	{jq}$('.here_groupmembers').removeClass('btn-default').addClass('btn-info');{/jq}
 {/if}
 {if $groupTrackerItemId}
 
