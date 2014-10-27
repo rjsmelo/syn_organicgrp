@@ -16,6 +16,7 @@ Results
 	<div class="srShowResult col-md-12 pad-bottom-xl">
           {pagination_links offset_jsvar="customsearch_`$customsearchid`.offset" _onclick="window.customsearch_`$customsearchid`.options.requireinput=false;$('#customsearch_`$customsearchid`').submit();return false;" resultset=$results}{/pagination_links}
 	</div>
+
 {foreach item=result from=$results}
 	<div class="panel panel-default search-result">
 	    <div class="panel-body">
@@ -56,3 +57,4 @@ Results
            {pagination_links offset_jsvar="customsearch_`$customsearchid`.offset" _onclick="window.customsearch_`$customsearchid`.options.requireinput=false;$('#customsearch_`$customsearchid`').submit();return false;" resultset=$results}{/pagination_links}
 		<div class="clear"></div>
 </div>
+
