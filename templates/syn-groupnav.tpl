@@ -72,4 +72,8 @@
 {jq}
 	$('#events').addClass('active');
 {/jq}
+{elseif $smarty.get.page eq "syn_organicgrp_{$result.object_id}:_:whiteboard_{$result.object_id}"}
+{jq}
+	$('#white').addClass('active');
+{/jq}
 {/if}
