@@ -7,10 +7,12 @@
 		<div class="arrow"></div> 
 		<div class="popover-content">
 			{$heading}
+			{if $content}
 			<div class="well well-sm mar-top-xl mar-bottom-sm">
 				<p>{$content}</p>
 			</div>
-			<span class="pull-right mar-bottom-sm"><small>September 12, 2014 10:21AM</small></span>
+			{/if}
+			<span class="pull-right mar-bottom-sm"><small>{$activity.modification_date|date_format:'%B %e, %Y at %l:%M %p'}</small></span>
 		</div>
 	</div>
 </div>
