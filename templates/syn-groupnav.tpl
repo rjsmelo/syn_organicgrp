@@ -36,7 +36,7 @@
 			<li id="forum"><a href="syn_organicgrp_forum?forumId={$result.tracker_field_og_forum_ID}&organicgroup={$result.object_id}&cat={$result.tracker_field_og_categoryID}"><span class="fa fa-comments"></span> Forums</a></li>
 			<li id="white"><a href="syn_organicgrp_{$result.object_id}:_:whiteboard_{$result.object_id}?organicgroup={$result.object_id}&cat={$result.tracker_field_og_categoryID}"><span class="fa fa-edit"></span> Whiteboard</a></li>
 			<li id="events"><a href="syn_organicgrp_event?eventId={$result.tracker_field_og_forum_ID}&organicgroup={$result.object_id}&cat={$result.tracker_field_og_categoryID}"><span class="fa fa-calendar"></span> Events</a></li>
-			<li id="files"><a href="syn_organicgrp_groupfiles?itemId={$result.tracker_field_og_forum_ID}&cat={$result.tracker_field_og_categoryID}"><span class="fa fa-file"></span> Files</a></li>
+			<li id="files"><a href="syn_organicgrp_groupfiles?itemId={$result.tracker_field_og_forum_ID}&organicgroup={$result.object_id}&cat={$result.tracker_field_og_categoryID}"><span class="fa fa-file"></span> Files</a></li>
 			<li id="live"><a href="#"><span class="fa fa-laptop"></span> Live Conferencing</a></li>
 		  	<li id="members"><a href="syn_organicgrp_groupmembers?organicgroup={$result.object_id}&cat={$result.tracker_field_og_categoryID}"><span class="fa fa-users"></span> Members</a></li>
 		</ul>
