@@ -3,7 +3,7 @@
 		<div class="group_avatar col-xs-12">
 			<div class="pull-right lock-icon">{if $result.tracker_status == 'p'}<span class="fa fa-lock"></span>{else}<span class="fa fa-unlock"></span>{/if}</div>
 			<div class="col-xs-4">
-				<div class="thumb" style="background-image: url('tiki-show_user_avatar.php?user={$result.tracker_field_og_creator}');"></div>
+				<div class="thumb grpavatar" style="background-image: url('tiki-show_user_avatar.php?user={$result.tracker_field_og_creator}');"></div>
 			</div>
 		</div>
 		<div class="col-xs-12 group-content">
