@@ -1,5 +1,14 @@
 <div class="col-md-9">
-	<h2>{$f_eventTitle}</h2>
+	{if {$user} eq {$f_eventAddedBy} }
+		<a class="btn btn-default pull-right mar-right-lg" href="syn_organicgrp_EditEvent?itemId={$f_itemId}&organicgroup={$smarty.get.organicgroup}&cat={$smarty.get.cat}"><span class="fa fa-edit"></span></a>
+		<div class="clear"></div>
+	{else}
+		{wikiplugin _name="GROUP" groups="Admins"}
+			<a class="btn btn-default pull-right mar-right-lg" href="syn_organicgrp_EditEvent?itemId={$f_itemId}&organicgroup={$smarty.get.organicgroup}&cat={$smarty.get.cat}"><span class="fa fa-edit"></span></a>
+			<div class="clear"></div>
+		{/wikiplugin}
+	{/if}
+	<h2 class="align-top">{$f_eventTitle}</h2>
 	<i class="fa fa-users fa-6"></i> 
 		{wikiplugin _name=relations qualifiers="leaf.event.attending.invert" object="trackeritem:{$f_itemId}" showonlycount="1"}{/wikiplugin} Confirmed Attendees &nbsp;&nbsp;<i class="fa fa-comments fa-6"></i> 
 		{wikiplugin _name="list"}
@@ -16,11 +25,11 @@
 	<div class="col-xs-12 col-sm-9 col-md-9">
 		<div class="row mar-top-sm">
 			<div class="col-xs-12 col-sm-4 text-right text-left-xs event_view_title">Start Time</div>
-			<div class="col-xs-12 col-sm-6">{$f_startDate2}</div>
+			<div class="col-xs-12 col-sm-6">{$f_startDate2|date_format:"%B %e, %Y at %l:%M %p"}</div>
 		</div>
 		<div class="row mar-top-sm">
 			<div class="col-xs-12 col-sm-4 text-right text-left-xs event_view_title">End Time</div>
-			<div class="col-xs-12 col-sm-6">{$f_endDate}</div>
+			<div class="col-xs-12 col-sm-6">{$f_endDate|date_format:"%B %e, %Y at %l:%M %p"}</div>
 		</div>
 		
 		<div class="row mar-top-sm">
