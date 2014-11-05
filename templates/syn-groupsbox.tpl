@@ -10,11 +10,11 @@
 			<h3><a href="syn_organicgrp_grouphomepage?itemId={$result.object_id}">{$result.tracker_field_og_title|escape}</a></h3>
 			<p>{$result.tracker_field_og_description|truncate:200}</p>
 		</div>
-	</div><!--
-	--><div class="col-xs-2 summary-content vcenter">
+	</div>
+	<div class="col-xs-2 summary-content vcenter">
 	 	<div class="icon-stack">
 			<div><span class="fa fa-users"></span><span> {$grpname|groupmembercount}</span></div>
-			<div><span class="fa fa-comments"></span><span> {$result.tracker_field_og_forum_ID|forumtopiccount}</span></div>
+			<div><span class="fa fa-comments"></span><span> {if $result.tracker_field_og_forum_ID}{$result.tracker_field_og_forum_ID|forumtopiccount}{else}0{/if}</span></div>
 		</div>
 	</div>	
 </div>
