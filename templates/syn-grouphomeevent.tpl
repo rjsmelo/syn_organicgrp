@@ -31,11 +31,17 @@ Results
                     {/if}
 					<h3 class="media-heading"><a href="./syn_organicgrp_ViewEvent?itemId={$result.object_id|escape}&organicgroup={$result.tracker_field_groupId}&cat={$result.categories[0]}" class="title">{$result.title|escape}</a></h3>
 					<div class="mar-bottom-lg mar-top-lg"><strong>
-                        {if $result.tracker_field_startDate2|date_format:"%b %e" eq $result.tracker_field_endDate|date_format:"%b %e"}
-                        {$result.tracker_field_startDate2|date_format:"%b %e %R"} - {$result.tracker_field_endDate|date_format:"%R"}
-                        {else}
-                                {$result.tracker_field_startDate2|date_format:"%b %e %R"} - {$result.tracker_field_endDate|date_format:"%b %e %R"}
-                        {/if}
+                        {if $result.tracker_field_startDate2|date_format:"%Y" eq $result.tracker_field_endDate|date_format:"%Y"}
+							{if $result.tracker_field_startDate2|date_format:"%B %e" eq $result.tracker_field_endDate|date_format:"%B %e"}
+								{$result.tracker_field_startDate2|date_format:"%B %e, %l:%M%p"} - {$result.tracker_field_endDate|date_format:"%l:%M%p"}
+							{elseif $result.tracker_field_startDate2|date_format:"%B" eq $result.tracker_field_endDate|date_format:"%B"} 
+								{$result.tracker_field_startDate2|date_format:"%B %e"} - {$result.tracker_field_endDate|date_format:"%e, %Y"}
+							{else}
+								{$result.tracker_field_startDate2|date_format:"%B %e"} - {$result.tracker_field_endDate|date_format:"%B %e, %Y"}
+							{/if}
+						{else}
+							{$result.tracker_field_startDate2|date_format:"%B %e, %Y"} - {$result.tracker_field_endDate|date_format:"%B %e, %Y"}
+						{/if}
 					</strong> </div>
 		  		</div>
 		  		<p>{$result.desc}</p>
