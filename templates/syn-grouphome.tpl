@@ -66,13 +66,6 @@
 
 				<div class="panel panel-default">
 			  		<div class="panel-heading">Recent Forum Posts</div>
-			  		<div class="panel-body">
-
-					</div>
-				</div>
-
-				<div class="panel panel-default">
-			  		<div class="panel-heading">Recent Forum Posts</div>
 		  			<div class="panel-body">
 						{wikiplugin _name="list"}
 						{literal}
@@ -85,6 +78,30 @@
 							{ALTERNATE()}<p class="emptyinfo">No post available.</p>{ALTERNATE}
 						{/literal}
 						{/wikiplugin}
+					</div>
+				</div>
+				<div class="panel panel-default" id="upcoming_events">
+			  		<div class="panel-heading">Upcoming Events</div>
+			  		<div class="panel-body">
+						{wikiplugin _name="list"}
+					        {literal}
+					        	{list max="3"}
+								{filter type="trackeritem"}
+								{filter content="4" field="tracker_id"}
+								{filter range="tracker_field_startDate2" from="now" gap="31536000"}
+								{filter  categories="{/literal}{$result.tracker_field_og_categoryID}{literal}"}
+					        	{sort mode="tracker_field_startDate2_asc"}
+								{output template="addons/syn_organicgrp/templates/syn-event_list.tpl"}
+								{FORMAT(name="event_desc")}{display name="tracker_field_eventDescription" format="snippet" length="50"}{FORMAT}
+								{ALTERNATE()}
+									{/literal}
+										{JQ}
+											$("#upcoming_events").hide();
+										{/JQ}
+									{literal}
+								{ALTERNATE}
+							{/literal}
+					    {/wikiplugin}
 					</div>
 				</div>
 			</div>
