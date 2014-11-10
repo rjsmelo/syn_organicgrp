@@ -34,11 +34,6 @@
 		<hr>
 		{include file="syn-collapsible-categories.tpl" id="5" header_label="By Region" category_id="43"}
 	</div>
-	<hr>
-	<div class="clear">
- 		<div class="search-category-header" data-toggle="collapse" data-target="#collapsible2"><label>Date</label><span class="pull-right fa fa-minus-square-o fa-lg"></span></div>
-		<div class="collapse in" id="collapsible2"> </div>
-	</div>
 </div>
 
 {JQ}
