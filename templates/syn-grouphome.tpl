@@ -13,7 +13,7 @@
 						<div class="input-group">
 							<input type="text" name="default[content]" placeholder="Search within this {$prefs.ta_syn_organicgrp_sterm}..." class="searchField form-control">
 							<span class="input-group-btn">
-								<input type="submit" value="Search" name="submit" class="btn btn-primary">
+								<input type="submit" value="Search" name="submit" class="btn btn-search">
 							</span>
 						</div>
 					</div>
