@@ -38,6 +38,11 @@
 		</div>	
 
 		<div class="row mar-top-sm">
+			<div class="col-xs-12 col-sm-4 text-right text-left-xs event_view_title">Region</div>
+			<div class="col-xs-12 col-sm-6">{$f_region}</div>
+		</div>	
+
+		<div class="row mar-top-sm">
 			<div class="col-xs-12 col-sm-4 text-right text-left-xs event_view_title">Presenter(s)</div>
 			<div class="col-xs-12 col-sm-6">{$f_presenter}</div>
 		</div>	

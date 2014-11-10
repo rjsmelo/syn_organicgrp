@@ -31,6 +31,8 @@
 				</ul>
 			</div>
 		</div>
+		<hr>
+		{include file="syn-collapsible-categories.tpl" id="5" header_label="By Region" category_id="43"}
 	</div>
 	<hr>
 	<div class="clear">
