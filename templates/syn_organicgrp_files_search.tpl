@@ -5,7 +5,7 @@
 		<div class="input-group">
 			{input _filter="content" _field="title" type="text"  placeholder="Search... " class="form-control"}
 			<span class="input-group-btn">
-			   	{input type=submit value="Search" class="btn btn-primary"}
+			   	{input type=submit value="Search" class="btn btn-search"}
 			</span>
 		</div>
 	</div>
