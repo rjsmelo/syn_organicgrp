@@ -86,7 +86,9 @@
             </div>
 		</div>
 		
-		<div class="col-md-12">{service_inline controller=comment action=list type=trackeritem objectId={$f_itemId}}</div>
+		<div class="col-md-12">
+			<div id="comment-container" data-target="{service controller=comment action=list type=trackeritem objectId={$f_itemId}}"></div>
+		</div>
 	</div>
 </div>
 <div class="col-md-3">
@@ -111,3 +113,8 @@
 	  	</div>
 	</div>
 </div>
+
+{JQ}
+	var id = '#comment-container';
+	$(id).comment_load($(id).data('target'));
+{/JQ}
