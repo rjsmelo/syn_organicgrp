@@ -94,11 +94,7 @@
 								{output template="addons/syn_organicgrp/templates/syn-event_list.tpl"}
 								{FORMAT(name="event_desc")}{display name="tracker_field_eventDescription" format="snippet" length="50"}{FORMAT}
 								{ALTERNATE()}
-									{/literal}
-										{JQ}
-											$("#upcoming_events").hide();
-										{/JQ}
-									{literal}
+									<p id="hide_panel" class="no_event">There is no upcoming event.</p>
 								{ALTERNATE}
 							{/literal}
 					    {/wikiplugin}
@@ -112,3 +108,10 @@
 	{/foreach}
 	</div>
 {/strip}
+
+{JQ}
+	if ( $( "#hide_panel" ).hasClass( "no_event" ) )
+ 	{
+		$("#upcoming_events").hide();
+	}	
+{/JQ}
