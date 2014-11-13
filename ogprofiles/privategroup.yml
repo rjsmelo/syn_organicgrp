@@ -83,7 +83,7 @@ permissions:
    -
     type: category
     id: $profileobject:cat_og$
-    allow: [ view_category, add_object, remove_object, submit_article, read_article, autoapprove_submission, read_comments, vote_comments, post_comments, wiki_view_history, wiki_view_comments, use_as_template, view, rename, edit, create_tracker_items, view_trackers, attach_trackers, tracker_view_attachments, comment_tracker_items, tracker_view_comments, tracker_view_ratings, tracker_vote_ratings, tracker_revote_ratings, watch_trackers, search, modify_object_categories, view_freetags, freetags_tag, unassign_freetags, list_file_galleries, edit_gallery_file, download_files, view_file_gallery, view_fgal_explorer, view_fgal_path, upload_files, forum_read, forum_edit_own_posts, forum_post_topic, forum_post, forums_report, forum_vote, forum_attach, view_trackers_closed, view_trackers_pending ]
+    allow: [ view_category, add_object, remove_object, submit_article, read_article, autoapprove_submission, read_comments, vote_comments, post_comments, wiki_view_history, wiki_view_comments, use_as_template, view, rename, edit, create_tracker_items, view_trackers, attach_trackers, tracker_view_attachments, comment_tracker_items, tracker_view_comments, tracker_view_ratings, tracker_vote_ratings, tracker_revote_ratings, watch_trackers, search, modify_object_categories, view_freetags, freetags_tag, unassign_freetags, list_file_galleries, edit_gallery_file, download_files, view_file_gallery, view_fgal_explorer, view_fgal_path, upload_files, admin_file_galleries, forum_read, forum_edit_own_posts, forum_post_topic, forum_post, forums_report, forum_vote, forum_attach, view_trackers_closed, view_trackers_pending ]
    -
     type: group
     id: syn_organicgrp_$profileobject:trkitem_og$

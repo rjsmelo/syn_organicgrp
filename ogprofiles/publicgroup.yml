@@ -73,7 +73,7 @@ permissions:
    -
     type: category
     id: $profileobject:cat_og$
-    allow: [ read_article, read_comments, wiki_view_comments, use_as_template, view, view_trackers, search, view_freetags, list_file_galleries, download_files, view_file_gallery, view_fgal_explorer, view_fgal_path, forum_read, forums_report ]
+    allow: [ read_article, read_comments, wiki_view_comments, use_as_template, view, view_trackers, search, view_freetags, list_file_galleries, download_files, view_file_gallery, upload_files, admin_file_galleries, view_fgal_explorer, view_fgal_path, forum_read, forums_report ]
     deny: [ create_tracker_items, modify_tracker_items, modify_tracker_items_pending, modify_tracker_items_closed, forum_post, post_comments ]
    -
     type: wiki_page
