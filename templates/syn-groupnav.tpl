@@ -63,10 +63,6 @@
 {jq}
 	$('#members').addClass('active');
 {/jq}
-{elseif $smarty.get.page eq "syn_organicgrp_forum"}
-{jq}
-	$('#forum').addClass('active');
-{/jq}
 {elseif ($smarty.get.page eq "syn_organicgrp_event") OR ($smarty.get.page eq "syn_organicgrp_ViewEvent")}
 {jq}
 	$('#events').addClass('active');
