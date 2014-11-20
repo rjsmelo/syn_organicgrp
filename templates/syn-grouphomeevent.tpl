@@ -20,15 +20,15 @@ Results
 {foreach item=result from=$results}
 	<div class="panel panel-default search-result">
 	    <div class="panel-body">
+	    	{* If Created in the past two weeks, display new_ribbon. *}
+            {if '-14 days'|date_format:'%Y-%m-%d'  <=  $result.creation_date}
+                <div class="col-md-2 pull-right newribbon" style="background-image:url('img/new-ribbon.png');"></div>
+            {/if}
 	    	<div class="media">
 		        <a class="pull-left" href="./syn_organicgrp_ViewEvent?itemId={$result.object_id|escape}&organicgroup={$result.tracker_field_groupId}&cat={$result.categories[0]}">
 		  			<i class="fa fa-calendar fa-4x"></i>
 				</a>
 	  			<div class="media-body">
-	  			 	{* If Created in the past two weeks, display new_ribbon. *}
-                    {if '-14 days'|date_format:'%Y-%m-%d'  <=  $result.creation_date}
-                            <div class="pull-right new_ribbon">New</div>
-                    {/if}
 					<h3 class="media-heading"><a href="./syn_organicgrp_ViewEvent?itemId={$result.object_id|escape}&organicgroup={$result.tracker_field_groupId}&cat={$result.categories[0]}" class="title">{$result.title|escape}</a></h3>
 					<div class="mar-bottom-lg mar-top-lg"><strong>
                         {if $result.tracker_field_startDate2|date_format:"%Y" eq $result.tracker_field_endDate|date_format:"%Y"}
