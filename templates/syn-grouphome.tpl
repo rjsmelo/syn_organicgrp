@@ -22,9 +22,9 @@
 
 			<div class="col-md-8 projectlist">
 				<h3>Recent Activity</h3>
-				{wikiplugin _name="activitystream" auto="1"}
+				{wikiplugin _name="activitystream" auto="0"}
 				{literal}
-					{pagination max="5"}
+					{pagination max="10"}
 					{filter categories="{/literal}{$result.tracker_field_og_categoryID}{literal}"}
 					{group field=aggregate collect=user}
 				{/literal}
