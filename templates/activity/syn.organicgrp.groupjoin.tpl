@@ -2,16 +2,15 @@
 {assign "user_id" "{$activity.user}"}
 
 {assign "usergrp" "syn_organicgrp_{$activity.organicgroupid}"}
-
 {if $usergrp eq $activity.groupname}
 	{if $activity.groupname|in_group}
-		{if $activity.user eq $user}
+		{if $activity.group_creator eq $activity.user}
 			{assign "heading" "<a href='profile?view_user={$user_id}'>{$username}</a> created the group <a href='syn_organicgrp_grouphomepage?itemId={$activity.organicgroupid|escape}'>{$activity.organicgroupname}</a>"}
 		{else}
 			{assign "heading" "<a href='profile?view_user={$user_id}'>{$username}</a> joined the group <a href='syn_organicgrp_grouphomepage?itemId={$activity.organicgroupid|escape}'>{$activity.organicgroupname}</a>"}
 		{/if}
 	{else}
-		{if $activity.user neq $user}
+		{if $activity.group_creator eq $activity.user}
 			{assign "heading" "<a href='profile?view_user={$user_id}'>{$username}</a> created the group <a href='syn_organicgrp_grouphomepage?itemId={$activity.organicgroupid|escape}'>{$activity.organicgroupname}</a>"}
 		{else}
 			{assign "heading" "<a href='profile?view_user={$user_id}'>{$username}</a> joined the group <a href='syn_organicgrp_grouphomepage?itemId={$activity.organicgroupid|escape}'>{$activity.organicgroupname}</a>"}
