@@ -37,7 +37,7 @@ creator,hidden={{user}}{DATACHANNEL}
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h4 class="modal-title">Chargement en cours...</h4>
+				<h4 class="modal-title">Loading...</h4>
 			</div>
 			<div class="modal-body">
 				<div class="progress">
