@@ -32,7 +32,9 @@
 			</div>
 		</div>
 		<hr>
-		{include file="syn-collapsible-categories.tpl" id="5" header_label="By Region" category_id="43"}
+		{include file="syn-collapsible-categories.tpl" id="10" header_label="By Region" category_id="95"}
+		<hr>
+		{include file="syn-collapsible-categories.tpl" id="11" header_label="By Type" category_id="100"}
 	</div>
 </div>
 
