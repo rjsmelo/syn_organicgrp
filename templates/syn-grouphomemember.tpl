@@ -22,7 +22,7 @@
 	                            {filter type="trackeritem"}
 	                            {filter content="2" field="tracker_id"}
 	                            {filter field="tracker_field_user" content="{/literal}{$result.tracker_field_user}{literal}"}
-	                            {output template="templates/styles/leaf/syn-resource_count.tpl"}
+	                            {output template="themes/leaf/templates/syn-resource_count.tpl"}
 	                            {ALTERNATE()}0{ALTERNATE}
                         	{/literal}
                     	{/wikiplugin}Total Contribution
