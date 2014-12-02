@@ -1,21 +1,25 @@
-{if $offsetplusmaxRecords>$count}
-	{$offsetplusmaxRecords = $count}
-{/if}
-Results 
-{if $count}
-	{$offsetplusone}
-{else}
-	0
-{/if}
-- {$offsetplusmaxRecords} of {$count} 
-{if $results->getEstimate() > $count}
-	({$results->getEstimate()} Total)
-{/if}
+<div class="col-md-6 col-sm-6 mar-bottom mar-top nopadding">
+	{if $offsetplusmaxRecords>$count}
+		{$offsetplusmaxRecords = $count}
+	{/if}
+	Results 
+	{if $count}
+		{$offsetplusone}
+	{else}
+		0
+	{/if}
+	- {$offsetplusmaxRecords} of {$count} 
+	{if $results->getEstimate() > $count}
+		({$results->getEstimate()} Total)
+	{/if}
+</div>
 
 {assign var='customsearchid' value='solsearch'}
-	<div class="srShowResult col-md-12 pad-bottom-xl">
-          {pagination_links offset_jsvar="customsearch_`$customsearchid`.offset" _onclick="window.customsearch_`$customsearchid`.options.requireinput=false;$('#customsearch_`$customsearchid`').submit();return false;" resultset=$results}{/pagination_links}
+	<div class="srShowResult col-md-6 col-sm-6 mar-bottom-lg nopadding">
+        {pagination_links offset_jsvar="customsearch_`$customsearchid`.offset" _onclick="window.customsearch_`$customsearchid`.options.requireinput=false;$('#customsearch_`$customsearchid`').submit();return false;" resultset=$results}{/pagination_links}
+		<div class="clear"></div>
 	</div>
+	<div class="clear"></div>
 
 {foreach item=result from=$results}
 	<div class="panel panel-default search-result">
@@ -44,13 +48,18 @@ Results
 						{/if}
 					</strong> </div>
 		  		</div>
-		  		<p>{$result.desc}</p>
+		  		{assign var="summary_desc" value={$result.tracker_field_eventSummary}|cat:' '|cat:{$result.tracker_field_eventDescription}}
+		  		<p>{$summary_desc|truncate:200}</p>
 	  		</div>
 	    </div>
 	    <div class="panel-footer clearfix">
 	    	<div class="pull-left icon-bar">
-		    	<div class="icon"><span class="fa fa-location-arrow fa-lg"></span> {$result.tracker_field_eventLocation}</div>
-		  		<div class="icon"><span class="fa fa-user fa-lg"></span> {$result.tracker_field_presenter}</div>
+	    		{if $result.tracker_field_eventLocation}
+		    		<div class="icon"><span class="fa fa-location-arrow fa-lg"></span> {$result.tracker_field_eventLocation}</div>
+		    	{/if}
+		    	{if $result.tracker_field_presenter}
+		  			<div class="icon"><span class="fa fa-microphone fa-lg"></span> {$result.tracker_field_presenter}</div>
+		  		{/if}
 		  	</div>
 	  		<div class="pull-right">
 	  			<a class="pull-right btn btn-action" href="./syn_organicgrp_ViewEvent?itemId={$result.object_id|escape}&organicgroup={$result.tracker_field_groupId}&cat={$result.categories[0]}"><span class="fa fa-arrow-circle-o-right fa-lg"></span> Details</a>
@@ -60,7 +69,7 @@ Results
 {/foreach}
 
 <div class="srShowResult">
-           {pagination_links offset_jsvar="customsearch_`$customsearchid`.offset" _onclick="window.customsearch_`$customsearchid`.options.requireinput=false;$('#customsearch_`$customsearchid`').submit();return false;" resultset=$results}{/pagination_links}
-		<div class="clear"></div>
+    {pagination_links offset_jsvar="customsearch_`$customsearchid`.offset" _onclick="window.customsearch_`$customsearchid`.options.requireinput=false;$('#customsearch_`$customsearchid`').submit();return false;" resultset=$results}{/pagination_links}
+	<div class="clear"></div>
 </div>
 
