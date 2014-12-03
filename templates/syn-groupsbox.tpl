@@ -9,7 +9,7 @@
 				{/if}
 			</div>
 			<div class="col-xs-4">
-				<div class="thumb grpavatar" style="background-image: url('tiki-show_user_avatar.php?user={$result.tracker_field_og_creator}');"></div>
+				<div class="thumb grpavatar" style="background-image: url('tiki-show_user_avatar.php?user={$result.tracker_field_og_creator|urlencode}');"></div>
 			</div>
 		</div>
 		<div class="col-xs-12 group-content">

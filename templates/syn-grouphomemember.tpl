@@ -5,7 +5,7 @@
 			<a href="profile?view_user={$result.tracker_field_user}"></a>
 			<div class="col-xs-3 nopadding">
 				<div class="imgbgd">
-					<div class="thumb" style="background-image: url(tiki-show_user_avatar.php?user={$result.tracker_field_user})"></div>
+					<div class="thumb" style="background-image: url(tiki-show_user_avatar.php?user={$result.tracker_field_user|urlencode})"></div>
 				</div>
 				<div class="text-center mar-top-sm home_right_panel">{$result.tracker_field_position}</div>
 			</div> 
