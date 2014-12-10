@@ -3,7 +3,7 @@
 	<div class="pull-left">
 		<span class="fa {$icon} activity_icon"></span>
 	</div>
-	<div class="activity_popover popover right col-xs-9 col-sm-10">	
+	<div class="activity_popover popover right col-xs-9 col-sm-10 popview">	
 		<div class="arrow"></div> 
 		<div class="popover-content">
 			{$heading}
