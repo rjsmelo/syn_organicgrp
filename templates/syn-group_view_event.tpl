@@ -32,24 +32,24 @@
 			<div class="col-xs-12 col-sm-6">{$f_endDate|date_format:"%B %e, %Y at %l:%M %p"}</div>
 		</div>
 		{if $f_eventLocation}
-		<div class="row mar-top-sm">
-			<div class="col-xs-12 col-sm-4 text-right text-left-xs event_view_title">Location</div>
-			<div class="col-xs-12 col-sm-6">{$f_eventLocation} <i class="fa fa-paper-plane fs-6"></i></div>
-		</div>
+			<div class="row mar-top-sm">
+				<div class="col-xs-12 col-sm-4 text-right text-left-xs event_view_title">Location</div>
+				<div class="col-xs-12 col-sm-6">{$f_eventLocation} <i class="fa fa-paper-plane fs-6"></i></div>
+			</div>
 		{/if}	
 
 		{if $f_region}
-		<div class="row mar-top-sm">
-			<div class="col-xs-12 col-sm-4 text-right text-left-xs event_view_title">Region</div>
-			<div class="col-xs-12 col-sm-6">{$f_region}</div>
-		</div>	
+			<div class="row mar-top-sm">
+				<div class="col-xs-12 col-sm-4 text-right text-left-xs event_view_title">Region</div>
+				<div class="col-xs-12 col-sm-6">{$f_region}</div>
+			</div>	
 		{/if}
 
 		{if $f_presenter}
-		<div class="row mar-top-sm">
-			<div class="col-xs-12 col-sm-4 text-right text-left-xs event_view_title">Presenter(s)</div>
-			<div class="col-xs-12 col-sm-6">{$f_presenter}</div>
-		</div>
+			<div class="row mar-top-sm">
+				<div class="col-xs-12 col-sm-4 text-right text-left-xs event_view_title">Presenter(s)</div>
+				<div class="col-xs-12 col-sm-6">{$f_presenter}</div>
+			</div>
 		{/if}	
 
 		{if $f_eventType}	
@@ -71,33 +71,37 @@
 	<div class="clearfix"></div>
 	<div class="col-md-12">
 		<div class="row mar-top-sm">
-			<div class="col-xs-12 col-sm-3 text-right text-left-xs event_view_title">Summary</div>
-			<div class="col-xs-12 col-sm-9">{$f_eventSummary}</div>
+			<div class="col-xs-12 col-sm-3 text-right text-left-xs event_view_title visibleleft">Summary</div>
+			<div class="col-xs-12 col-sm-9 hidden-xs visibleright">{$f_eventSummary}</div>
+			<div class="col-xs-12 col-sm-9 visible-xs">{$f_eventSummary}</div>
 		</div>	
 
 		<div class="row mar-top-sm">
-			<div class="col-xs-12 col-sm-3 text-right text-left-xs event_view_title">Full Description</div>
-			<div class="col-xs-12 col-sm-9">{$f_eventDescription}</div>
+			<div class="col-xs-12 col-sm-3 text-right text-left-xs event_view_title visibleleft">Full Description</div>
+			<div class="col-xs-12 col-sm-9 hidden-xs visibleright">{$f_eventDescription}</div>
+			<div class="col-xs-12 col-sm-9 visible-xs">{$f_eventDescription}</div>
 		</div>	
 		
-		<div class="row mar-top-lg">
-			<div class="col-xs-12 col-sm-3 text-right text-left-xs event_view_title">Event Resources</div>
-			<div class="col-xs-12 col-sm-9">
-				<div class="row">
-					{wikiplugin _name="list"}
-                	 {literal}
-                    	{filter type="trackeritem"}
-                    	{filter content="4" field="tracker_id"}
-                    	{filter field="object_id" content="{/literal}{$f_itemId}{literal}"}
-                    	{filter categories="{/literal}{$smarty.get.cat}{literal}"}
-                    	{output template="templates/syn-lists-files.tpl"}
-                    	{ALTERNATE()}There is no result for this search{ALTERNATE}
-                	 {/literal}
-            		{/wikiplugin}
-            	</div>
-            </div>
-		</div>
-		
+		{if $f_eventFiles}
+			<div class="row mar-top-lg">
+				<div class="col-xs-12 col-sm-3 text-right text-left-xs event_view_title visibleleft">Event Resources</div>
+				<div class="col-xs-12 col-sm-9 hidden-xs visibleright">
+					<div class="row">
+						{wikiplugin _name="list"}
+	                	 {literal}
+	                    	{filter type="trackeritem"}
+	                    	{filter content="4" field="tracker_id"}
+	                    	{filter field="object_id" content="{/literal}{$f_itemId}{literal}"}
+	                    	{filter categories="{/literal}{$smarty.get.cat}{literal}"}
+	                    	{output template="templates/syn-lists-files.tpl"}
+	                    	{ALTERNATE()}There is no result for this search{ALTERNATE}
+	                	 {/literal}
+	            		{/wikiplugin}
+	            	</div>
+	            </div>
+			</div>
+		{/if}
+
 		<div class="col-md-12">
 			<div id="comment-container" data-target="{service controller=comment action=list type=trackeritem objectId={$f_itemId}}"></div>
 		</div>
