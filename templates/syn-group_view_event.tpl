@@ -22,7 +22,7 @@
             {/literal}
         {/wikiplugin} Comments
 	<hr>
-	<div class="col-xs-12 col-sm-9 col-md-9">
+	<div class="col-xs-12 col-sm-8 col-md-8">
 		<div class="row mar-top-sm">
 			<div class="col-xs-12 col-sm-4 text-right text-left-xs event_view_title">Start Time</div>
 			<div class="col-xs-12 col-sm-6">{$f_startDate2|date_format:"%B %e, %Y at %l:%M %p"}</div>
@@ -31,28 +31,40 @@
 			<div class="col-xs-12 col-sm-4 text-right text-left-xs event_view_title">End Time</div>
 			<div class="col-xs-12 col-sm-6">{$f_endDate|date_format:"%B %e, %Y at %l:%M %p"}</div>
 		</div>
-		
+		{if $f_eventLocation}
 		<div class="row mar-top-sm">
 			<div class="col-xs-12 col-sm-4 text-right text-left-xs event_view_title">Location</div>
 			<div class="col-xs-12 col-sm-6">{$f_eventLocation} <i class="fa fa-paper-plane fs-6"></i></div>
-		</div>	
+		</div>
+		{/if}	
 
+		{if $f_region}
 		<div class="row mar-top-sm">
 			<div class="col-xs-12 col-sm-4 text-right text-left-xs event_view_title">Region</div>
 			<div class="col-xs-12 col-sm-6">{$f_region}</div>
 		</div>	
+		{/if}
 
+		{if $f_presenter}
 		<div class="row mar-top-sm">
 			<div class="col-xs-12 col-sm-4 text-right text-left-xs event_view_title">Presenter(s)</div>
 			<div class="col-xs-12 col-sm-6">{$f_presenter}</div>
-		</div>	
+		</div>
+		{/if}	
+
+		{if $f_eventType}	
+			<div class="row mar-top-sm">
+				<div class="col-xs-12 col-sm-4 text-right text-left-xs event_view_title">Event Type</div>
+				<div class="col-xs-12 col-sm-6">{$f_eventType}</div>
+			</div>	
+		{/if}
 
 		<div class="row mar-top-sm">
 			<div class="col-xs-12 col-sm-4 text-right text-left-xs event_view_title">Posted By</div>
 			<div class="col-xs-12 col-sm-6">{$f_eventAddedBy|username}</div>
 		</div>	
 	</div>
-	<div class="text-center col-xs-12 col-sm-3 col-md-3">
+	<div class="text-center col-xs-12 col-sm-4 col-md-4">
 		<div class="favimage">{wikiplugin _name="FAVORITE" objectType="trackeritem" objectId="{$f_itemId}"}{/wikiplugin}</div>
 		<div class="attend-btn mar-top-sm">{wikiplugin _name=addrelation label_add="I Wish to Attend" label_added="I am Attending" label_remove="Remove" qualifier="leaf.event.attending" source_object="user:{$user}" target_object="trackeritem:{$f_itemId}"}{/wikiplugin}</div>
 	</div>
@@ -103,6 +115,7 @@
 	  	<div class="panel-body">
 	  		{wikiplugin _name="list"}
                 {literal}
+                	{list max="5"}
                     {filter type="trackeritem"}
                     {filter content="4" field="tracker_id"}
                     {filter categories="{/literal}{$smarty.get.cat}{literal}"}
