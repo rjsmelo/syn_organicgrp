@@ -20,7 +20,8 @@ function groupnavloader($data, $params)
 		if (!isset($_REQUEST['cat'])) {
 			$_REQUEST['cat'] = $cat;
 		}
-	}
+	} 
+
 	if (!isset($_REQUEST['organicgroup']) && !empty($_REQUEST['itemId'])) {
 		$info = $api->getOrganicGroupInfoForItem('trackeritem', $_REQUEST['itemId']);
 		$cat = $info['cat'];
@@ -30,6 +31,12 @@ function groupnavloader($data, $params)
 		if (!isset($_REQUEST['cat'])) {
 			$_REQUEST['cat'] = $cat;
 		}
+	}
+
+	if (!empty($_REQUEST['organicgroup']) && empty($_REQUEST['cat'])) {
+		$ogname = 'syn_organicgrp_' . $_REQUEST['organicgroup'];
+		$cat = \TikiLib::lib('categ')->get_category_id($ogname);
+		$_REQUEST['cat'] = $cat;
 	}
 
 	// if og is private, always redirect to home page
