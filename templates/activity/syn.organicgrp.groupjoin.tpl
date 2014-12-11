@@ -16,7 +16,7 @@
 			{assign "heading" "<a href='profile?view_user={$user_id}'>{$username}</a> joined the group <a href='syn_organicgrp_grouphomepage?itemId={$activity.organicgroupid|escape}'>{$activity.organicgroupname}</a>"}
 		{/if}
 	{/if}
-	{assign "content" "{$activity.organicgroupname}</a> is pleased to welcome its new member."}
+	{assign "content" "{$activity.organicgroupname}</a> is pleased to welcome its newest member."}
 
 	{include file="./syn.general.activity.tpl" icon="fa-sign-in" heading="{$heading}" content="{$content}"}
 {/if}
