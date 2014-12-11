@@ -6,7 +6,7 @@
 		{assign var=grpname value="syn_organicgrp_`$result.object_id`"}
 		{assign var=mgrpname value="syn_organicgrp_managers_`$result.object_id`"}
 		{assign var=pgrpname value="syn_organicgrp_pending_`$result.object_id`"}
-		{if $result.tracker_status == 'o' || $grpname|in_group}
+		{if $result.tracker_status == 'o' || $grpname|in_group}     
 			<div class="row">
 				<form name="commSearch" method="post" action="./syn_organicgrp_groupsearchpage?organicgroup={$result.object_id}&cat={$result.tracker_field_og_categoryID}&forgetlastsearch=y">
 					<div class="form-group">

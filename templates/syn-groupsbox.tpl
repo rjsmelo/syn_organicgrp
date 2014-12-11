@@ -13,7 +13,7 @@
 			</div>
 		</div>
 		<div class="col-xs-12 group-content">
-			<h3><a href="syn_organicgrp_grouphomepage?itemId={$result.object_id}">{$result.tracker_field_og_title|escape}</a></h3>
+			<h3><a href="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}">{$result.tracker_field_og_title|escape}</a></h3>
 			<p>{$result.tracker_field_og_description|truncate:200}</p>
 		</div>
 	</div>

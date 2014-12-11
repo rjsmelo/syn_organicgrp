@@ -1,10 +1,10 @@
 <div class="col-md-9">
 	{if {$user} eq {$f_eventAddedBy} }
-		<a class="btn btn-default pull-right mar-right-lg" href="syn_organicgrp_EditEvent?itemId={$f_itemId}&organicgroup={$smarty.get.organicgroup}&cat={$smarty.get.cat}"><span class="fa fa-edit"></span></a>
+		<a class="btn btn-default pull-right mar-right-lg" href="syn_organicgrp_EditEvent?itemId={$f_itemId}&organicgroup={$smarty.get.organicgroup}"><span class="fa fa-edit"></span></a>
 		<div class="clear"></div>
 	{else}
 		{wikiplugin _name="GROUP" groups="Admins"}
-			<a class="btn btn-default pull-right mar-right-lg" href="syn_organicgrp_EditEvent?itemId={$f_itemId}&organicgroup={$smarty.get.organicgroup}&cat={$smarty.get.cat}"><span class="fa fa-edit"></span></a>
+			<a class="btn btn-default pull-right mar-right-lg" href="syn_organicgrp_EditEvent?itemId={$f_itemId}&organicgroup={$smarty.get.organicgroup}"><span class="fa fa-edit"></span></a>
 			<div class="clear"></div>
 		{/wikiplugin}
 	{/if}
