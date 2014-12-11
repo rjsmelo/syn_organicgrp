@@ -1,9 +1,8 @@
 <div class="row bg-light-accent pad-top-lg">
 {foreach item=result from=$results}
 	<div class="col-lg-4 col-sm-6 col-xs-12 zoom">
-		<div class="contact-box clickable">
-			<a href="profile?view_user={$result.tracker_field_user}"></a>
-			<div class="col-xs-3 nopadding">
+		<div class="contact-box">
+			<div class="col-xs-2 col-sm-3 nopadding">
 				<div class="imgbgd">
 					<div class="thumb" style="background-image: url(tiki-show_user_avatar.php?user={$result.tracker_field_user|urlencode})"></div>
 				</div>
@@ -16,7 +15,7 @@
 				  	{if $result.tracker_field_city}
 				  		<li><span class="fa-li fawidth fa fa-map-marker fa-fw"></span>{$result.tracker_field_city}, {$result.tracker_field_country}</li>
 				 	{/if}
-				  	<li><span class="fa-li fawidth fa fa-book fa-fw"></span>
+				  	<li class="total-contribution"><span class="fa-li fawidth fa fa-book fa-fw"></span>
 				   		{wikiplugin _name="list"}
                        		{literal}
 	                            {filter type="trackeritem"}
