@@ -8,6 +8,8 @@
 	{if !isset($groupTrackerItemId)}{assign var=groupTrackerItemId value=$smarty.request.organicgroup}{/if}
 {elseif ($groupnavfrom == 'home')}
 	{if !isset($groupTrackerItemId)}{assign var=groupTrackerItemId value=$smarty.request.organicgroup}{/if}
+{elseif ($groupnavfrom == 'live')}
+    {if !isset($groupTrackerItemId)}{assign var=groupTrackerItemId value=$smarty.request.organicgroup}{/if}
 {elseif ($groupnavfrom == 'members')}
 	{if !isset($groupTrackerItemId)}{assign var=groupTrackerItemId value=$smarty.request.organicgroup}{/if}
 {/if}
