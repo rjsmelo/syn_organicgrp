@@ -20,7 +20,7 @@
 				</form>
 			</div>
 
-			<div class="col-md-8 projectlist">
+			<div class="col-md-8 mar-bottom projectlist">
 				<h3>Recent Activity</h3>
 				{wikiplugin _name="activitystream" auto="0"}
 				{literal}
@@ -41,7 +41,7 @@
 				{/jq}
 			</div>
 
-			<div class="col-md-4">
+			<div class="col-md-4 mar-top-xl pad-top">
 				<div class="hide">
 					<h3>New Members</h3>
 					{wikiplugin _name="activitystream"}
