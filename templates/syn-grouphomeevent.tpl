@@ -1,4 +1,4 @@
-<div class="col-md-6 col-sm-6 mar-bottom mar-top nopadding">
+<div class="col-md-6 col-sm-6 mar-bottom-xl mar-top-negative nopadding">
 	{if $offsetplusmaxRecords>$count}
 		{$offsetplusmaxRecords = $count}
 	{/if}
@@ -15,7 +15,7 @@
 </div>
 
 {assign var='customsearchid' value='solsearch'}
-	<div class="srShowResult col-md-6 col-sm-6 mar-bottom-lg nopadding">
+	<div class="srShowResult col-md-9 col-sm-6 mar-bottom-lg nopadding">
         {pagination_links offset_jsvar="customsearch_`$customsearchid`.offset" _onclick="window.customsearch_`$customsearchid`.options.requireinput=false;$('#customsearch_`$customsearchid`').submit();return false;" resultset=$results}{/pagination_links}
 		<div class="clear"></div>
 	</div>
