@@ -3,7 +3,7 @@
 {literal}
 	{filter type="file"}
 	{pagination max="9"}
-        {filter content="{/literal}{$smarty.get.itemId}{literal}" field="gallery_id"}
+        {filter content="{/literal}{$smarty.get.organicgroup}{literal}" field="gallery_id"}
 	{sort mode="modification_date_ndesc"}
 	{output template="addons/syn_organicgrp/templates/syn_organicgrp_files.tpl"}
 {/literal}
