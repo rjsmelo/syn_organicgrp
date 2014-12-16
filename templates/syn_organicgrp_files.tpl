@@ -30,7 +30,7 @@
 				</div>
 				<div>
 					<h3 class="mar-top-lg"><a href="{$result.url}">{$result.title}</a></h3>
-					<span class="fa fa-user"></span> {$result.contributors|userlink}<br>
+					<span class="fa fa-user"></span> {$result.contributors[0]|userlink}<br>
 					<span class="fa fa-cloud-upload"></span> {$result.modification_date|date_format}
 				</div>
 				<div class="clear"></div>
