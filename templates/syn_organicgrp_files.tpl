@@ -1,10 +1,13 @@
-<div class="nopadding mar-bottom-lg pull-right">{if $offsetplusmaxRecords>$count}{$offsetplusmaxRecords = $count}{/if}Showing {if $count}{$offsetplusone}{else}0{/if}-{$offsetplusmaxRecords} of {$count} {if $results->getEstimate() > $count}({$results->getEstimate()} Total){/if}
+<div class="col-xs-12 mar-bottom-lg clear">
+    <a class="btn btn-action pull-right" href="syn_organicgrp_sharefile?organicgroup={$smarty.get.organicgroup}"><span class="fa fa-cloud-upload"></span> Share New Files</a>
+    <div class="nopadding pull-left btn mar-top">{if $offsetplusmaxRecords>$count}{$offsetplusmaxRecords = $count}{/if}Showing {if $count}{$offsetplusone}{else}0{/if}-{$offsetplusmaxRecords} of {$count} {if $results->getEstimate() > $count}({$results->getEstimate()} Total){/if}
+</div>
 {assign var='customsearchid' value='syn_organicgrp_file_search'}</div>
 <div class="clear">
 	{foreach item=result from=$results}
         {*If PC file*}
         {if $result.tracker_field_fileType == "117"}
-            {assign var="icon" value=$result.tracker_field_pcFiles|geticon}
+            {assign var="icon" value=$result.file_group|geticon}
             {assign "url" "dl{$result.tracker_field_pcFiles}"}
             {*if URL*}
         {elseif $result.tracker_field_fileType == "118"}
@@ -15,7 +18,7 @@
             {assign var="icon" value="fa-link"}
             {assign "url" "ContentView?itemId={$result.tracker_field_resourceLink}"}
         {/if}
-		<div class="col-md-4">
+		<div class="col-xs-12">
             <div class="filebox">
                 <div class="media">
                     <div class="media-left">
@@ -36,3 +39,10 @@
     {pagination_links offset_jsvar="customsearch_`$customsearchid`.offset" _onclick="window.customsearch_`$customsearchid`.options.requireinput=false;$('#customsearch_`$customsearchid`').submit();return false;" resultset=$results}{/pagination_links}
 	<div class="clear"></div>
 </div>
+
+{jq}
+    $(document).ready(function(){
+    $("#customsearch_synorganicgrpfilesearch_results").addClass( "col-md-8 col-xs-12" );
+    $('.collapse.in select').css('display','none');
+    });
+{/jq}
