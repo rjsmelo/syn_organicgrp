@@ -1,4 +1,4 @@
-    <span class="pull-right mar-bottom-lg clear"><a class="btn btn-action" href="tiki-upload_file.php?galleryId={$smarty.get.organicgroup}"><span class="fa fa-cloud-upload"></span> Share New Files</a></span>
+    <span class="pull-right mar-bottom-lg clear"><a class="btn btn-action" href="syn_organicgrp_sharefile?organicgroup={$smarty.get.organicgroup}"><span class="fa fa-cloud-upload"></span> Share New Files</a></span>
 	<div class="clear"></div>
 {literal}
 	<div class="form-group">

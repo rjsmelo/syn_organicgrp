@@ -5,7 +5,7 @@
 {assign var=admgrpname value="Admins"}
 {if $mgrpname|in_group || $admgrpname|in_group}
 	<h2>Manage {$prefs.ta_syn_organicgrp_sterm} - {$f_og_title}</h2>
-	<a href="syn_organicgrp_grouphomepage?itemId={$smarty.request.itemId|escape}"><button class="btn btn-default">Return to {$prefs.ta_syn_organicgrp_sterm} Home Page</button></a>
+	<a href="syn_organicgrp_grouphomepage?organicgroup={$smarty.request.itemId|escape}"><button class="btn btn-default">Return to {$prefs.ta_syn_organicgrp_sterm} Home Page</button></a>
 	<h3>Manage Members</h3>
 	{if $f_status == 'p'}
 		<div class="row">
