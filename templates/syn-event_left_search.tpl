@@ -3,6 +3,22 @@
 		window.location.reload(true);
 	});	
 {/JQ}
+{assign var="todatedate" value="{$smarty.now}"}
+{assign var="typefilter" value="{$smarty.get.type}"}
+{assign var="organicid" value="{$smarty.get.organicgroup}"}
+{if $typefilter eq 'up'}
+{JQ}
+	$(".upevent").prop( "checked", true );
+{/JQ}
+{elseif $typefilter eq 'past'}
+{JQ}
+	$(".pastevent").prop( "checked", true );
+{/JQ}
+{else}
+{JQ}
+	$(".allevent").prop( "checked", true );
+{/JQ}
+{/if}
 <div class="col-md-4 col-xs-12 pull-left left_search">
 	{literal}
 		<div class="form-group">
@@ -25,9 +41,9 @@
 			<div class="search-category-header" data-toggle="collapse" data-target="#collapsible1"><label>By Status</label><span class="pull-right fa fa-minus-square-o fa-lg"></span></div>
 			<div class="collapse in" id="collapsible1">
 				<ul>
-					<li class="mar-bottom-sm">{literal}{input type="checkbox" _field="tracker_id" _filter="content" _value="4" _group="2"}{/literal} All</li>
-					<li class="mar-bottom-sm">{literal}{input type="checkbox" _field="tracker_status" _filter="content" _value="o" _group="2"}{/literal} Open</li>
-					<li class="mar-bottom-sm">{literal}{input type="checkbox" _field="tracker_status" _filter="content" _value="p" _group="2"}{/literal} Archived</li>
+					<li class="mar-bottom-sm">{literal}{input type="radio" _filter="content" class="upevent"}{/literal} Upcoming Events</li>
+					<li class="mar-bottom-sm">{literal}{input type="radio" _filter="content" class="pastevent"}{/literal} Past Events</li>
+					<li class="mar-bottom-sm">{literal}{input type="radio" _filter="content" _field="tracker_id" _value="4" _group="2" class="allevent"}{/literal} All Events</li>
 				</ul>
 			</div>
 		</div>
@@ -47,6 +63,20 @@
 			$(this).find("span").addClass("fa-plus-square-o");
 			$(this).find("span").removeClass("fa-minus-square-o");
 		}	
+	});
+	$(".listview .upevent").click(function(){
+		var organcid = {$organicid};
+		var todate = {$todatedate};
+		$(location).attr('href', 'syn_organicgrp_event?organicgroup='+organcid+'&start='+todate+'&end=1893495012&type=up');
+	});
+	$(".listview .pastevent").click(function(){
+		var todate = {$todatedate};
+		var organcid = {$organicid};
+		$(location).attr('href', 'syn_organicgrp_event?organicgroup='+organcid+'&start=946723812&end='+todate+'&type=past');
+	});
+	$(".listview .allevent").click(function(){
+		var organcid = {$organicid};
+		$(location).attr('href', 'syn_organicgrp_event?organicgroup='+organcid+'&start=946723812&end=1893495012&type=all');
 	});
 {/JQ}
 
