@@ -25,6 +25,18 @@
 			<div>
 				<span data-toggle="tooltip" title="Number of Discussions in the Forum" data-placement="left" class="fa fa-comments tooltip-activate"></span><span> {if $result.tracker_field_og_forum_ID}{$result.tracker_field_og_forum_ID|forumtopiccount}{else}0{/if}</span>
 			</div>
+			<div>
+				<span data-toggle="tooltip" title="Number of Files" data-placement="left" class="fa fa-file tooltip-activate"></span>
+				{wikiplugin _name="list"}
+		            {literal}
+						{filter type="trackeritem"}
+						{filter field="tracker_id" content="8"}
+						{filter content="{/literal}{$result.object_id}{literal}" field="tracker_field_groupID"}
+						{output template="themes/leaf/templates/syn-resource_count.tpl"}
+		                {ALTERNATE()}0{ALTERNATE}
+		            {/literal}
+		        {/wikiplugin}
+			</div>
 		</div>
 	</div>	
 </div>
