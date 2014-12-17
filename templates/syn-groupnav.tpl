@@ -18,6 +18,12 @@
 	{if !$mgrpname|in_group}
 		{if $result.tracker_status eq 'o'}
 			{wikiplugin _name="subscribegroup" group=$grpname subscribe_action="Join {$prefs.ta_syn_organicgrp_sterm}" postsubscribe_url="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}" unsubscribe_action="Leave {$prefs.ta_syn_organicgrp_sterm}" postunsubscribe_url="syn_organicgrp_joingroups" subscribe="" unsubscribe=""}{/wikiplugin}
+			{JQ}
+				$(".notmember").addClass("shadow");
+				$("#table-forum").addClass("notmember shadow");
+				$("#table-forum").css("height","0px");
+				$(".notmember").attr("contentEditable", true);
+			{/JQ}
 		{elseif $result.tracker_status eq 'p' && !$grpname|in_group}
 			{wikiplugin _name="subscribegroup" group=$pgrpname subscribe_action="Request to Join {$prefs.ta_syn_organicgrp_sterm}" postsubscribe_url="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}" unsubscribe_action="Cancel Request to Join {$prefs.ta_syn_organicgrp_sterm}" postunsubscribe_url="syn_organicgrp_joingroups" subscribe="" unsubscribe=""}{/wikiplugin}
 		{elseif $result.tracker_status eq 'p' && $grpname|in_group}
