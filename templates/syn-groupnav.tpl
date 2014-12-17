@@ -2,7 +2,13 @@
 	{assign var=grpname value="syn_organicgrp_`$result.object_id`"}
 	{assign var=mgrpname value="syn_organicgrp_managers_`$result.object_id`"}
 	{assign var=pgrpname value="syn_organicgrp_pending_`$result.object_id`"}
-    {wikiplugin _name="synpagetitle" title="{$prefs.ta_syn_organicgrp_sterm} - {$result.title}" iconsrc="themes/leaf/images/4-Collaborate.png"}{/wikiplugin}
+	{if $smarty.get.forumId}
+		{wikiplugin _name="synpagetitle" title="{$prefs.ta_syn_organicgrp_sterm} - {$result.title}" iconsrc="themes/leaf/images/4-Collaborate.png" breadcrumb="organicgrp_forum"}{/wikiplugin}
+	{elseif $smarty.get.comments_parentId}
+		{wikiplugin _name="synpagetitle" title="{$prefs.ta_syn_organicgrp_sterm} - {$result.title}" iconsrc="themes/leaf/images/4-Collaborate.png" breadcrumb="organicgrp_forum_thread"}{/wikiplugin}
+	{else}
+		 {wikiplugin _name="synpagetitle" title="{$prefs.ta_syn_organicgrp_sterm} - {$result.title}" iconsrc="themes/leaf/images/4-Collaborate.png"}{/wikiplugin}
+	{/if}
 	<div class="row">
 		{$result.logo_image}
 	</div>
