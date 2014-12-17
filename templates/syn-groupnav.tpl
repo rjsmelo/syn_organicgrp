@@ -12,7 +12,7 @@
 	<div class="row">
 		{$result.logo_image}
 	</div>
-	<div class="row">{$result.tracker_field_og_description|escape}<br /><br /></div>
+	<div class="row">{$result.tracker_field_og_description|nl2br}<br /><br /></div>
 
 	<div class="row">
 	{if !$mgrpname|in_group}
