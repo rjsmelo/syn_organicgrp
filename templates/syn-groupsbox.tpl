@@ -37,6 +37,18 @@
 		            {/literal}
 		        {/wikiplugin}
 			</div>
+			<div>
+				<span data-toggle="tooltip" title="Number of Events" data-placement="left" class="fa fa-calendar tooltip-activate"></span>
+				{wikiplugin _name="list"}
+		            {literal}
+						{filter type="trackeritem"}
+						{filter field="tracker_id" content="4"}
+						{filter content="{/literal}{$result.object_id}{literal}" field="tracker_field_groupId"}
+						{output template="themes/leaf/templates/syn-resource_count.tpl"}
+		                {ALTERNATE()}0{ALTERNATE}
+		            {/literal}
+		        {/wikiplugin}
+			</div>
 		</div>
 	</div>	
 </div>
