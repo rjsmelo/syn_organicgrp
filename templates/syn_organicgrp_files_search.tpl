@@ -24,16 +24,16 @@
         {include file="syn-collapsible-categories.tpl" id="10" header_label="By File Type" category_id="116"}
         <hr>
         <div class="form-group listview">
-            <div class="search-category-header" data-toggle="collapse" data-target="#collapsible1"><label>By File Extension</label><span class="pull-right fa fa-minus-square-o fa-lg"></span></div>
+            <div class="search-category-header" data-toggle="collapse" data-target="#collapsible1"><label>By File Attachment Type</label><span class="pull-right fa fa-minus-square-o fa-lg"></span></div>
             <div class="collapse in" id="collapsible1">
                 <ul>
                     {literal}
-                    <li class="mar-bottom-sm">{input _filter="content" _value="Pdf" _default="n" _field="file_group" type="checkbox"} PDF</li>
-                    <li class="mar-bottom-sm">{input _filter="application/msword" _default="n" _field="file_type" type="checkbox"} Document</li>
-                    <li class="mar-bottom-sm">{input _filter="application/ms-excel" _default="n" _field="file_type" type="checkbox"} Excel</li>
-                    <li class="mar-bottom-sm">{input _filter="application/ms-powerpoint" _default="n" _field="file_type" type="checkbox"} Powerpoint</li>
-                    <li class="mar-bottom-sm">{input _filter="application/text" _default="n" _field="file_type" type="checkbox"} Text</li>
-                    <li class="mar-bottom-sm">{input _filter="image" _default="n" _field="file_type" type="checkbox"} Image</li>
+                        <li class="mar-bottom-sm">{input _filter="content" _value="Pdf" _default="n" _field="file_group" type="checkbox"} PDF</li>
+                        <li class="mar-bottom-sm">{input _filter="content" _value="Document" _default="n" _field="file_group" type="checkbox"} Document</li>
+                        <li class="mar-bottom-sm">{input _filter="content" _value="Spreadsheet" _default="n" _field="file_group" type="checkbox"} Spreadsheet</li>
+                        <li class="mar-bottom-sm">{input _filter="content" _value="Presentation" _default="n" _field="file_group" type="checkbox"} Presentation</li>
+                        <li class="mar-bottom-sm">{input _filter="content" _value="Video" _default="n" _field="file_group" type="checkbox"} Video</li>
+                        <li class="mar-bottom-sm">{input _filter="content" _value="Image" _default="n" _field="file_group" type="checkbox"} Image</li>
                     {/literal}
                 </ul>
             </div>
