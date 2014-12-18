@@ -12,24 +12,26 @@
 	<div class="row">
 		{$result.logo_image}
 	</div>
-	<div class="row">{$result.tracker_field_og_description|escape}<br /><br /></div>
 
-	<div class="row">
+	<div class="row collab">
 	{if !$mgrpname|in_group}
 		{if $result.tracker_status eq 'o'}
-			{wikiplugin _name="subscribegroup" group=$grpname subscribe_action="Join {$prefs.ta_syn_organicgrp_sterm}" postsubscribe_url="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}" unsubscribe_action="Leave {$prefs.ta_syn_organicgrp_sterm}" postunsubscribe_url="syn_organicgrp_joingroups" subscribe="" unsubscribe=""}{/wikiplugin}
+			{wikiplugin _name="subscribegroup" group=$grpname subscribe_action="Join {$prefs.ta_syn_organicgrp_sterm}" postsubscribe_url="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}" unsubscribe_action="Withdraw for {$prefs.ta_syn_organicgrp_sterm}" postunsubscribe_url="syn_organicgrp_joingroups" subscribe="" unsubscribe=""}{/wikiplugin}
+			{JQ}
+			var colvalue = $(".collab div input").val();
+				if(colvalue == 'Join Collaboration') {
+					$(".notmember").addClass("hide");
+					$("#table-forum").addClass("hide");
+					$("#page-bar").addClass("hide");
+				} 
+			{/JQ}
 		{elseif $result.tracker_status eq 'p' && !$grpname|in_group}
 			{wikiplugin _name="subscribegroup" group=$pgrpname subscribe_action="Request to Join {$prefs.ta_syn_organicgrp_sterm}" postsubscribe_url="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}" unsubscribe_action="Cancel Request to Join {$prefs.ta_syn_organicgrp_sterm}" postunsubscribe_url="syn_organicgrp_joingroups" subscribe="" unsubscribe=""}{/wikiplugin}
 		{elseif $result.tracker_status eq 'p' && $grpname|in_group}
-			{wikiplugin _name="subscribegroup" group=$grpname subscribe_action="Join {$prefs.ta_syn_organicgrp_sterm}" postsubscribe_url="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}" unsubscribe_action="Leave {$prefs.ta_syn_organicgrp_sterm}" postunsubscribe_url="syn_organicgrp_joingroups" subscribe="" unsubscribe="" allowLeaveNonUserChoice="y"}{/wikiplugin}
+			{wikiplugin _name="subscribegroup" group=$grpname subscribe_action="Join {$prefs.ta_syn_organicgrp_sterm}" postsubscribe_url="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}" unsubscribe_action="Withdraw for {$prefs.ta_syn_organicgrp_sterm}" postunsubscribe_url="syn_organicgrp_joingroups" subscribe="" unsubscribe="" allowLeaveNonUserChoice="y"}{/wikiplugin}
 		{elseif $result.tracker_status eq 'p' && $pgrpname|in_group}
 			{tr}Your membership to this {$prefs.ta_syn_organicgrp_sterm} is pending approval{/tr}
 		{/if}
-	{else}
-		<div>
-			<a href="syn_organicgrp_managegrp?itemId={$result.object_id}" class="btn btn-default button-bar pull-left">Manage Members</a>
-			{wikiplugin _name="mail" bypass_preview="y" popup="y" showgroupdd="n" showuser="n" group="{$grpname}" mail_subject="A message from the leader of {$result.title|replace|replace:'~/np~':''|replace:'~np~':''}" label_name="Send email to all Members"}{/wikiplugin}
-		</div>
 	{/if}
 	</div>
 
@@ -39,7 +41,7 @@
 			<li id="home"><a href="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}"><span class="fa fa-home"></span> Home</a></li>
 			<li id="forum"><a href="tiki-view_forum.php?forumId={$result.tracker_field_og_forum_ID}&organicgroup={$result.object_id}"><span class="fa fa-comments"></span> Forums</a></li>
 			<li id="white"><a href="syn_organicgrp_{$result.object_id}:_:whiteboard_{$result.object_id}?organicgroup={$result.object_id}"><span class="fa fa-edit"></span> Whiteboard</a></li>
-			<li id="events"><a href="syn_organicgrp_event?organicgroup={$result.object_id}"><span class="fa fa-calendar"></span> Events</a></li>
+			<li id="events"><a href="syn_organicgrp_event?organicgroup={$result.object_id}&start=now&end=1893495012&type=up"><span class="fa fa-calendar"></span> Events</a></li>
 			<li id="files"><a href="syn_organicgrp_groupfiles?organicgroup={$result.object_id}"><span class="fa fa-file"></span> Files</a></li>
 			<li id="live"><a href="syn_organicgrp_liveconferencing?organicgroup={$result.object_id}"><span class="fa fa-laptop"></span> Live Conferencing</a></li>
 		  	<li id="members"><a href="syn_organicgrp_groupmembers?organicgroup={$result.object_id}"><span class="fa fa-users"></span> Members</a></li>

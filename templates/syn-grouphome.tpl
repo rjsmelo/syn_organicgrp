@@ -1,6 +1,7 @@
 {strip}
 	<div>
 	{include file="syn-groupnav.tpl"}
+	<div class="notmember">
 	{jq}$('.here_grouphome').removeClass('btn-default').addClass('btn-info');{/jq}
 	{foreach item=result from=$results}
 		{assign var=grpname value="syn_organicgrp_`$result.object_id`"}
@@ -19,6 +20,12 @@
 					</div>
 				</form>
 			</div>
+
+			<div class="clear mar-bottom-lg"></div>
+
+			<div class="row">{$result.tracker_field_og_description|nl2br}<br /><br /></div>
+
+			<div class="clear mar-bottom-lg"></div>
 
 			<div class="col-md-8 mar-bottom projectlist">
 				<h3>Recent Activity</h3>
@@ -106,6 +113,7 @@
 			<p>{tr}As this is a private group, you have to be a group member to view activity within this group{/tr}</p>
 		{/if}
 	{/foreach}
+	</div>
 	</div>
 {/strip}
 
