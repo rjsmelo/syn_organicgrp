@@ -1,3 +1,4 @@
+<div class="errormail"></div>
 {foreach item=result from=$results}
 	{assign var=grpname value="syn_organicgrp_`$result.object_id`"}
 	{assign var=mgrpname value="syn_organicgrp_managers_`$result.object_id`"}
