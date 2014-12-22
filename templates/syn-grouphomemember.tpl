@@ -35,7 +35,8 @@
 				 	</li>
 				</ul>
 			</div>
-			<div class="clearfix"></div>
+			<div class="mar-bottom-xl clearfix"></div>
+		{service_inline controller=user action=info username={$result.tracker_field_user} no_details=yes}
 		</div>	
 	</div>
 {/foreach}
