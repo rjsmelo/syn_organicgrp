@@ -1,13 +1,4 @@
 <div class="col-md-9">
-	{if {$user} eq {$f_eventAddedBy} }
-		<a class="btn btn-default pull-right mar-right-lg" href="syn_organicgrp_EditEvent?itemId={$f_itemId}&organicgroup={$smarty.get.organicgroup}"><span class="fa fa-edit"></span></a>
-		<div class="clear"></div>
-	{else}
-		{wikiplugin _name="GROUP" groups="Admins"}
-			<a class="btn btn-default pull-right mar-right-lg" href="syn_organicgrp_EditEvent?itemId={$f_itemId}&organicgroup={$smarty.get.organicgroup}"><span class="fa fa-edit"></span></a>
-			<div class="clear"></div>
-		{/wikiplugin}
-	{/if}
 	<h2 class="align-top">{$f_eventTitle}</h2>
 	<i class="fa fa-users fa-6"></i> 
 		{wikiplugin _name=relations qualifiers="leaf.event.attending.invert" object="trackeritem:{$f_itemId}" showonlycount="1"}{/wikiplugin} Confirmed Attendees &nbsp;&nbsp;<i class="fa fa-comments fa-6"></i> 
@@ -64,9 +55,15 @@
 			<div class="col-xs-12 col-sm-6">{$f_eventAddedBy|username}</div>
 		</div>	
 	</div>
-	<div class="text-center col-xs-12 col-sm-4 col-md-4">
+	<div class="button-stack text-center col-xs-12 col-sm-4 col-md-4 pull-right mar-top-sm mar-top">
+		{if {$user} eq {$f_eventAddedBy} }
+			<a class="btn btn-default" href="syn_organicgrp_EditEvent?itemId={$f_itemId}&organicgroup={$smarty.get.organicgroup}"><span class="fa fa-edit"></span> Edit Event</a>
+			<div class="clear"></div>
+		{else}
+			{wikiplugin _name="GROUP" groups="Admins"}<a class="btn btn-default" href="syn_organicgrp_EditEvent?itemId={$f_itemId}&organicgroup={$smarty.get.organicgroup}"><span class="fa fa-edit"></span> Edit Event</a>{/wikiplugin}
+		{/if}
 		<div class="favimage">{wikiplugin _name="FAVORITE" objectType="trackeritem" objectId="{$f_itemId}"}{/wikiplugin}</div>
-		<div class="attend-btn mar-top-sm">{wikiplugin _name=addrelation label_add="I Wish to Attend" label_added="I am Attending" label_remove="Remove" qualifier="leaf.event.attending" source_object="user:{$user}" target_object="trackeritem:{$f_itemId}"}{/wikiplugin}</div>
+		<div class="attend-btn">{wikiplugin _name=addrelation label_add="I Wish to Attend" label_added="I am Attending" label_remove="Remove" qualifier="leaf.event.attending" source_object="user:{$user}" target_object="trackeritem:{$f_itemId}"}{/wikiplugin}</div>
 	</div>
 	<div class="clearfix"></div>
 	<div class="col-md-12">
