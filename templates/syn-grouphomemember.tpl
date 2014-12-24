@@ -1,8 +1,9 @@
 {assign var=mgrpname value="syn_organicgrp_managers_{$smarty.get.organicgroup}"}
+{assign var=grpname value="{$smarty.get.organicgroup|groupnamebyid}"}
 {if $mgrpname|in_group}
 	<div class="mar-bottom-xl">
-		<a href="syn_organicgrp_managegrp?organicgroup={$smarty.get.organicgroup}" class="btn btn-default button-bar pull-left">Manage Members</a>
-		{wikiplugin _name="mail" bypass_preview="y" popup="y" showgroupdd="n" showuser="n" group="{$grpname}" mail_subject="A message from the leader of {$result.title|replace|replace:'~/np~':''|replace:'~np~':''}" label_name="Send email to all Members"}{/wikiplugin}
+		<a href="syn_organicgrp_managegrp?itemId={$result.object_id}" class="btn btn-default button-bar pull-left">Manage Members</a>
+		{wikiplugin _name="mail" bypass_preview="y" popup="y" showgroupdd="n" showuser="n" group="{$grpname}" mail_subject="LEAF - A Message from the Leader of {$grpname}" label_name="Send Email to All Members"}{/wikiplugin}
 	</div>
 {/if}
 <div class="row bg-light-accent pad-top-lg">
