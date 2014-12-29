@@ -110,7 +110,7 @@
 			</div>
 
 		{else}
-			<p>{tr}As this is a private group, you have to be a group member to view activity within this group{/tr}</p>
+			<p>{tr}This is a private collaboration, so you need to be a member to view the activity. Click on the "Request to Join Collaboration" button to indicate your interest to participate.{/tr}</p>
 		{/if}
 	{/foreach}
 	</div>
