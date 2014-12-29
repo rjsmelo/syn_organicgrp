@@ -3,9 +3,9 @@
 		<div class="group_avatar col-xs-12">
 			<div class="pull-right lock-icon">
 				{if $result.tracker_status == 'p'}
-					<span data-toggle="tooltip" title="Private (You must be accepted to join)" class="fa fa-lock tooltip-activate"></span>
+					<span data-toggle="tooltip" title="Private (Approval to join is required)" class="fa fa-lock tooltip-activate"></span>
 				{else}
-					<span data-toggle="tooltip" title="Public (Anyone can join)" class="fa fa-unlock tooltip-activate"></span>
+					<span data-toggle="tooltip" title="Public (Open to everyone)" class="fa fa-unlock tooltip-activate"></span>
 				{/if}
 			</div>
 			<div class="col-xs-4">
@@ -23,7 +23,7 @@
 				<span data-toggle="tooltip" title="Number of Members" data-placement="left" class="fa fa-users tooltip-activate"></span><span> {$grpname|groupmembercount}</span>
 			</div>
 			<div>
-				<span data-toggle="tooltip" title="Number of Discussions in the Forum" data-placement="left" class="fa fa-comments tooltip-activate"></span><span> {if $result.tracker_field_og_forum_ID}{$result.tracker_field_og_forum_ID|forumtopiccount}{else}0{/if}</span>
+				<span data-toggle="tooltip" title="Number of Forum Discussions" data-placement="left" class="fa fa-comments tooltip-activate"></span><span> {if $result.tracker_field_og_forum_ID}{$result.tracker_field_og_forum_ID|forumtopiccount}{else}0{/if}</span>
 			</div>
 			<div>
 				<span data-toggle="tooltip" title="Number of Files" data-placement="left" class="fa fa-file tooltip-activate"></span>
