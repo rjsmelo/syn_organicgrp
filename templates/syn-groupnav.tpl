@@ -56,7 +56,7 @@
 	{if $result.tracker_status eq 'o' && !$grpname|in_group}
 		<div class="row">
 			{remarksbox type="note" title="Join!" close="n"}
-				{tr}You are currently not yet a member. You can view but not participate. Join to gain full access and to receive notifications.{/tr}
+				{tr}Since you are not currently a member of this collaboration, you can view but not participate in the activity. Click on the "Join Collaboration" button to gain full access.{/tr}
 			{/remarksbox}
 		</div>
 	{/if}
