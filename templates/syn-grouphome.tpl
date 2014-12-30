@@ -20,14 +20,9 @@
 					</div>
 				</form>
 			</div>
-
 			<div class="clear mar-bottom-lg"></div>
-
-			<div class="row">{$result.tracker_field_og_description|nl2br}<br /><br /></div>
-
-			<div class="clear mar-bottom-lg"></div>
-
 			<div class="col-md-8 mar-bottom projectlist">
+                {$result.tracker_field_og_description|nl2br}<br/>
 				<h3>Recent Activity</h3>
 				{wikiplugin _name="activitystream" auto="0"}
 				{literal}
@@ -48,7 +43,7 @@
 				{/jq}
 			</div>
 
-			<div class="col-md-4 mar-top-xl pad-top">
+			<div class="col-md-4 mar-bottom">
 				<div class="hide">
 					<h3>New Members</h3>
 					{wikiplugin _name="activitystream"}
