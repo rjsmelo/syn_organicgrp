@@ -21,32 +21,9 @@
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="managemembers">
                 <h3>Manage Members</h3>
-                <div class="panel panel-primary panel-grey">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Pending Members</h3>
-                    </div>
-                    <div class="panel-body">
-                        {wikiplugin _name="memberlist" groups="syn_organicgrp_pending_{$f_itemId}" addon_groups_approval_buttons="y"}{/wikiplugin}
-                    </div>
-                </div>
-                <div class="panel panel-primary panel-grey">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Current Members</h3>
-                    </div>
-                    <div class="panel-body">
-                        {wikiplugin _name="memberlist" groups="syn_organicgrp_{$f_itemId}" showDescriptions="y" email_to_added_user="y" email_to_removed_user="y"}{/wikiplugin}
-                    </div>
-                </div>
-                <div class="panel panel-primary panel-grey">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Leaders</h3>
-                    </div>
-                    <div class="panel-body">
-                        <p class="help-block">Only leaders can approve new requests to join, remove or add other members. As
-                            a leader, you can make other members leaders as well by adding them here.</p>
-                        {wikiplugin _name="memberlist" groups="syn_organicgrp_managers_{$f_itemId}"}{/wikiplugin}
-                    </div>
-                </div>
+                {wikiplugin _name="memberlist" groups="syn_organicgrp_pending_{$f_itemId}" addon_groups_approval_buttons="y"}{/wikiplugin}
+                {wikiplugin _name="memberlist" groups="syn_organicgrp_{$f_itemId}" email_to_added_user="y" email_to_removed_user="y" title="Current Members"}{/wikiplugin}
+                {wikiplugin _name="memberlist" groups="syn_organicgrp_managers_{$f_itemId}" title="Leaders" help_block="Only leaders can approve new requests to join, remove or add other members. As a leader, you can make other members leaders as well by adding them here."}{/wikiplugin}
             </div>
             <div role="tabpanel" class="tab-pane" id="editdetails">
                 <h3>Edit {$prefs.ta_syn_organicgrp_sterm} Details</h3>
