@@ -22,6 +22,7 @@
 			{literal}
 			{ACTIVITYSTREAM(auto="0")}
 	            {pagination max="10"}
+                {filter field="feed" content="syn_organicgrps"}
 	            {filter categories="{/literal}{$user|my_group}{literal}"}
 	            {group field=aggregate collect=user}
 			{ACTIVITYSTREAM}
