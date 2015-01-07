@@ -26,24 +26,19 @@
                         <span class="fa {$icon} fa-3x"></span>
                     </div>
                     <div class="media-body col-xs-11">
-                        {if $result.tracker_field_pcFiles}
-                            {if $smarty.session.u_info.login eq $result.tracker_field_contributor}
-                                <input type="hidden" id="fileId" value="{$result.tracker_field_pcFiles}">
-                                <div class="row">
-                                    <div class="col-xs-11">
-                                        <h4 class="media-heading"><a href="{$url}">{$result.title}</a></h4>  
-                                    </div>
-                                    <div class="col-xs-1 button-stack text-right">
-                                        <a title="Delete" data-target=".bs-modal.fade:not(.in):first" data-toggle="modal" href="tiki-tracker-remove_item?trackerId=8&amp;itemId={$result.object_id}&amp;modal=1"><span class="fa fa-times-circle"></span></a>
-                                    </div>
+                         {if $smarty.session.u_info.login eq $result.tracker_field_contributor}
+                            <div class="row">
+                                <div class="col-xs-11">
+                                    <h4 class="media-heading"><a href="{$url}">{$result.title}</a></h4>  
                                 </div>
-                            {else}
-                                <h4 class="media-heading"><a href="{$url}">{$result.title}</a></h4>
-                            {/if}
+                                <div class="col-xs-1 button-stack text-right">
+                                    <a title="Delete" data-target=".bs-modal.fade:not(.in):first" data-toggle="modal" href="tiki-tracker-remove_item?trackerId=8&amp;itemId={$result.object_id}&amp;modal=1"><span class="fa fa-times-circle"></span></a>
+                                </div>
+                            </div>
                         {else}
                             <h4 class="media-heading"><a href="{$url}">{$result.title}</a></h4>
                         {/if}
-                        <span class="fa fa-user"></span> {$result.contributor|userlink}<br>
+                        <span class="fa fa-user"></span> {$result.tracker_field_contributor|userlink}<br>
                         <span class="fa fa-cloud-upload"></span> {$result.modification_date|date_format}
                     </div>
                 </div>
