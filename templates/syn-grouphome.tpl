@@ -27,6 +27,7 @@
 				{wikiplugin _name="activitystream" auto="0"}
 				{literal}
 					{pagination max="10"}
+					{filter field="feed" content="syn_organicgrps"}
 					{filter categories="{/literal}{$result.tracker_field_og_categoryID}{literal}"}
 					{group field=aggregate collect=user}
 				{/literal}
