@@ -121,7 +121,7 @@ objects:
       permname: og_categoryID
       tracker: $profileobject:trk_og$
       options:
-      type: text_field
+      type: category
       flags:
         - searchable
         - public
