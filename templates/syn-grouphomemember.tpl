@@ -37,7 +37,7 @@
 				</ul>
 			</div>
 			<div class="mar-bottom-xl col-lg-height clearfix"></div>
-			<a href="#" class="col-md-12 col-xs-12 mar-top btn btn-action btn-sm mar-left-xs"><span class="fa fa-user"></span> See Tutela Profile</a>
+			{service_inline controller=user action=info username={$result.tracker_field_user} no_details=yes}
 		</div>	
 	</div>
 {/foreach}
