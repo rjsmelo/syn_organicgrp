@@ -21,6 +21,7 @@
 		{wiki}
 			{literal}
 			{ACTIVITYSTREAM(auto="0")}
+                {filter personalize="addongroups"}
 	            {pagination max="10"}
                 {filter field="feed" content="syn_organicgrps"}
 	            {filter categories="{/literal}{$user|my_group}{literal}"}
