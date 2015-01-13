@@ -1,6 +1,4 @@
 <div class="col-xs-12 mar-bottom-lg clear">
-    {assign var=resource value="="|explode:$smarty.server.HTTP_REFERER}
-    <a class="btn btn-action pull-right" href="syn_organicgrp_sharefile?organicgroup={$resource[1]}"><span class="fa fa-cloud-upload"></span> Share New Files</a>
     <div class="nopadding pull-left btn mar-top">{if $offsetplusmaxRecords>$count}{$offsetplusmaxRecords = $count}{/if}Showing {if $count}{$offsetplusone}{else}0{/if}-{$offsetplusmaxRecords} of {$count} {if $results->getEstimate() > $count}({$results->getEstimate()} Total){/if}
 </div>
 {assign var='customsearchid' value='syn_organicgrp_file_search'}</div>
