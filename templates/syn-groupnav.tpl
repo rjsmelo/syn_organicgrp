@@ -49,6 +49,10 @@
 			<li id="files"><a href="syn_organicgrp_groupfiles?organicgroup={$result.object_id}"><span class="fa fa-file"></span> Files</a></li>
 			<li id="live"><a href="syn_organicgrp_liveconferencing?organicgroup={$result.object_id}"><span class="fa fa-laptop"></span> Live Conferencing</a></li>
 		  	<li id="members"><a href="syn_organicgrp_groupmembers?organicgroup={$result.object_id}"><span class="fa fa-users"></span> Members</a></li>
+			{assign var=mgrpname value="syn_organicgrp_managers_{$smarty.get.organicgroup}"}
+			{if $mgrpname|in_group}
+				<li id="manage"><a href="syn_organicgrp_managegrp?itemId={$result.object_id}&organicgroup={$result.object_id}"><span class="fa fa-cog"></span> Manage Group</a></li>
+			{/if}
 		</ul>
 	</div>
 	{/if}
@@ -72,6 +76,10 @@
 {elseif $smarty.get.page eq "syn_organicgrp_groupmembers"}
 {jq}
 	$('#members').addClass('active');
+{/jq}
+{elseif $smarty.get.page eq "syn_organicgrp_managegrp"}
+{jq}
+	$('#manage').addClass('active');
 {/jq}
 {elseif $smarty.get.page eq "syn_organicgrp_liveconferencing"}
 {jq}

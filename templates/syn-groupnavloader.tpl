@@ -12,9 +12,10 @@
     {if !isset($groupTrackerItemId)}{assign var=groupTrackerItemId value=$smarty.request.organicgroup}{/if}
 {elseif ($groupnavfrom == 'members')}
 	{if !isset($groupTrackerItemId)}{assign var=groupTrackerItemId value=$smarty.request.organicgroup}{/if}
+{elseif ($groupnavfrom == 'manage')}
+	{if !isset($groupTrackerItemId)}{assign var=groupTrackerItemId value=$smarty.request.organicgroup}{/if}
 {/if}
 {if $groupTrackerItemId}
-
 	{wikiplugin _name="list"}
 	{literal}
 		{list max="1" offset="0"}
