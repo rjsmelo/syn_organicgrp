@@ -25,7 +25,7 @@
 		{filter content="{/literal}{$groupTrackerItemId}{literal}" field="object_id"}
 		{output template="addons/syn_organicgrp/templates/syn-groupnav.tpl" somevar="test"}
 		{FORMAT(name="logo_image")}{display name="tracker_field_og_logo_image" format="trackerrender" default=""}{FORMAT}
-		{FORMAT(name="approvalCount")}{/literal}{$approvalcount}{literal}{FORMAT}
+		{FORMAT(name="approvalCount" mode="raw")}{/literal}{$approvalcount}{literal}{FORMAT}
 	{/literal}
 	{/wikiplugin}
 {/if}

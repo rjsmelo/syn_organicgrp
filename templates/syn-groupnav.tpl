@@ -51,9 +51,7 @@
 		  	<li id="members">{if $smarty.get.organicgroup}<a href="syn_organicgrp_groupmembers?organicgroup={$result.object_id}"><span class="fa fa-users"></span> Members</a>{else}<a href="syn_organicgrp_mygroups"><span class="fa fa-users"></span> Members</a>{/if}</li>
 			{assign var=mgrpname value="syn_organicgrp_managers_{$smarty.get.organicgroup}"}
 			{if $mgrpname|in_group}
-				{*Strip approvalcount of ~np~ tags from Formatter.php*}
-				{assign var='count' value=$result.approvalCount|replace:'~np~':''|replace:'~/np~':''}
-				<li id="manage" class="pull-right"><a href="syn_organicgrp_managegrp?itemId={$result.object_id}&organicgroup={$result.object_id}"><span class="fa fa-cog"></span>{if $count neq '0'}<span class="badge">{$count}</span>{/if} Manage</a></li>
+				<li id="manage" class="pull-right"><a href="syn_organicgrp_managegrp?itemId={$result.object_id}&organicgroup={$result.object_id}"><span class="fa fa-cog"></span>{if $result.approvalCount neq '0'}<span class="badge">{$result.approvalCount}</span>{/if} Manage</a></li>
 			{/if}
 		</ul>
 	</div>
