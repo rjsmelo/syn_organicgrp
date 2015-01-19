@@ -74,7 +74,8 @@ permissions:
    -
     type: category
     id: $profileobject:cat_og$  
-    deny: [ create_tracker_items, modify_tracker_items, modify_tracker_items_pending, modify_tracker_items_closed, view_trackers, view_trackers_pending, view_trackers_closed, forum_read, forum_post, download_files, upload_files, post_comments, read_comments ]
+    deny: [ create_tracker_items, modify_tracker_items, modify_tracker_items_pending, modify_tracker_items_closed, view_trackers_closed, forum_read, forum_post, download_files, upload_files, post_comments, read_comments ]
+    allow: [ view, view_trackers, view_trackers_pending, view_category ]
  Pending:
   user_signup: 'y'
  Member:
