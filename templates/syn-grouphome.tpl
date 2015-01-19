@@ -1,7 +1,8 @@
 {strip}
 	<div>
-	{include file="syn-groupnav.tpl"}
-	<div class="notmember">
+	{*{include file="syn-groupnav.tpl"}*}
+	{wikiplugin _name="addon" package="syn/organicgrp" view="groupnavloader" from="home"}{/wikiplugin}
+<div class="notmember">
 	{jq}$('.here_grouphome').removeClass('btn-default').addClass('btn-info');{/jq}
 	{foreach item=result from=$results}
 		{assign var=grpname value="syn_organicgrp_`$result.object_id`"}

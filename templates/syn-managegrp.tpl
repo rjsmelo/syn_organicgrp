@@ -4,10 +4,7 @@
 {assign var=pgrpname value="syn_organicgrp_pending_`$f_itemId`"}
 {assign var=admgrpname value="Admins"}
 {if $mgrpname|in_group || $admgrpname|in_group}
-    <h2>Manage {$prefs.ta_syn_organicgrp_sterm} - {$f_og_title}</h2>
-    <a href="syn_organicgrp_grouphomepage?organicgroup={$f_itemId}">
-        <button class="btn btn-default">Return to {$prefs.ta_syn_organicgrp_sterm} Home Page</button>
-    </a>
+    {*<h2>Manage {$prefs.ta_syn_organicgrp_sterm} - {$f_og_title}</h2>*}
     <div role="tabpanel" class="mar-top-lg">
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">

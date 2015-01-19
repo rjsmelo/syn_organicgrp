@@ -48,6 +48,9 @@ function groupnavloader($data, $params)
 		}
 	}
 
+	$userlib = \TikiLib::lib('user');
+	$approvalCount = $userlib->nb_users_in_group("syn_organicgrp_pending_". $_REQUEST['organicgroup']); //get the number of pending users
+	$app->smarty->assign('approvalcount', $approvalCount);
 	$app->smarty->assign('groupnavfrom', $params['from']);
 	return $app->smarty->fetch('syn-groupnavloader.tpl');
 }
