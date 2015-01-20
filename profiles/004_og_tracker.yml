@@ -44,6 +44,19 @@ objects:
         - public
   -
     type: tracker_field
+    ref: trk_og_welcome_message
+    data:
+      name: Welcome Message
+      permname: og_welcome_message
+      tracker: $profileobject:trk_og$
+      options:
+      type: text_area
+      flags:
+        - list
+        - searchable
+        - public
+  -
+    type: tracker_field
     ref: trk_og_logo_image
     data:
       name: Logo image

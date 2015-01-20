@@ -12,8 +12,9 @@
 <div class="col-lg-12" id="loading">
 {HTML}
 !!Create a New Public {showpref pref=ta_syn_organicgrp_sterm}
-{DATACHANNEL(channel="syn_organicgrp_newpublicgroup" buttonLabel="Create" id="loading" emptyCache="all" returnErrorURI="syn_organicgrp_creategroupfail" returnURI="syn_organicgrp_grouphomepage?itemId=%trkitem_og%&notify=y")}groupname,Name
+{DATACHANNEL(channel="syn_organicgrp_newpublicgroup" buttonLabel="Create" id="loading" emptyCache="all" returnErrorURI="syn_organicgrp_creategroupfail" returnURI="syn_organicgrp_grouphomepage?organicgroup=%trkitem_og%&notify=y")}groupname,Name
 groupdescription,Description
+welcomeMessage,Welcome Message
 creator,hidden={{user}}{DATACHANNEL}
 {HTML()}
 </div>
@@ -23,8 +24,9 @@ creator,hidden={{user}}{DATACHANNEL}
 <div class="col-lg-12"  id="loading">
 {HTML}
 !!Create a New Private {showpref pref=ta_syn_organicgrp_sterm}
-{DATACHANNEL(channel="syn_organicgrp_newprivategroup" buttonLabel="Create" emptyCache="all" returnErrorURI="syn_organicgrp_creategroupfail" returnURI="syn_organicgrp_grouphomepage?itemId=%trkitem_og%&notify=y")}groupname,Name
+{DATACHANNEL(channel="syn_organicgrp_newprivategroup" buttonLabel="Create" emptyCache="all" returnErrorURI="syn_organicgrp_creategroupfail" returnURI="syn_organicgrp_grouphomepage?organicgroup=%trkitem_og%&notify=y")}groupname,Name
 groupdescription,Description
+welcomeMessage,Welcome Message
 creator,hidden={{user}}{DATACHANNEL}
 {HTML()}
 </div>

@@ -8,7 +8,7 @@
 	{elseif $smarty.get.comments_parentId}
 		{wikiplugin _name="synpagetitle" title="{$prefs.ta_syn_organicgrp_sterm} - {$result.title}" iconsrc="themes/leaf/images/4-Collaborate.png" breadcrumb="organicgrp_forum_thread"}{/wikiplugin}
 	{else}
-		 {wikiplugin _name="synpagetitle" title="{$prefs.ta_syn_organicgrp_sterm} - {$result.title}" iconsrc="themes/leaf/images/4-Collaborate.png"}{/wikiplugin}
+		{wikiplugin _name="synpagetitle" title="{$prefs.ta_syn_organicgrp_sterm} - {$result.title}" iconsrc="themes/leaf/images/4-Collaborate.png"}{/wikiplugin}
 	{/if}
 	<div class="row">
 		{$result.logo_image}

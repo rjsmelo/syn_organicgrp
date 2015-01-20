@@ -9,6 +9,7 @@ objects:
    values:
     - [ $profileobject:addons/syn_organicgrp/profiles:004_og_tracker:trk_og_title$, $profilerequest:groupname$Sample$ ]
     - [ $profileobject:addons/syn_organicgrp/profiles:004_og_tracker:trk_og_description$, $profilerequest:groupdescription$A description for this group has not yet been written.$ ]
+    - [ $profileobject:addons/syn_organicgrp/profiles:004_og_tracker:trk_og_welcome_message$, $profilerequest:welcomeMessage$A message for this group has not yet been written.$ ]
     - [ $profileobject:addons/syn_organicgrp/profiles:004_og_tracker:trk_og_creator$, $profilerequest:creator$Sample$]
     - [ $profileobject:addons/syn_organicgrp/profiles:004_og_tracker:trk_og_lang$, en ]
  -
@@ -58,6 +59,7 @@ objects:
    values:
     - [ $profileobject:addons/syn_organicgrp/profiles:004_og_tracker:trk_og_title$, $profilerequest:groupname$Sample$ ]
     - [ $profileobject:addons/syn_organicgrp/profiles:004_og_tracker:trk_og_description$, $profilerequest:groupdescription$A description for this group has not yet been written.$ ]
+    - [ $profileobject:addons/syn_organicgrp/profiles:004_og_tracker:trk_og_welcome_message$, $profilerequest:welcomeMessage$A message for this group has not yet been written.$ ]
     - [ $profileobject:addons/syn_organicgrp/profiles:004_og_tracker:trk_og_creator$, $profilerequest:creator$Sample$]
     - [ $profileobject:addons/syn_organicgrp/profiles:004_og_tracker:trk_og_lang$, en ]
     - [ $profileobject:addons/syn_organicgrp/profiles:004_og_tracker:trk_og_file_gallery_ID$, $profileobject:fg_og$ ]
