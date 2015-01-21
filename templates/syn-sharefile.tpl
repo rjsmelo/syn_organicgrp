@@ -1,7 +1,7 @@
 {if $smarty.get.alert == 'y'}
     <div class="alert alert-success alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <strong>Well done !</strong> You submitted your file.
+        <strong>{tr}Well done !{/tr}</strong>{tr} You submitted your file.{/tr}
     </div>
 {/if}
 {formitem _field={$f_name} _label="Title"}
