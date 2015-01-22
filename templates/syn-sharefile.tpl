@@ -9,7 +9,7 @@
 {formitem _field={$f_fileType} _label="File Type" id="fileTypeSelector"}
 
 <div class="fileSection hidden">
-    <div class="show-pc">{formitem _field={$f_pcFiles} _label="File from your Computer"}</div>
+    <div class="show-pc">{formitem _field={$f_pcFiles} _label="Upload File" class="file-section"}</div>
     <div class="show-external">{formitem _field={$f_externalURL} _label="External URL"}</div>
     <div class="show-resource">{formitem _field={$f_resourceLink} _label="Resource Link"}</div>
 </div>
