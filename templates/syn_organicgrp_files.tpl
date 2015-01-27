@@ -24,7 +24,8 @@
                         <span class="fa {$icon} fa-3x"></span>
                     </div>
                     <div class="media-body col-xs-11">
-                         {if $smarty.session.u_info.login eq $result.tracker_field_contributor}
+                    {assign var=mgrpname value="syn_organicgrp_managers_{$result.tracker_field_groupID}"}
+                         {if $smarty.session.u_info.login eq $result.tracker_field_contributor || {$mgrpname|in_group}}
                             <div class="row">
                                 <div class="col-xs-11">
                                     <h4 class="media-heading"><a href="{$url}">{$result.title}</a></h4>  
