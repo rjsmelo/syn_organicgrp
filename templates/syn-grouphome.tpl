@@ -13,18 +13,16 @@
 					<div class="alert alert-info">{$result.tracker_field_og_welcome_message|nl2br}</div>
 				</div>
 			{/if}
-			<div class="row">
-				<form name="commSearch" method="post" action="./syn_organicgrp_groupsearchpage?organicgroup={$result.object_id}&cat={$result.tracker_field_og_categoryID}&forgetlastsearch=y">
-					<div class="form-group">
-						<div class="input-group">
-							<input type="text" name="default[content]" placeholder="Search within this {$prefs.ta_syn_organicgrp_sterm}..." class="searchField form-control">
-							<span class="input-group-btn">
-								<input type="submit" value="Search" name="submit" class="btn btn-search">
-							</span>
-						</div>
+			<form name="commSearch" method="post" action="./syn_organicgrp_groupsearchpage?organicgroup={$result.object_id}&cat={$result.tracker_field_og_categoryID}&forgetlastsearch=y">
+				<div class="form-group">
+					<div class="input-group">
+						<input type="text" name="default[content]" placeholder="Search within this {$prefs.ta_syn_organicgrp_sterm}..." class="searchField form-control">
+						<span class="input-group-btn">
+							<input type="submit" value="Search" name="submit" class="btn btn-search">
+						</span>
 					</div>
-				</form>
-			</div>
+				</div>
+			</form>
 			<div class="clear mar-bottom-lg"></div>
 			<div class="row">
 				<div class="col-md-8 mar-bottom projectlist">

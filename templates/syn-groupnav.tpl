@@ -15,32 +15,34 @@
 	</div>
 
 	<div class="row collab">
-	{if !$mgrpname|in_group}
-		{if $result.tracker_status eq 'o'}
-			{assign var="typeofgrp" value="{$result.tracker_field_privateGroup}"}
-			{wikiplugin _name="subscribegroup" group=$grpname subscribe_action="Join {$prefs.ta_syn_organicgrp_sterm}" postsubscribe_url="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}" unsubscribe_action="Withdraw from {$prefs.ta_syn_organicgrp_sterm}" postunsubscribe_url="syn_organicgrp_joingroups" subscribe="" unsubscribe=""}{/wikiplugin}
-			{if $typeofgrp eq "y"}
-			{JQ}
-			var colvalue = $(".collab div input").val();
-				if(colvalue == 'Join Collaboration') {
-					$(".notmember").addClass("hide");
-					$("#table-forum").addClass("hide");
-					$("#page-bar").addClass("hide");
-				} 
-			{/JQ}
+		<div class="col-xs-12">
+			{if !$mgrpname|in_group}
+				{if $result.tracker_status eq 'o'}
+					{assign var="typeofgrp" value="{$result.tracker_field_privateGroup}"}
+					{wikiplugin _name="subscribegroup" group=$grpname subscribe_action="Join {$prefs.ta_syn_organicgrp_sterm}" postsubscribe_url="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}" unsubscribe_action="Withdraw from {$prefs.ta_syn_organicgrp_sterm}" postunsubscribe_url="syn_organicgrp_joingroups" subscribe="" unsubscribe=""}{/wikiplugin}
+					{if $typeofgrp eq "y"}
+					{JQ}
+					var colvalue = $(".collab div input").val();
+						if(colvalue == 'Join Collaboration') {
+							$(".notmember").addClass("hide");
+							$("#table-forum").addClass("hide");
+							$("#page-bar").addClass("hide");
+						}
+					{/JQ}
+					{/if}
+				{elseif $result.tracker_status eq 'p' && !$grpname|in_group}
+					{wikiplugin _name="subscribegroup" group=$pgrpname subscribe_action="Request to Join {$prefs.ta_syn_organicgrp_sterm}" postsubscribe_url="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}" unsubscribe_action="Cancel Request to Join {$prefs.ta_syn_organicgrp_sterm}" postunsubscribe_url="syn_organicgrp_joingroups" subscribe="" unsubscribe=""}{/wikiplugin}
+				{elseif $result.tracker_status eq 'p' && $grpname|in_group}
+					{wikiplugin _name="subscribegroup" group=$grpname subscribe_action="Join {$prefs.ta_syn_organicgrp_sterm}" postsubscribe_url="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}" unsubscribe_action="Withdraw from {$prefs.ta_syn_organicgrp_sterm}" postunsubscribe_url="syn_organicgrp_joingroups" subscribe="" unsubscribe="" allowLeaveNonUserChoice="y"}{/wikiplugin}
+				{elseif $result.tracker_status eq 'p' && $pgrpname|in_group}
+					{tr}Your membership to this {$prefs.ta_syn_organicgrp_sterm} is pending approval{/tr}
+				{/if}
 			{/if}
-		{elseif $result.tracker_status eq 'p' && !$grpname|in_group}
-			{wikiplugin _name="subscribegroup" group=$pgrpname subscribe_action="Request to Join {$prefs.ta_syn_organicgrp_sterm}" postsubscribe_url="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}" unsubscribe_action="Cancel Request to Join {$prefs.ta_syn_organicgrp_sterm}" postunsubscribe_url="syn_organicgrp_joingroups" subscribe="" unsubscribe=""}{/wikiplugin}
-		{elseif $result.tracker_status eq 'p' && $grpname|in_group}
-			{wikiplugin _name="subscribegroup" group=$grpname subscribe_action="Join {$prefs.ta_syn_organicgrp_sterm}" postsubscribe_url="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}" unsubscribe_action="Withdraw from {$prefs.ta_syn_organicgrp_sterm}" postunsubscribe_url="syn_organicgrp_joingroups" subscribe="" unsubscribe="" allowLeaveNonUserChoice="y"}{/wikiplugin}
-		{elseif $result.tracker_status eq 'p' && $pgrpname|in_group}
-			{tr}Your membership to this {$prefs.ta_syn_organicgrp_sterm} is pending approval{/tr}
-		{/if}
-	{/if}
+		</div>
 	</div>
 
 	{if $grpname|in_group || $result.tracker_status eq 'o'}
-	<div class="row groupnav-bar">
+	<div class="groupnav-bar">
 		<ul class="nav nav-pills">
 			<li id="home">{if $smarty.get.organicgroup}<a href="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}"><span class="fa fa-home"></span> Home</a>{else}<a href="syn_organicgrp_mygroups"><span class="fa fa-home"></span> Home</a>{/if}</li>
 			<li id="forum"><a href="tiki-view_forum.php?forumId={$result.tracker_field_og_forum_ID}&organicgroup={$result.object_id}"><span class="fa fa-comments"></span> Forums</a></li>
@@ -65,9 +67,15 @@
 		</div>
 	{/if}
 {/foreach}
+
+
 {if $smarty.get.page eq "syn_organicgrp_grouphomepage"}
 {jq}
 	$('#home').addClass('active');
+{/jq}
+{elseif $smarty.get.page eq "tiki-view_forum_thread.php"}
+{jq}
+	$('#forum').addClass('active');
 {/jq}
 {elseif $smarty.get.page eq "syn_organicgrp_groupfiles"}
 {jq}

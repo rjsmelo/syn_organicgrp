@@ -1,19 +1,4 @@
-{if ($groupnavfrom == 'forum')}
-	{if !isset($groupTrackerItemId)}{assign var=groupTrackerItemId value=$smarty.request.organicgroup}{/if}
-{elseif ($groupnavfrom == 'whiteboard')}
-	{if !isset($groupTrackerItemId)}{assign var=groupTrackerItemId value=$smarty.request.organicgroup}{/if}
-{elseif ($groupnavfrom == 'events')}
-	{if !isset($groupTrackerItemId)}{assign var=groupTrackerItemId value=$smarty.request.organicgroup}{/if}
-{elseif ($groupnavfrom == 'files')}
-	{if !isset($groupTrackerItemId)}{assign var=groupTrackerItemId value=$smarty.request.organicgroup}{/if}
-{elseif ($groupnavfrom == 'home')}
-	{if !isset($groupTrackerItemId)}{assign var=groupTrackerItemId value=$smarty.request.organicgroup}{/if}
-{elseif ($groupnavfrom == 'live')}
-    {if !isset($groupTrackerItemId)}{assign var=groupTrackerItemId value=$smarty.request.organicgroup}{/if}
-{elseif ($groupnavfrom == 'members')}
-	{if !isset($groupTrackerItemId)}{assign var=groupTrackerItemId value=$smarty.request.organicgroup}{/if}
-{elseif ($groupnavfrom == 'manage')}
-	{if !isset($groupTrackerItemId)}{assign var=groupTrackerItemId value=$smarty.request.organicgroup}{/if}
+{if !isset($groupTrackerItemId)}{assign var=groupTrackerItemId value=$smarty.request.organicgroup scope=global}
 {/if}
 
 {if $groupTrackerItemId}
