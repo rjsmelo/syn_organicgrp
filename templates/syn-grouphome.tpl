@@ -112,7 +112,9 @@
 				</div>
 			</div>
 		{else}
-			<p>{tr}This is a private collaboration, so you need to be a member to view the activity. Click on the "Request to Join Collaboration" button to indicate your interest to participate.{/tr}</p>
+			{wikiplugin _name = "alert" id="privategrp-alertmsg" dismissable="n" cookies="n"}
+				<p>{tr}This is a private collaboration, so you need to be a member to view the activity. Click on the "Request to Join Collaboration" button to indicate your interest to participate.{/tr}</p>
+			{/wikiplugin}
 		{/if}
 	{/foreach}
 	</div>
