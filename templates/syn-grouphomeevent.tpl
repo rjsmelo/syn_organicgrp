@@ -55,11 +55,23 @@
 	    </div>
 	    <div class="panel-footer clearfix">
 	    	<div class="pull-left icon-bar">
+	    		{if $result.tracker_field_eventRecording}
+                   <span class="fa-stack fa-lg mar-right-lg text-secondary tooltip-activate" data-toggle="tooltip" data-placement="top" title="A Recording of this event is available">
+                      <i class="fa fa-certificate fa-stack-2x"></i>
+                      <i class="fa fa-video-camera fa-stack-1x fa-inverse " style="font-size: 16px;"></i>
+                    </span>
+                {/if}
 	    		{if $result.tracker_field_eventLocation}
-		    		<div class="icon"><span class="fa fa-location-arrow fa-lg"></span> {$result.tracker_field_eventLocation}</div>
+		    		<div class="icon tooltip-activate" data-toggle="tooltip" data-placement="top" title="Location">
+		    			<span class="fa fa-location-arrow fa-lg"></span>
+		    			{$result.tracker_field_eventLocation}
+		    		</div>
 		    	{/if}
 		    	{if $result.tracker_field_presenter}
-		  			<div class="icon"><span class="fa fa-microphone fa-lg"></span> {$result.tracker_field_presenter}</div>
+		  			<div class="icon tooltip-activate" data-toggle="tooltip" data-placement="top" title="Presenter">
+		  				<span class="fa fa-microphone fa-lg"></span>
+		  				{$result.tracker_field_presenter}
+		  			</div>
 		  		{/if}
 		  	</div>
 	  		<div class="pull-right">
@@ -74,3 +86,8 @@
 	<div class="clear"></div>
 </div>
 
+{jq}
+	$(function () {
+  		$('[data-toggle="tooltip"]').tooltip()
+	});
+{/jq}
