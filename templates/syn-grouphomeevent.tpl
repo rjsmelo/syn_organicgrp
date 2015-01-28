@@ -26,7 +26,8 @@
 	    <div class="panel-body">
 	    	{* If Created in the past two weeks, display new_ribbon. *}
             {if '-14 days'|date_format:'%Y-%m-%d'  <=  $result.creation_date}
-                <div class="col-md-2 pull-right newribbon" style="background-image:url('img/new-ribbon.png');"></div>
+                <div class="col-md-2 pull-right newribbon" title="This event was created in the past 7 days" data-toggle="tooltip" data-placement="top" style="background-image:url('img/new-ribbon.png');">
+                </div>
             {/if}
 	    	<div class="media">
 		        <a class="pull-left" href="./syn_organicgrp_ViewEvent?itemId={$result.object_id|escape}&organicgroup={$result.tracker_field_groupId}&cat={$result.categories[0]}">
