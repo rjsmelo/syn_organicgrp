@@ -13,4 +13,8 @@
 		{FORMAT(name="approvalCount" mode="raw")}{/literal}{$approvalcount}{literal}{FORMAT}
 	{/literal}
 	{/wikiplugin}
+{else}
+	{jq}
+		window.location.replace("syn_organicgrp_mygroups");
+	{/jq}
 {/if}
