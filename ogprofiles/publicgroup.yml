@@ -110,7 +110,7 @@ permissions:
    -
     type: category
     id: $profileobject:cat_og$
-    allow: [ edit_comments, remove_comments, remove_files, remove, modify_tracker_items, modify_tracker_items_pending, modify_tracker_items_closed, forum_attach ]
+    allow: [ edit_comments, remove_comments, remove_files, remove, remove_tracker_items, modify_tracker_items, modify_tracker_items_pending, modify_tracker_items_closed, forum_attach ]
    -
     type: group
     id: syn_organicgrp_$profileobject:trkitem_og$
