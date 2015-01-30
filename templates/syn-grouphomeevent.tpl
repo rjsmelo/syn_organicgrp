@@ -22,6 +22,7 @@
 	<div class="clear"></div>
 
 {foreach item=result from=$results}
+	{assign "orgid"  "{$result.tracker_field_groupId|groupnamebycatid|replace:'syn_organicgrp_':''}"}
 	<div class="panel panel-default search-result">
 	    <div class="panel-body">
 	    	{* If Created in the past two weeks, display new_ribbon. *}
@@ -30,13 +31,13 @@
                 </div>
             {/if}
 	    	<div class="media">
-		        <a class="pull-left" href="./syn_organicgrp_ViewEvent?itemId={$result.object_id|escape}&organicgroup={$result.tracker_field_groupId}&cat={$result.categories[0]}">
+		         <a class="pull-left" href="./syn_organicgrp_ViewEvent?itemId={$result.object_id|escape}&organicgroup={$orgid}">
 		  			<i class="fa fa-calendar fa-4x"></i>
 				</a>
 	  			<div class="media-body">
 	  				{assign var=imagess value=$result.tracker_field_groupId|groupnamebycatid}
 	  				{assign var=groupid value="_"|explode:$imagess}
-					<h3 class="media-heading"><a href="./syn_organicgrp_ViewEvent?itemId={$result.object_id|escape}&organicgroup={$groupid[2]}&cat={$result.tracker_field_groupId}" class="title">{$result.title|escape}</a></h3>
+					<h3 class="media-heading"><a href="./syn_organicgrp_ViewEvent?itemId={$result.object_id|escape}&organicgroup={$orgid}" class="title">{$result.title|escape}</a></h3>
 					<div class="mar-bottom-lg mar-top-lg"><strong>
                         {if $result.tracker_field_startDate2|date_format:"%Y" eq $result.tracker_field_endDate|date_format:"%Y"}
 							{if $result.tracker_field_startDate2|date_format:"%B %e" eq $result.tracker_field_endDate|date_format:"%B %e"}
@@ -77,7 +78,7 @@
 		  		{/if}
 		  	</div>
 	  		<div class="pull-right">
-	  			<a class="pull-right btn btn-action" href="./syn_organicgrp_ViewEvent?itemId={$result.object_id|escape}&organicgroup={$result.tracker_field_groupId}&cat={$result.categories[0]}"><span class="fa fa-arrow-circle-o-right fa-lg"></span> Details</a>
+	  			<a class="pull-right btn btn-action" href="./syn_organicgrp_ViewEvent?itemId={$result.object_id|escape}&organicgroup={$orgid}"><span class="fa fa-arrow-circle-o-right fa-lg"></span> Details</a>
 	  		</div> 
 	    </div>
 	</div>

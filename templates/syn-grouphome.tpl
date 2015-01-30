@@ -95,7 +95,7 @@
 									{list max="3"}
 									{filter type="trackeritem"}
 									{filter content="4" field="tracker_id"}
-									{filter range="tracker_field_startDate2" from="now" gap="31536000"}
+									{filter range="tracker_field_endDate" from="now" gap="31536000"}
 									{filter  categories="{/literal}{$result.tracker_field_og_categoryID}{literal}"}
 									{sort mode="tracker_field_startDate2_asc"}
 									{output template="addons/syn_organicgrp/templates/syn-event_list.tpl"}
