@@ -34,7 +34,9 @@
 		  			<i class="fa fa-calendar fa-4x"></i>
 				</a>
 	  			<div class="media-body">
-					<h3 class="media-heading"><a href="./syn_organicgrp_ViewEvent?itemId={$result.object_id|escape}&organicgroup={$result.tracker_field_groupId}&cat={$result.categories[0]}" class="title">{$result.title|escape}</a></h3>
+	  				{assign var=imagess value=$result.tracker_field_groupId|groupnamebycatid}
+	  				{assign var=groupid value="_"|explode:$imagess}
+					<h3 class="media-heading"><a href="./syn_organicgrp_ViewEvent?itemId={$result.object_id|escape}&organicgroup={$groupid[2]}&cat={$result.tracker_field_groupId}" class="title">{$result.title|escape}</a></h3>
 					<div class="mar-bottom-lg mar-top-lg"><strong>
                         {if $result.tracker_field_startDate2|date_format:"%Y" eq $result.tracker_field_endDate|date_format:"%Y"}
 							{if $result.tracker_field_startDate2|date_format:"%B %e" eq $result.tracker_field_endDate|date_format:"%B %e"}
