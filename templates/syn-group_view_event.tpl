@@ -99,6 +99,15 @@
 			</div>
 		{/if}
 
+		{if $f_eventRecording}
+			<div class="row mar-top-lg">
+				<div class="col-xs-12 col-sm-3 text-right text-left-xs event_view_title visibleleft">Event Recording</div>
+				<div class="col-xs-12 col-sm-9 visibleright">
+					{$f_eventRecording}
+	            </div>
+			</div>
+		{/if}
+
 		<div class="col-md-12">
 			<div id="comment-container" data-target="{service controller=comment action=list type=trackeritem objectId={$f_itemId}}"></div>
 		</div>
