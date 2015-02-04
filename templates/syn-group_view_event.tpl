@@ -140,5 +140,4 @@
 {jq}
 	var id = '#comment-container';
 	$(id).comment_load($(id).data('target'));
-	$("[id='Collaborate']").addClass("active");
 {/jq}
