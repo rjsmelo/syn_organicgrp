@@ -33,6 +33,8 @@ preferences:
   wikiplugininline_datachannel: y
   wikiplugin_favorite: y
   wikiplugininline_favorite: y
+  wikiplugin_jq: y
+  wikiplugininline_jq: y
   wikiplugin_list: y
   wikiplugininline_list: y
   wikiplugin_mail: y
