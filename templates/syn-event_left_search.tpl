@@ -1,23 +1,23 @@
-{jq}
+{JQ}
 	$("#reset_search").click(function(){
 		window.location.reload(true);
 	});	
-{/js}
+{/JQ}
 {assign var="todatedate" value="{$smarty.now}"}
 {assign var="typefilter" value="{$smarty.get.type}"}
 {assign var="organicid" value="{$smarty.get.organicgroup}"}
 {if $typefilter eq 'up'}
-{js}
+{JQ}
 	$(".upevent").prop( "checked", true );
-{/js}
+{/JQ}
 {elseif $typefilter eq 'past'}
-{js}
+{JQ}
 	$(".pastevent").prop( "checked", true );
-{/js}
+{/JQ}
 {else}
-{js}
+{JQ}
 	$(".allevent").prop( "checked", true );
-{/js}
+{/JQ}
 {/if}
 <div class="col-md-4 col-xs-12 pull-left left_search">
 	{literal}
@@ -54,7 +54,7 @@
 	</div>
 </div>
 
-{js}
+{JQ}
 	$(".listview .search-category-header").click(function(){
 		if($(this).hasClass('collapsed')){
 			$(this).find("span").removeClass("fa-plus-square-o");
@@ -78,5 +78,5 @@
 		var organcid = {$organicid};
 		$(location).attr('href', 'syn_organicgrp_event?organicgroup='+organcid+'&start=946723812&end=1893495012&type=all');
 	});
-{/js}
+{/JQ}
 
