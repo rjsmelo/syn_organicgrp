@@ -124,5 +124,4 @@
  	{
 		$("#upcoming_events").hide();
 	}
-	$("[id='Collaborate']").addClass("active");	
 {/jq}
