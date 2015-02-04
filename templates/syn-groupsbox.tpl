@@ -53,10 +53,10 @@
 	</div>	
 </div>
 
-{JQ}
+{jq}
 	$(document).ready(function () {
   		$(".tooltip-activate").tooltip({
     		'container':'body'
   		});
 	});
-{/JQ}
+{/jq}

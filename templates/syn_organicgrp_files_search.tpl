@@ -1,8 +1,8 @@
-{JQ}
+{jq}
     $("#reset_search").click(function(){
     window.location.reload(true);
     });
-{/JQ}
+{/jq}
 <div class="col-md-4 col-xs-12 pull-left left_search">
     {literal}
         <div class="form-group">
@@ -41,7 +41,7 @@
     </div>
 </div>
 
-{JQ}
+{jq}
     $(".listview .search-category-header").click(function(){
         if($(this).hasClass('collapsed')){
             $(this).find("span").removeClass("fa-plus-square-o");
@@ -51,4 +51,4 @@
             $(this).find("span").removeClass("fa-minus-square-o");
         }
     });
-{/JQ}
+{/jq}

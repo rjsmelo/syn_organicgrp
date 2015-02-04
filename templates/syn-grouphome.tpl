@@ -119,10 +119,10 @@
 	</div>
 {/strip}
 
-{JQ}
+{jq}
 	if ( $( "#hide_panel" ).hasClass( "no_event" ) )
  	{
 		$("#upcoming_events").hide();
 	}
 	$("[id='Collaborate']").addClass("active");	
-{/JQ}
+{/jq}
