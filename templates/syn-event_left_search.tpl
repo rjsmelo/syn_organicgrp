@@ -1,23 +1,23 @@
-{JQ}
+{jq}
 	$("#reset_search").click(function(){
 		window.location.reload(true);
 	});	
-{/JQ}
+{/jq}
 {assign var="todatedate" value="{$smarty.now}"}
 {assign var="typefilter" value="{$smarty.get.type}"}
 {assign var="organicid" value="{$smarty.get.organicgroup}"}
 {if $typefilter eq 'up'}
-{JQ}
+{jq}
 	$(".upevent").prop( "checked", true );
-{/JQ}
+{/jq}
 {elseif $typefilter eq 'past'}
-{JQ}
+{jq}
 	$(".pastevent").prop( "checked", true );
-{/JQ}
+{/jq}
 {else}
-{JQ}
+{jq}
 	$(".allevent").prop( "checked", true );
-{/JQ}
+{/jq}
 {/if}
 <div class="col-md-4 col-xs-12 pull-left left_search">
 	{literal}
@@ -54,7 +54,7 @@
 	</div>
 </div>
 
-{JQ}
+{jq}
 	$(".listview .search-category-header").click(function(){
 		if($(this).hasClass('collapsed')){
 			$(this).find("span").removeClass("fa-plus-square-o");
@@ -65,18 +65,18 @@
 		}	
 	});
 	$(".listview .upevent").click(function(){
-		var organcid = {$organicid};
-		var todate = {$todatedate};
+		var organcid = {{$organicid}};
+		var todate = {{$todatedate}};
 		$(location).attr('href', 'syn_organicgrp_event?organicgroup='+organcid+'&start='+todate+'&end=1893495012&type=up');
 	});
 	$(".listview .pastevent").click(function(){
-		var todate = {$todatedate};
-		var organcid = {$organicid};
+		var todate = {{$todatedate}};
+		var organcid = {{$organicid}};
 		$(location).attr('href', 'syn_organicgrp_event?organicgroup='+organcid+'&start=946723812&end='+todate+'&type=past');
 	});
 	$(".listview .allevent").click(function(){
-		var organcid = {$organicid};
+		var organcid = {{$organicid}};
 		$(location).attr('href', 'syn_organicgrp_event?organicgroup='+organcid+'&start=946723812&end=1893495012&type=all');
 	});
-{/JQ}
+{/jq}
 
