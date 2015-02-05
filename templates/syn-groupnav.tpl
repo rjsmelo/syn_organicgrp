@@ -77,7 +77,7 @@
 {jq}
 	$('#forum').addClass('active');
 {/jq}
-{elseif $smarty.get.page eq "syn_organicgrp_groupfiles"}
+{elseif ($smarty.get.page eq "syn_organicgrp_groupfiles") OR ($smarty.get.page eq "syn_organicgrp_sharefile")}
 {jq}
 	$('#files').addClass('active');
 {/jq}
@@ -93,12 +93,13 @@
 {jq}
     $('#live').addClass('active');
 {/jq}
-{elseif ($smarty.get.page eq "syn_organicgrp_event") OR ($smarty.get.page eq "syn_organicgrp_ViewEvent")}
+{elseif ($smarty.get.page eq "syn_organicgrp_event") OR ($smarty.get.page eq "syn_organicgrp_ViewEvent") OR ($smarty.get.page eq "syn_organicgrp_EditEvent") OR ($smarty.get.page eq "syn_organicgrp_createevent")}
 {jq}
 	$('#events').addClass('active');
 {/jq}
 {elseif $smarty.get.page eq "syn_organicgrp_{$result.object_id}:_:whiteboard_{$result.object_id}"}
 {jq}
 	$('#white').addClass('active');
+	$("#Collaborate").addClass('active');
 {/jq}
 {/if}
