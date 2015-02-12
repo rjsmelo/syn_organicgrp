@@ -10,8 +10,7 @@
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active"><a href="#" data-target="#managemembers" aria-controls="managemembers" role="tab"
                                                       data-toggle="tab">Manage Members</a></li>
-            <li role="presentation"><a href="#" data-target="#editdetails" aria-controls="editdetails" role="tab" data-toggle="tab">Edit
-                    Details</a></li>
+            <li role="presentation"><a href="#" data-target="#editdetails" aria-controls="editdetails" role="tab" data-toggle="tab">Edit Collaboration Details</a></li>
         </ul>
 
         <!-- Tab panes -->
