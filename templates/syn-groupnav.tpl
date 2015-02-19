@@ -23,17 +23,22 @@
 					{assign var="typeofgrp" value="{$result.tracker_field_privateGroup}"}
 					{wikiplugin _name="subscribegroup" group=$grpname subscribe_action="Join {$prefs.ta_syn_organicgrp_sterm}" postsubscribe_url="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}" unsubscribe_action="Withdraw from {$prefs.ta_syn_organicgrp_sterm}" postunsubscribe_url="syn_organicgrp_joingroups" subscribe="" unsubscribe=""}{/wikiplugin}
 					{if $typeofgrp eq "y"}
-					{jq}
-					var colvalue = $(".collab div input").val();
-						if(colvalue == 'Join Collaboration') {
-							$(".notmember").addClass("hide");
-							$("#table-forum").addClass("hide");
-							$("#page-bar").addClass("hide");
-						}
-					{/jq}
+						{jq}
+						var colvalue = $(".collab div input").val();
+							if(colvalue == 'Join Collaboration') {
+								$(".notmember").addClass("hide");
+								$("#table-forum").addClass("hide");
+								$("#page-bar").addClass("hide");
+							}
+						{/jq}
 					{/if}
 				{elseif $result.tracker_status eq 'p' && !$grpname|in_group}
 					{wikiplugin _name="subscribegroup" group=$pgrpname subscribe_action="Request to Join {$prefs.ta_syn_organicgrp_sterm}" postsubscribe_url="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}" unsubscribe_action="Cancel Request to Join {$prefs.ta_syn_organicgrp_sterm}" postunsubscribe_url="syn_organicgrp_joingroups" subscribe="" unsubscribe=""}{/wikiplugin}
+					<div class="alert alert-info alert-dismissible" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<p>As this is a private collaboration. permission to join is required before you can view the details of, and participate in, its activities.</p>
+					</div>
+					<p>{$result.tracker_field_og_description|nl2br}</p>
 				{elseif $result.tracker_status eq 'p' && $grpname|in_group}
 					{wikiplugin _name="subscribegroup" group=$grpname subscribe_action="Join {$prefs.ta_syn_organicgrp_sterm}" postsubscribe_url="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}" unsubscribe_action="Withdraw from {$prefs.ta_syn_organicgrp_sterm}" postunsubscribe_url="syn_organicgrp_joingroups" subscribe="" unsubscribe="" allowLeaveNonUserChoice="y"}{/wikiplugin}
 				{elseif $result.tracker_status eq 'p' && $pgrpname|in_group}
@@ -59,14 +64,6 @@
 			{/if}
 		</ul>
 	</div>
-	{/if}
-
-	{if $result.tracker_status eq 'o' && !$grpname|in_group}
-		<div class="row">
-			{remarksbox type="note" title="Join!" close="n"}
-				{tr}Since you are not currently a member of this collaboration, you can view but not participate in the activity. Click on the "Join Collaboration" button to gain full access.{/tr}
-			{/remarksbox}
-		</div>
 	{/if}
 {/foreach}
 
