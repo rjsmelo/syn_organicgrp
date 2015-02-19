@@ -2,7 +2,7 @@
 {assign var=grpname value="{$smarty.get.organicgroup|groupnamebyid}"}
 {if $mgrpname|in_group}
 	<div class="mar-bottom-xl">
-		<a href="syn_organicgrp_managegrp?itemId={$smarty.get.organicgroup}&organicgroup={$smarty.get.organicgroup}" class="btn btn-default button-bar pull-left">Manage Members</a>
+		<a href="syn_organicgrp_managegrp?itemId={$smarty.get.organicgroup}&organicgroup={$smarty.get.organicgroup}" class="btn btn-default button-bar pull-left"> Manage Collaboration Members </a>
 		{wikiplugin _name="mail" bypass_preview="y" popup="y" showgroupdd="n" showuser="n" group="{$grpname}" mail_subject="LEAF - A Message from the Leader of {$grpname}" label_name="Send Email to All Members"}{/wikiplugin}
 	</div>
 {/if}
