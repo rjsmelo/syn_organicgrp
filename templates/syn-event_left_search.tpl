@@ -6,18 +6,18 @@
 {assign var="todatedate" value="{$smarty.now}"}
 {assign var="typefilter" value="{$smarty.get.type}"}
 {assign var="organicid" value="{$smarty.get.organicgroup}"}
-{if $typefilter eq 'up'}
-{jq}
-	$(".upevent").prop( "checked", true );
-{/jq}
+{if $typefilter eq 'all'}
+    {jq}
+        $(".allevent").prop( "checked", true );
+    {/jq}
 {elseif $typefilter eq 'past'}
-{jq}
-	$(".pastevent").prop( "checked", true );
-{/jq}
+    {jq}
+        $(".pastevent").prop( "checked", true );
+    {/jq}
 {else}
-{jq}
-	$(".allevent").prop( "checked", true );
-{/jq}
+    {jq}
+        $(".upevent").prop( "checked", true );
+    {/jq}
 {/if}
 <div class="col-md-4 col-xs-12 pull-left left_search">
 	{literal}
