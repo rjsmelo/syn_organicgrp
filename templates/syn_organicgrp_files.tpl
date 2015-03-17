@@ -1,5 +1,5 @@
 <div class="col-xs-12 mar-bottom-lg clear">
-    <div class="nopadding pull-left btn mar-top">{if $offsetplusmaxRecords>$count}{$offsetplusmaxRecords = $count}{/if}Showing {if $count}{$offsetplusone}{else}0{/if}-{$offsetplusmaxRecords} of {$count} {if $results->getEstimate() > $count}({$results->getEstimate()} Total){/if}
+    <div class="nopadding pull-left btn mar-top">{if $offsetplusmaxRecords>$count}{$offsetplusmaxRecords = $count}{/if}{tr}Showing{/tr} {if $count}{$offsetplusone}{else}0{/if}-{$offsetplusmaxRecords} {tr}of{/tr} {$count} {if $results->getEstimate() > $count}({$results->getEstimate()} Total){/if}
 </div>
 {assign var='customsearchid' value='syn_organicgrp_file_search'}</div>
 <div class="clear">

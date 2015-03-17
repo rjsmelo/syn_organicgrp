@@ -5,7 +5,7 @@
 
 <!-- sort/pagination bar -->
 <div class="srShowResult">
-	<div class="srShow">{if $offsetplusmaxRecords>$count}{$offsetplusmaxRecords = $count}{/if}Showing results {if $count}{$offsetplusone}{else}0{/if}-{$offsetplusmaxRecords} of {$count} {if $results->getEstimate() > $count}({$results->getEstimate()} Total){/if}</div>
+	<div class="srShow">{if $offsetplusmaxRecords>$count}{$offsetplusmaxRecords = $count}{/if}{tr}Showing results{/tr} {if $count}{$offsetplusone}{else}0{/if}-{$offsetplusmaxRecords} {tr}of{/tr} {$count} {if $results->getEstimate() > $count}({$results->getEstimate()} Total){/if}</div>
 	<div class="srResultsNum commsearch">{pagination_links offset_jsvar="customsearch_`$customsearchid`.offset" _onclick="$('#customsearch_`$customsearchid`').submit();return false;" resultset=$results}{/pagination_links}</div>
 	<div class="clear"></div>
 </div>
@@ -24,8 +24,8 @@
 					<div class="csContent forum_post">
 						<div class="addfav myNetwork"><div>{wikiplugin _name="favorite" objectType="{$result.object_type}" objectId="`$result.object_id`"}{/wikiplugin}</div></div>
 						<div class="forum_title"><a href="./tiki-view_forum_thread.php?comments_parentId={$result.object_id}" class="title">{$result.title}</a></div>
-						<div class="forum_post"><span>{$result.postsnippet}</span> <a href="./tiki-view_forum_thread.php?comments_parentId={$result.object_id|escape}" class="">read more</a></div>
-						<div class="forum_date">Started by {$result.contributors|userlink} {$result.modification_date|tiki_short_datetime:on}</div>
+						<div class="forum_post"><span>{$result.postsnippet}</span> <a href="./tiki-view_forum_thread.php?comments_parentId={$result.object_id|escape}" class="">{tr}read more{/tr}</a></div>
+						<div class="forum_date">{tr}Started by{/tr} {$result.contributors|userlink} {$result.modification_date|tiki_short_datetime:on}</div>
 					</div>
 				{else}
 					{$result.object_type} - {$result.title}
@@ -43,7 +43,7 @@
 
 <!--  bottom pagination bar -->
 <div class="srShowResult">
-	<div class="srShow">{if $offsetplusmaxRecords>$count}{$offsetplusmaxRecords = $count}{/if}Showing results {if $count}{$offsetplusone}{else}0{/if}-{$offsetplusmaxRecords} of {$count} {if $results->getEstimate() > $count}({$results->getEstimate()} Total){/if}</div>
+	<div class="srShow">{if $offsetplusmaxRecords>$count}{$offsetplusmaxRecords = $count}{/if}{tr}Showing results{/tr} {if $count}{$offsetplusone}{else}0{/if}-{$offsetplusmaxRecords} {tr}of{/tr} {$count} {if $results->getEstimate() > $count}({$results->getEstimate()} Total){/if}</div>
 	<div class="srResultsNum commsearch">{pagination_links offset_jsvar="customsearch_`$customsearchid`.offset" _onclick="$('#customsearch_`$customsearchid`').submit();return false;" resultset=$results}{/pagination_links}</div>
 	<div class="clear"></div>
 </div>

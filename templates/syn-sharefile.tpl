@@ -4,14 +4,14 @@
         <strong>{tr}Well done !{/tr}</strong>{tr} You submitted your file.{/tr}
     </div>
 {/if}
-{formitem _field={$f_name} _label="Title"}
-{formitem _field={$f_description} _label="Description"}
-{formitem _field={$f_fileType} _label="File Type" id="fileTypeSelector"}
+{formitem _field={$f_name} _label="{tr}Title{/tr}"}
+{formitem _field={$f_description} _label="{tr}Description{/tr}"}
+{formitem _field={$f_fileType} _label="{tr}File Type{/tr}" id="fileTypeSelector"}
 
 <div class="fileSection hidden">
-    <div class="show-pc">{formitem _field={$f_pcFiles} _label="Upload File" class="file-section"}</div>
-    <div class="show-external">{formitem _field={$f_externalURL} _label="External URL"}</div>
-    <div class="show-resource">{formitem _field={$f_resourceLink} _label="Resource Link"}</div>
+    <div class="show-pc">{formitem _field={$f_pcFiles} _label="{tr}Upload File{/tr}" class="file-section"}</div>
+    <div class="show-external">{formitem _field={$f_externalURL} _label="{tr}External URL{/tr}"}</div>
+    <div class="show-resource">{formitem _field={$f_resourceLink} _label="{tr}Resource Link{/tr}"}</div>
 </div>
 
 {jq}

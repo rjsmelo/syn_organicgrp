@@ -23,34 +23,34 @@
 	{literal}
 		<div class="form-group">
 			<div class="input-group">
-				{input _filter="content" _field="title" type="text"  placeholder="Search... " class="form-control"}
+				{input _filter="content" _field="title" type="text"  placeholder="{tr}Search{/tr}... " class="form-control"}
 				<span class="input-group-btn">
-				   	{input type=submit value="Search" class="btn btn-search"}
+				   	{input type=submit value="{tr}Search{/tr}" class="btn btn-search"}
 				</span>
 			</div>
 		</div>
 	{/literal}
 	<div class="mar-top-xl">
-		<div class="h4 text-primary mar-top pull-left">Refine Results</div>
+		<div class="h4 text-primary mar-top pull-left">{tr}Refine Results{/tr}</div>
 		<div class="form-group pull-right">
-			<button class="btn btn-action" type="reset" id="reset_search">Reset</button>
+			<button class="btn btn-action" type="reset" id="reset_search">{tr}Reset{/tr}</button>
 		</div>
 	</div>
 	<div class="clear">
 		<div class="form-group listview">
-			<div class="search-category-header" data-toggle="collapse" data-target="#collapsible1"><label>By Status</label><span class="pull-right fa fa-minus-square-o fa-lg"></span></div>
+			<div class="search-category-header" data-toggle="collapse" data-target="#collapsible1"><label>{tr}By Status{/tr}</label><span class="pull-right fa fa-minus-square-o fa-lg"></span></div>
 			<div class="collapse in" id="collapsible1">
 				<ul>
-					<li class="mar-bottom-sm">{literal}{input type="radio" _filter="content" class="upevent"}{/literal} Upcoming Events</li>
-					<li class="mar-bottom-sm">{literal}{input type="radio" _filter="content" class="pastevent"}{/literal} Past Events</li>
-					<li class="mar-bottom-sm">{literal}{input type="radio" _filter="content" _field="tracker_id" _value="4" _group="2" class="allevent"}{/literal} All Events</li>
+					<li class="mar-bottom-sm">{literal}{input type="radio" _filter="content" class="upevent"}{/literal} {tr}Upcoming Events{/tr}</li>
+					<li class="mar-bottom-sm">{literal}{input type="radio" _filter="content" class="pastevent"}{/literal} {tr}Past Events{/tr}</li>
+					<li class="mar-bottom-sm">{literal}{input type="radio" _filter="content" _field="tracker_id" _value="4" _group="2" class="allevent"}{/literal} {tr}All Events{/tr}</li>
 				</ul>
 			</div>
 		</div>
 		<hr>
-		{include file="syn-collapsible-categories.tpl" id="10" header_label="By Region" category_id="95"}
+		{include file="syn-collapsible-categories.tpl" id="10" header_label="{tr}By Region{/tr}" category_id="95"}
 		<hr>
-		{include file="syn-collapsible-categories.tpl" id="11" header_label="By Type" category_id="100"}
+		{include file="syn-collapsible-categories.tpl" id="11" header_label="{tr}By Type{/tr}" category_id="100"}
 	</div>
 </div>
 

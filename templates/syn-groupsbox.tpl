@@ -3,9 +3,9 @@
 		<div class="group_avatar col-xs-12">
 			<div class="pull-right lock-icon">
 				{if $result.tracker_status == 'p'}
-					<span data-toggle="tooltip" title="Private (Approval to join is required)" class="fa fa-lock tooltip-activate"></span>
+					<span data-toggle="tooltip" title="{tr}Private (Approval to join is required){/tr}" class="fa fa-lock tooltip-activate"></span>
 				{else}
-					<span data-toggle="tooltip" title="Public (Open to everyone)" class="fa fa-unlock tooltip-activate"></span>
+					<span data-toggle="tooltip" title="{tr}Public (Open to everyone){/tr}" class="fa fa-unlock tooltip-activate"></span>
 				{/if}
 			</div>
 			<div class="col-xs-4">
@@ -20,13 +20,13 @@
 	<div class="col-xs-2 summary-content vcenter">
 	 	<div class="icon-stack">
 			<div>
-				<span data-toggle="tooltip" title="Number of Members" data-placement="left" class="fa fa-users tooltip-activate"></span><span> {$grpname|groupmembercount}</span>
+				<span data-toggle="tooltip" title="{tr}Number of Members{/tr}" data-placement="left" class="fa fa-users tooltip-activate"></span><span> {$grpname|groupmembercount}</span>
 			</div>
 			<div>
-				<span data-toggle="tooltip" title="Number of Forum Discussions" data-placement="left" class="fa fa-comments tooltip-activate"></span><span> {if $result.tracker_field_og_forum_ID}{$result.tracker_field_og_forum_ID|forumtopiccount}{else}0{/if}</span>
+				<span data-toggle="tooltip" title="{tr}Number of Forum Discussions{/tr}" data-placement="left" class="fa fa-comments tooltip-activate"></span><span> {if $result.tracker_field_og_forum_ID}{$result.tracker_field_og_forum_ID|forumtopiccount}{else}0{/if}</span>
 			</div>
 			<div>
-				<span data-toggle="tooltip" title="Number of Files" data-placement="left" class="fa fa-file tooltip-activate"></span>
+				<span data-toggle="tooltip" title="{tr}Number of Files{/tr}" data-placement="left" class="fa fa-file tooltip-activate"></span>
 				{wikiplugin _name="list"}
 		            {literal}
 						{filter type="trackeritem"}
@@ -38,7 +38,7 @@
 		        {/wikiplugin}
 			</div>
 			<div>
-				<span data-toggle="tooltip" title="Number of Events" data-placement="left" class="fa fa-calendar tooltip-activate"></span>
+				<span data-toggle="tooltip" title="{tr}Number of Events{/tr}" data-placement="left" class="fa fa-calendar tooltip-activate"></span>
 				{wikiplugin _name="list"}
 		            {literal}
 						{filter type="trackeritem"}

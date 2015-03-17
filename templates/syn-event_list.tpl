@@ -17,7 +17,7 @@
 				<a href="./syn_organicgrp_ViewEvent?itemId={$result.object_id|escape}" class="title">{$result.title|escape}</a>
 			</h5>
 			{$result.event_desc}
-				<a class="btn btn-link" href="./syn_organicgrp_ViewEvent?itemId={$result.object_id|escape}"></span>More</a>
+				<a class="btn btn-link" href="./syn_organicgrp_ViewEvent?itemId={$result.object_id|escape}"></span>{tr}More{/tr}</a>
 		</div>
 	</div>
 {/foreach}

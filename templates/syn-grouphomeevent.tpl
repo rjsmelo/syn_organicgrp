@@ -2,13 +2,13 @@
 	{if $offsetplusmaxRecords>$count}
 		{$offsetplusmaxRecords = $count}
 	{/if}
-	Results
+	{tr}Results{/tr}
 	{if $count}
 		{$offsetplusone}
 	{else}
 		0
 	{/if}
-	- {$offsetplusmaxRecords} of {$count}
+	- {$offsetplusmaxRecords} {tr}of{/tr} {$count}
 	{if $results->getEstimate() > $count}
 		({$results->getEstimate()} Total)
 	{/if}
@@ -27,7 +27,7 @@
 	    <div class="panel-body">
 	    	{* If Created in the past two weeks, display new_ribbon. *}
             {if '-14 days'|date_format:'%Y-%m-%d'  <=  $result.creation_date}
-                <div class="col-md-2 pull-right newribbon" title="This event was created in the past 7 days" data-toggle="tooltip" data-placement="top" style="background-image:url('img/new-ribbon.png');">
+                <div class="col-md-2 pull-right newribbon" title="{tr}This event was created in the past 7 days{/tr}" data-toggle="tooltip" data-placement="top" style="background-image:url('img/new-ribbon.png');">
                 </div>
             {/if}
 	    	<div class="media">
@@ -57,26 +57,26 @@
 	    <div class="panel-footer clearfix">
 	    	<div class="pull-left icon-bar">
 	    		{if $result.tracker_field_eventRecording}
-                   <span class="fa-stack fa-lg mar-right-lg text-secondary tooltip-activate" data-toggle="tooltip" data-placement="top" title="A Recording of this event is available">
+                   <span class="fa-stack fa-lg mar-right-lg text-secondary tooltip-activate" data-toggle="tooltip" data-placement="top" title="{tr}A Recording of this event is available{/tr}">
                       <i class="fa fa-certificate fa-stack-2x"></i>
                       <i class="fa fa-video-camera fa-stack-1x fa-inverse " style="font-size: 16px;"></i>
                     </span>
                 {/if}
 	    		{if $result.tracker_field_eventLocation}
-		    		<div class="icon tooltip-activate" data-toggle="tooltip" data-placement="top" title="Location">
+		    		<div class="icon tooltip-activate" data-toggle="tooltip" data-placement="top" title="{tr}Location{/tr}">
 		    			<span class="fa fa-location-arrow fa-lg"></span>
 		    			{$result.tracker_field_eventLocation}
 		    		</div>
 		    	{/if}
 		    	{if $result.tracker_field_presenter}
-		  			<div class="icon tooltip-activate" data-toggle="tooltip" data-placement="top" title="Presenter">
+		  			<div class="icon tooltip-activate" data-toggle="tooltip" data-placement="top" title="{tr}Presenter{/tr}">
 		  				<span class="fa fa-microphone fa-lg"></span>
 		  				{$result.tracker_field_presenter}
 		  			</div>
 		  		{/if}
 		  	</div>
 	  		<div class="pull-right">
-	  			<a class="pull-right btn btn-action" href="./syn_organicgrp_ViewEvent?itemId={$result.object_id|escape}&organicgroup={$orgid}"><span class="fa fa-arrow-circle-o-right fa-lg"></span> Details</a>
+	  			<a class="pull-right btn btn-action" href="./syn_organicgrp_ViewEvent?itemId={$result.object_id|escape}&organicgroup={$orgid}"><span class="fa fa-arrow-circle-o-right fa-lg"></span> {tr}Details{/tr}</a>
 	  		</div> 
 	    </div>
 	</div>

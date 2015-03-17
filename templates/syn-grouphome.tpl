@@ -16,9 +16,9 @@
 			<form name="commSearch" method="post" action="./syn_organicgrp_groupsearchpage?organicgroup={$result.object_id}&cat={$result.tracker_field_og_categoryID}&forgetlastsearch=y">
 				<div class="form-group">
 					<div class="input-group">
-						<input type="text" name="default[content]" placeholder="Search within this {$prefs.ta_syn_organicgrp_sterm}..." class="searchField form-control">
+						<input type="text" name="default[content]" placeholder="{tr _0=$prefs.ta_syn_organicgrp_sterm}Search within this %0{/tr}..." class="searchField form-control">
 						<span class="input-group-btn">
-							<input type="submit" value="Search" name="submit" class="btn btn-search">
+							<input type="submit" value="{tr}Search{/tr}" name="submit" class="btn btn-search">
 						</span>
 					</div>
 				</div>
@@ -27,7 +27,7 @@
 			<div class="row">
 				<div class="col-md-8 mar-bottom projectlist">
 					{$result.tracker_field_og_description|nl2br}<br/>
-					<h3>Recent Activity</h3>
+					<h3>{tr}Recent Activity{/tr}</h3>
 					{wikiplugin _name="activitystream" auto="0"}
 					{literal}
 						{pagination max="10"}
@@ -50,7 +50,7 @@
 
 				<div class="col-md-4 mar-bottom">
 					<div class="hide">
-						<h3>New Members</h3>
+						<h3>{tr}New Members{/tr}</h3>
 						{wikiplugin _name="activitystream"}
 						{literal}
 							{pagination max="5"}
@@ -72,7 +72,7 @@
 					</div>
 
 					<div class="panel panel-default">
-						<div class="panel-heading">Recent Forum Posts</div>
+						<div class="panel-heading">{tr}Recent Forum Posts{/tr}</div>
 						<div class="panel-body">
 							{wikiplugin _name="list"}
 							{literal}
@@ -82,13 +82,13 @@
 								{filter content="{/literal}{$result.tracker_field_og_forum_ID}{literal}" field="parent_object_id"}
 								{sort mode="modification_date_desc"}
 								{output template="addons/syn_organicgrp/templates/syn-forum_list_title.tpl"}
-								{ALTERNATE()}<p class="emptyinfo">No post available.</p>{ALTERNATE}
+								{ALTERNATE()}<p class="emptyinfo">{tr}No post available.{/tr}</p>{ALTERNATE}
 							{/literal}
 							{/wikiplugin}
 						</div>
 					</div>
 					<div class="panel panel-default" id="upcoming_events">
-						<div class="panel-heading">Upcoming Events</div>
+						<div class="panel-heading">{tr}Upcoming Events{/tr}</div>
 						<div class="panel-body">
 							{wikiplugin _name="list"}
 								{literal}
@@ -101,7 +101,7 @@
 									{output template="addons/syn_organicgrp/templates/syn-event_list.tpl"}
 									{FORMAT(name="event_desc")}{display name="tracker_field_eventDescription" format="snippet" length="50"}{FORMAT}
 									{ALTERNATE()}
-										<p id="hide_panel" class="no_event">There is no upcoming event.</p>
+										<p id="hide_panel" class="no_event">{tr}There is no upcoming event.{/tr}</p>
 									{ALTERNATE}
 								{/literal}
 							{/wikiplugin}

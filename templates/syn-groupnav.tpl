@@ -21,7 +21,7 @@
 			{if !$mgrpname|in_group}
 				{if $result.tracker_status eq 'o'}
 					{assign var="typeofgrp" value="{$result.tracker_field_privateGroup}"}
-					{wikiplugin _name="subscribegroup" group=$grpname subscribe_action="Join {$prefs.ta_syn_organicgrp_sterm}" postsubscribe_url="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}" unsubscribe_action="Withdraw from {$prefs.ta_syn_organicgrp_sterm}" postunsubscribe_url="syn_organicgrp_joingroups" subscribe="" unsubscribe=""}{/wikiplugin}
+					{wikiplugin _name="subscribegroup" group=$grpname subscribe_action="{tr _0=$prefs.ta_syn_organicgrp_sterm}Join %0{/tr}" postsubscribe_url="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}" unsubscribe_action="{tr _0=$prefs.ta_syn_organicgrp_sterm}Withdraw from %0{/tr}" postunsubscribe_url="syn_organicgrp_joingroups" subscribe="" unsubscribe=""}{/wikiplugin}
 					{if $typeofgrp eq "y"}
 						{jq}
 						var colvalue = $(".collab div input").val();
@@ -33,16 +33,16 @@
 						{/jq}
 					{/if}
 				{elseif $result.tracker_status eq 'p' && !$grpname|in_group}
-					{wikiplugin _name="subscribegroup" group=$pgrpname subscribe_action="Request to Join {$prefs.ta_syn_organicgrp_sterm}" postsubscribe_url="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}" unsubscribe_action="Cancel Request to Join {$prefs.ta_syn_organicgrp_sterm}" postunsubscribe_url="syn_organicgrp_joingroups" subscribe="" unsubscribe=""}{/wikiplugin}
+					{wikiplugin _name="subscribegroup" group=$pgrpname subscribe_action="{tr _0=$prefs.ta_syn_organicgrp_sterm}Request to Join %0{/tr}" postsubscribe_url="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}" unsubscribe_action="{tr _0=$prefs.ta_syn_organicgrp_sterm}Cancel Request to Join %0{/tr}" postunsubscribe_url="syn_organicgrp_joingroups" subscribe="" unsubscribe=""}{/wikiplugin}
 					<div class="alert alert-info alert-dismissible" role="alert">
 						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<p>As this is a private collaboration. permission to join is required before you can view the details of, and participate in, its activities.</p>
+						<p>{tr}As this is a private collaboration. permission to join is required before you can view the details of, and participate in, its activities.{/tr}</p>
 					</div>
 					<p>{$result.tracker_field_og_description|nl2br}</p>
 				{elseif $result.tracker_status eq 'p' && $grpname|in_group}
-					{wikiplugin _name="subscribegroup" group=$grpname subscribe_action="Join {$prefs.ta_syn_organicgrp_sterm}" postsubscribe_url="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}" unsubscribe_action="Withdraw from {$prefs.ta_syn_organicgrp_sterm}" postunsubscribe_url="syn_organicgrp_joingroups" subscribe="" unsubscribe="" allowLeaveNonUserChoice="y"}{/wikiplugin}
+					{wikiplugin _name="subscribegroup" group=$grpname subscribe_action="{tr _0=$prefs.ta_syn_organicgrp_sterm}Join %0{/tr}" postsubscribe_url="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}" unsubscribe_action="{tr _0=$prefs.ta_syn_organicgrp_sterm}Withdraw from %0{/tr}" postunsubscribe_url="syn_organicgrp_joingroups" subscribe="" unsubscribe="" allowLeaveNonUserChoice="y"}{/wikiplugin}
 				{elseif $result.tracker_status eq 'p' && $pgrpname|in_group}
-					{tr}Your membership to this {$prefs.ta_syn_organicgrp_sterm} is pending approval{/tr}
+					{tr _0=$prefs.ta_syn_organicgrp_sterm}Your membership to this %0 is pending approval{/tr}
 				{/if}
 			{/if}
 		</div>
@@ -51,16 +51,16 @@
 	{if $grpname|in_group || $result.tracker_status eq 'o'}
 	<div class="groupnav-bar">
 		<ul class="nav nav-pills">
-			<li id="home"><a href="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}"><span class="fa fa-home"></span> Home</a></li>
-			<li id="forum"><a href="tiki-view_forum.php?forumId={$result.tracker_field_og_forum_ID}&organicgroup={$result.object_id}"><span class="fa fa-comments"></span> Forums</a></li>
-			<li id="white"><a href="syn_organicgrp_{$result.object_id}:_:whiteboard_{$result.object_id}?organicgroup={$result.object_id}"><span class="fa fa-edit"></span> Whiteboard</a></li>
-			<li id="events"><a href="syn_organicgrp_event?organicgroup={$result.object_id}"><span class="fa fa-calendar"></span> Events</a></li>
-			<li id="files"><a href="syn_organicgrp_groupfiles?organicgroup={$result.object_id}"><span class="fa fa-file"></span> Files</a></li>
-			<li id="live"><a href="syn_organicgrp_liveconferencing?organicgroup={$result.object_id}"><span class="fa fa-laptop"></span> Live Conferencing</a></li>
-		  	<li id="members"><a href="syn_organicgrp_groupmembers?organicgroup={$result.object_id}"><span class="fa fa-users"></span> Members</a></li>
+			<li id="home"><a href="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}"><span class="fa fa-home"></span> {tr}Home{/tr}</a></li>
+			<li id="forum"><a href="tiki-view_forum.php?forumId={$result.tracker_field_og_forum_ID}&organicgroup={$result.object_id}"><span class="fa fa-comments"></span> {tr}Forums{/tr}</a></li>
+			<li id="white"><a href="syn_organicgrp_{$result.object_id}:_:whiteboard_{$result.object_id}?organicgroup={$result.object_id}"><span class="fa fa-edit"></span> {tr}Whiteboard{/tr}</a></li>
+			<li id="events"><a href="syn_organicgrp_event?organicgroup={$result.object_id}"><span class="fa fa-calendar"></span> {tr}Events{/tr}</a></li>
+			<li id="files"><a href="syn_organicgrp_groupfiles?organicgroup={$result.object_id}"><span class="fa fa-file"></span> {tr}Files{/tr}</a></li>
+			<li id="live"><a href="syn_organicgrp_liveconferencing?organicgroup={$result.object_id}"><span class="fa fa-laptop"></span> {tr}Live Conferencing{/tr}</a></li>
+		  	<li id="members"><a href="syn_organicgrp_groupmembers?organicgroup={$result.object_id}"><span class="fa fa-users"></span> {tr}Members{/tr}</a></li>
 			{assign var=mgrpname value="syn_organicgrp_managers_{$smarty.get.organicgroup}"}
 			{if $mgrpname|in_group}
-				<li id="manage" class="pull-right"><a href="syn_organicgrp_managegrp?itemId={$result.object_id}&organicgroup={$result.object_id}"><span class="fa fa-cog"></span>{if $result.approvalCount neq '0'}<span class="badge">{$result.approvalCount}</span>{/if} Manage</a></li>
+				<li id="manage" class="pull-right"><a href="syn_organicgrp_managegrp?itemId={$result.object_id}&organicgroup={$result.object_id}"><span class="fa fa-cog"></span>{if $result.approvalCount neq '0'}<span class="badge">{$result.approvalCount}</span>{/if} {tr}Manage{/tr}</a></li>
 			{/if}
 		</ul>
 	</div>
