@@ -23,7 +23,13 @@ function groupnavloader_info()
 
 function groupnavloader($data, $params)
 {
-	if (!isset($params['from'])) {
+    global $auto_query_args;
+
+    $auto_query_args_local = array('organicgroup');
+
+    $auto_query_args = empty($auto_query_args)? $auto_query_args_local: array_merge($auto_query_args, $auto_query_args_local);
+
+    if (!isset($params['from'])) {
 		return 'Please specify parameter: from';
 	}
 
