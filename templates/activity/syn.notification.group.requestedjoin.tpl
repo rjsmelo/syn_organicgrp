@@ -5,4 +5,4 @@
 
 {assign "heading" "{$user_id|userlink} Requested to joined the group <a href='syn_organicgrp_grouphomepage?organicgroup={$activity.object|escape}'>{$activity.organicgroupname}</a>"}
 {assign var="faicon" value="fa-user"}
-{include file="./syn.general.activity.tpl" icon="{$faicon}" heading="{$heading}"}
+{include file="./syn.general.notification.tpl" heading="{$heading}"}
