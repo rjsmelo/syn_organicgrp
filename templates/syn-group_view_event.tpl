@@ -115,7 +115,7 @@
 </div>
 <div class="col-md-3">
 	<div class="panel panel-default">
-	  	<div class="panel-heading"><i class="fa fa-star fa-6"></i> {tr}Event Attendees{/tr]</div>
+	  	<div class="panel-heading"><i class="fa fa-star fa-6"></i> {tr}Event Attendees{/tr}</div>
 	  	<div class="panel-body">
 	  		{wikiplugin _name=relations qualifiers="leaf.event.attending.invert" object="trackeritem:{$f_itemId}" singlelist="1"}{/wikiplugin}
 	  	</div>

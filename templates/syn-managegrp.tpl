@@ -17,7 +17,7 @@
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane clearfix active" id="managemembers">
                 <h3>{tr}Manage Members{/tr}</h3>
-                {wikiplugin _name="memberlist" groups="syn_organicgrp_pending_{$f_itemId}" addon_groups_approval_buttons="y"}{/wikiplugin}
+                {wikiplugin _name="memberlist" groups="syn_organicgrp_pending_{$f_itemId}" addon_groups_approval_buttons="y" title="{tr}Users Pending Approval{/tr}"}{/wikiplugin}
                 {wikiplugin _name="memberlist" groups="syn_organicgrp_{$f_itemId}" email_to_added_user="y" email_to_removed_user="y" title="{tr}Current Members{/tr}"}{/wikiplugin}
                 {wikiplugin _name="memberlist" groups="syn_organicgrp_managers_{$f_itemId}" title="Leaders" help_block="{tr}Only leaders can approve new requests to join, remove or add other members. As a leader, you can make other members leaders as well by adding them here.{/tr}"}{/wikiplugin}
             </div>
