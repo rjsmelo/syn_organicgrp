@@ -15,9 +15,7 @@
 		{assign var=pgrpname value="syn_organicgrp_pending_`$result.object_id`"}
 		{if $result.tracker_status == 'o' || $grpname|in_group}
 			{if $result.tracker_field_og_welcome_message}
-				<div class="row">
-					<div class="alert alert-info">{$result.tracker_field_og_welcome_message|nl2br}</div>
-				</div>
+				<div class="alert alert-info">{$result.tracker_field_og_welcome_message|nl2br}</div>
 			{/if}
 			<form name="commSearch" method="post" action="./syn_organicgrp_groupsearchpage?organicgroup={$result.object_id}&cat={$result.tracker_field_og_categoryID}&forgetlastsearch=y">
 				<div class="form-group">
