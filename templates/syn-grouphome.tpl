@@ -1,5 +1,11 @@
 {strip}
-	<div>
+    {if $smarty.get.congrats eq "y"}
+        <div id="congrats-alert" class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            You've successfully joined the collaboration!
+        </div>
+    {/if}
+    <div>
 	{*{include file="syn-groupnav.tpl"}*}
 	{wikiplugin _name="addon" package="syn/organicgrp" view="groupnavloader" from="home"}{/wikiplugin}
 <div class="notmember">

@@ -21,7 +21,7 @@
 			{if !$mgrpname|in_group}
 				{if $result.tracker_status eq 'o'}
 					{assign var="typeofgrp" value="{$result.tracker_field_privateGroup}"}
-					{wikiplugin _name="subscribegroup" group=$grpname subscribe_action="{tr _0=$prefs.ta_syn_organicgrp_sterm}Join %0{/tr}" postsubscribe_url="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}" unsubscribe_action="{tr _0=$prefs.ta_syn_organicgrp_sterm}Withdraw from %0{/tr}" postunsubscribe_url="syn_organicgrp_joingroups" subscribe="" unsubscribe=""}{/wikiplugin}
+					{wikiplugin _name="subscribegroup" group=$grpname subscribe_action="{tr _0=$prefs.ta_syn_organicgrp_sterm}Join %0{/tr}" postsubscribe_url="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}&congrats=y" unsubscribe_action="{tr _0=$prefs.ta_syn_organicgrp_sterm}Withdraw from %0{/tr}" postunsubscribe_url="syn_organicgrp_joingroups" subscribe="" unsubscribe=""}{/wikiplugin}
 					{if $typeofgrp eq "y"}
 						{jq}
 						var colvalue = $(".collab div input").val();
