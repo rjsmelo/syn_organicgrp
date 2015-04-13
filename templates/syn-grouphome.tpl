@@ -86,7 +86,7 @@
 								{filter content="{/literal}{$result.tracker_field_og_forum_ID}{literal}" field="parent_object_id"}
 								{sort mode="modification_date_desc"}
 								{output template="addons/syn_organicgrp/templates/syn-forum_list_title.tpl"}
-								{ALTERNATE()}<p class="emptyinfo">{tr}No post available.{/tr}</p>{ALTERNATE}
+								{ALTERNATE()}<p class="emptyinfo">{tr}There are currently no Forum posts. To start a new discussion that may interest other Collaboration members,click on "Forums" and add a "New Topic".{/tr}</p>{ALTERNATE}
 							{/literal}
 							{/wikiplugin}
 						</div>

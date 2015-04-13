@@ -24,19 +24,10 @@
                         <span class="fa {$icon} fa-3x"></span>
                     </div>
                     <div class="media-body col-xs-11">
-                    {assign var=mgrpname value="syn_organicgrp_managers_{$result.tracker_field_groupID}"}
-                         {if $smarty.session.u_info.login eq $result.tracker_field_contributor || {$mgrpname|in_group}}
-                            <div class="row">
-                                <div class="col-xs-11">
-                                    <h4 class="media-heading"><a href="{$url}" target="_blank">{$result.title}</a></h4>
-                                </div>
-                                <div class="col-xs-1 button-stack text-right">
-                                    <a title="Delete" data-target=".bs-modal.fade:not(.in):first" data-toggle="modal" href="tiki-tracker-remove_item?trackerId=8&amp;itemId={$result.object_id}&amp;modal=1"><span class="fa fa-times-circle"></span></a>
-                                </div>
-                            </div>
-                        {else}
-                            <h4 class="media-heading"><a href="{$url}">{$result.title}</a></h4>
-                        {/if}
+                        {permission name="remove_tracker_items" object=$result.object_id type="trackeritem"}
+                            <a class="pull-right" title="Delete" data-target=".bs-modal.fade:not(.in):first" data-toggle="modal" href="tiki-tracker-remove_item?trackerId=8&amp;itemId={$result.object_id}&amp;modal=1"><span class="fa fa-times-circle"></span></a>
+                        {/permission}
+                        <h4 class="media-heading"><a href="{$url}" target="_blank">{$result.title}</a></h4>
                         <span class="fa fa-user"></span> {$result.tracker_field_contributor|userlink}<br>
                         <span class="fa fa-cloud-upload"></span> {$result.modification_date|date_format}
                     </div>
