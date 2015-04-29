@@ -13,6 +13,7 @@ searchfadediv="customsearch_solsearch_results" autosearchdelay="1" recalllastsea
         {filter content="{/literal}{$cat}{literal}" field="tracker_field_groupId"}
         {filter field="tracker_status" content="o"}
         {output template="addons/syn_organicgrp/templates/syn-grouphomeevent.tpl"}
+		{ALTERNATE()}{tr}There are currently no Events to display.{/tr}{ALTERNATE}
     {/literal}
 {/wikiplugin}
 

@@ -36,7 +36,7 @@
 					{wikiplugin _name="subscribegroup" group=$pgrpname subscribe_action="{tr _0=$prefs.ta_syn_organicgrp_sterm}Request to Join %0{/tr}" postsubscribe_url="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}" unsubscribe_action="{tr _0=$prefs.ta_syn_organicgrp_sterm}Cancel Request to Join %0{/tr}" postunsubscribe_url="syn_organicgrp_joingroups" subscribe="" unsubscribe=""}{/wikiplugin}
 					<div class="alert alert-info alert-dismissible" role="alert">
 						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<p>{tr}As this is a private collaboration. permission to join is required before you can view the details of, and participate in, its activities.{/tr}</p>
+						<p>{tr}As this is a private collaboration, permission to join is required before you can view the details of, and participate in, its activities.{/tr}</p>
 					</div>
 					<p>{$result.tracker_field_og_description|nl2br}</p>
 				{elseif $result.tracker_status eq 'p' && $grpname|in_group}
