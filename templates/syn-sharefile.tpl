@@ -11,27 +11,19 @@
 <div class="fileSection hidden">
     <div class="show-pc">{formitem _field={$f_pcFiles} _label="{tr}Upload File{/tr}" class="file-section"}</div>
     <div class="show-external">{formitem _field={$f_externalURL} _label="{tr}External URL{/tr}"}</div>
-    <div class="show-resource">{formitem _field={$f_resourceLink} _label="{tr}Resource Link{/tr}"}</div>
 </div>
 
 {jq}
 $('#fileTypeSelector>select').change(function(){
     $(".fileSection").removeClass("hidden");
 
-    if ($( this ).val() == 117){
+    if ($( this ).val() == $profileobject:002_og_categories:cat_organicgrp_filetypes_file$){
         $(".show-pc").removeClass("hidden");
         $(".show-external").addClass("hidden");
-        $(".show-resource").addClass("hidden");
     }
-    if ($( this ).val() == 118){
+    if ($( this ).val() == $profileobject:002_og_categories:cat_organicgrp_filetypes_url$){
         $(".show-pc").addClass("hidden");
         $(".show-external").removeClass("hidden");
-        $(".show-resource").addClass("hidden");
-    }
-    if ($( this ).val() == 119){
-        $(".show-pc").addClass("hidden");
-        $(".show-external").addClass("hidden");
-        $(".show-resource").removeClass("hidden");
     }
 });
 

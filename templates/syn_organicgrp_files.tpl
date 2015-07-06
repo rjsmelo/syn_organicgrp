@@ -5,15 +5,11 @@
 <div class="clear">
 	{foreach item=result from=$results}
         {*If PC file*}
-        {if $result.tracker_field_fileType == "117"}
+        {if $result.tracker_field_fileType == $profileobject:002_og_categories:cat_organicgrp_filetypes_file$}
             {assign var="icon" value=$result.file_group|geticon}
             {assign "url" "dl{$result.tracker_field_pcFiles}"}
             {*if URL*}
-        {elseif $result.tracker_field_fileType == "118"}
-            {assign var="icon" value="fa-external-link"}
-            {assign "url" "http://{$result.tracker_field_externalURL}"}
-            {*if Resource link*}
-        {elseif $result.tracker_field_fileType == "119"}
+        {elseif $result.tracker_field_fileType == $profileobject:002_og_categories:cat_organicgrp_filetypes_url$}
             {assign var="icon" value="fa-link"}
             {assign "url" "ContentView?itemId={$result.tracker_field_resourceLink}"}
         {/if}
