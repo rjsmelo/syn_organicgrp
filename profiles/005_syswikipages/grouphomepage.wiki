@@ -3,7 +3,7 @@
 {list max="1" offset="0"}
 {filter type="trackeritem"}
 {filter exact="$profileobject:004_og_tracker:trk_og$" field="tracker_id"}
-{filter exact="{{itemId}}" field="object_id"}
+{filter exact="{{organicgroup}}" field="object_id"}
 {sort mode="modification_date_desc"}
 {output template="addons/syn_organicgrp/templates/syn-grouphome.tpl"}
 {ALTERNATE()}
