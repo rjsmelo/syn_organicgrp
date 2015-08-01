@@ -1,0 +1,57 @@
+---
+objects:
+  -
+    type: category
+    ref: cat_ogevents_events
+    data:
+      name: Events
+  -
+    type: category
+    ref: cat_ogevents_types
+    data:
+      name: Types
+      parent: $profileobject:cat_ogevents_events$
+      root: $profileobject:cat_ogevents_events$
+  -
+    type: category
+    ref: cat_ogevents_north
+    data:
+      name: North
+      parent: $profileobject:cat_ogevents_events$
+      root: $profileobject:cat_ogevents_events$
+  -
+    type: category
+    ref: cat_ogevents_west
+    data:
+      name: West
+      parent: $profileobject:cat_ogevents_events$
+      root: $profileobject:cat_ogevents_events$
+  -
+    type: category
+    ref: cat_ogevents_central
+    data:
+      name: Central
+      parent: $profileobject:cat_ogevents_events$
+      root: $profileobject:cat_ogevents_events$
+  -
+    type: category
+    ref: cat_ogevents_east
+    data:
+      name: East
+      parent: $profileobject:cat_ogevents_events$
+      root: $profileobject:cat_ogevents_events$
+  -
+    type: category
+    ref: cat_ogevents_region
+    data:
+      name: Region
+      parent: $profileobject:cat_ogevents_events$
+      root: $profileobject:cat_ogevents_events$
+
+permissions:
+  Admins:
+    objects:
+      -
+        type: category
+        id: $profileobject:cat_ogevents_events$
+        allow: [ admin_categories ]

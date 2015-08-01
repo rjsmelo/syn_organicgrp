@@ -1,0 +1,42 @@
+---
+objects:
+  -
+    type: wiki_page
+    ref: wiki_event
+    data:
+      mode: create_or_update
+      name: syn_organicgrp_event
+      hide_title: y
+      content: wikicontent:event
+      description:
+  -
+    type: wiki_page
+    ref: wiki_createevent
+    data:
+      mode: create_or_update
+      name: syn_organicgrp_createevent
+      hide_title: y
+      content: wikicontent:createevent
+      description:
+      
+permissions:
+  Admins:
+    objects:
+      -
+        type: wiki_page
+        id: $profileobject:wiki_createevent$
+        allow: [ admin_wiki ]
+      -
+        type: wiki_page
+        id: $profileobject:wiki_event$
+        allow: [ admin_wiki ]
+  Registered:
+    objects:
+      -
+        type: wiki_page
+        id: $profileobject:wiki_createevent$
+        allow: [ view ]
+      -
+        type: wiki_page
+        id: $profileobject:wiki_event$
+        allow: [ view ]

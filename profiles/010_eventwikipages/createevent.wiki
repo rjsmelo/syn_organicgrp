@@ -1,0 +1,8 @@
+ {addon package="syn/organicgrp" view="groupnavloader" from="events"}
+ {tracker trackerId="$profileobject:009_og_eventstracker:trk_og_events$" fields="$profileobject:009_og_eventstracker:trk_og_eventTitle$" tpl="addons/syn_organicgrp/templates/syn-event-create.tpl"  url="syn_organicgrp_ViewEvent"}
+
+{JQ()}
+$(document).ready(function(){
+  $("#events").addClass( "active" );
+ });
+{JQ}

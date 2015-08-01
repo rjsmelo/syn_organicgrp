@@ -1,7 +1,10 @@
 {
 	"remove": [
 		{"type":"tracker", "ref":"trk_og", "profile":"004_og_tracker"},
+		{"type":"tracker", "ref":"trk_og_events", "profile":"008_og_eventstracker"},
 		{"type":"file_gallery", "ref":"fg_groupgalleries", "profile":"003_groupfilegallery"},
+		{"type":"file_gallery", "ref":"og_event_recordings", "profile":"008_og_eventstracker"},
+		{"type":"file_gallery", "ref":"og_event_gallery", "profile":"008_og_eventstracker"},
 		{"type":"wiki_page", "ref":"wiki_creategroup", "profile":"005_syswikipages"},
 		{"type":"wiki_page", "ref":"wiki_joingroups", "profile":"005_syswikipages"},
 		{"type":"wiki_page", "ref":"wiki_mygroups", "profile":"005_syswikipages"},
@@ -9,8 +12,11 @@
 		{"type":"wiki_page", "ref":"wiki_groupsearchpage", "profile":"005_syswikipages"},
 		{"type":"wiki_page", "ref":"wiki_groupmembers", "profile":"005_syswikipages"},
 		{"type":"wiki_page", "ref":"wiki_managegrp", "profile":"005_syswikipages"},
+		{"type":"wiki_page", "ref":"wiki_event", "profile":"005_syswikipages"},
+		{"type":"wiki_page", "ref":"wiki_createevent", "profile":"005_syswikipages"},
 		{"type":"wiki_page", "ref":"wiki_creategroupfail", "profile":"006_usrwikipages"},
 		{"type":"category", "ref":"cat_syn_organicgrp", "profile":"002_og_categories"},
+		{"type":"category", "ref":"cat_og_types", "profile":"008_og_eventstracker"},
 		{"type":"activity", "ref":"act_groupjoin", "profile":"007_groupcoreactivities"},
 		{"type":"activity", "ref":"act_groupjoin_rec", "profile":"007_groupcoreactivities"},
 		{"type":"activity", "ref":"act_groupleave", "profile":"007_groupcoreactivities"},

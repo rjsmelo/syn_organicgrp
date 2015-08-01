@@ -1,0 +1,321 @@
+---
+objects:
+  - 
+    type: file_gallery
+    ref: og_event_recordings
+    data:
+      name : Organic Group Event Recordings
+      description :
+  - 
+    type: file_gallery
+    ref: og_event_gallery
+    data:
+      name : Organic Group Event Files Gallery
+      description :
+  -
+    type: tracker
+    ref: trk_og_events
+    data:
+      name: Organic Groups Events
+      description:
+      list_default_status: opc
+      restrict_end: 0
+      section_format: flat
+      restrict_start: 0
+      allow:
+        - creator_modification
+      show:
+        - status
+  -
+    type: tracker_field
+    ref: trk_og_logo_image
+    data:
+      name: Logo image
+      permname: og_logo_image
+      tracker: $profileobject:trk_og_events$
+      options:
+        xListSize: 30
+        yListSize: 30
+        xDetailSize: 300
+        yDetailSize: 300
+        uploadLimitScale: 1000
+      type: image
+      flags:
+        - searchable
+        - public
+
+  -
+    type: tracker_field
+    ref: trk_og_eventFiles
+    data:
+      name: Event Files,
+      permname: og_eventFiles,
+      tracker: $profileobject:trk_og_events$
+      options:
+        galleryId: $profileobject:og_event_gallery$
+        replace: false
+      type: files
+      flags:
+        - public
+  -
+    type: tracker_field
+    ref: trk_og_eventAddedBy
+    data:
+      name: Event Added By
+      permname: og_eventAddedBy
+      tracker: $profileobject:trk_og_events$
+      options:
+        autoassign: 1
+      type: user
+      flags:
+        - public
+  -
+    type: tracker_field
+    ref: trk_og_eventLocationMap
+    data:
+      name: Event Location Map
+      permname: og_eventLocationMap
+      tracker: $profileobject:trk_og_events$
+      options:
+        use_as_item_location : 1
+        list_width : 200
+        list_height : 200
+        item_width : 500
+        item_height : 400
+      type: location
+      flags:
+        - public
+
+  -
+    type: tracker_field
+    ref: trk_og_eventLocation
+    data:
+      name: Event Location'
+      permname: og_eventLocation
+      tracker: $profileobject:trk_og_events$
+      options:
+        samerow: 1
+        size: 40
+        prepend: 
+        append : 
+        max: 0
+        autocomplete: n
+        exact: n
+
+      type: text_field
+      flags:
+        - public
+  -
+    type: tracker_field
+    ref: trk_og_presenterProfileLink
+    data:
+      name: Presenter (profile link)
+      permname: og_presenterProfileLink
+      tracker: $profileobject:trk_og_events$
+      options:
+      type: user
+      flags:
+        - public
+  -
+    type: tracker_field
+    ref: trk_og_presenter
+    data:
+      name: Presenter (text only)
+      permname: og_presenter
+      tracker: $profileobject:trk_og_events$
+      options:
+        samerow: 1
+      type: text_field
+      flags:
+        - searchable
+        - public
+  -
+    type: tracker_field
+    ref: trk_og_endDate
+    data:
+      name: End Date and Time
+      permname: endDate
+      tracker: $profileobject:trk_og_events$
+      options:
+        datetime : dt
+      type: calendar
+      flags:
+        - searchable
+        - public
+  -
+    type: tracker_field
+    ref: trk_og_startDate
+    data:
+      name: Start Date and Time
+      permname: startDate
+      tracker: $profileobject:trk_og_events$
+      options:
+        datetime : dt
+      type: calendar
+      flags:
+        - searchable
+        - public
+  -
+    type: tracker_field
+    ref: trk_og_eventDescription
+    data:
+      name: Event Description
+      permname: eventDescription
+      tracker: $profileobject:trk_og_events$
+      options:
+        samerow : 1
+      type: text_area
+      flags:
+        - searchable
+        - public
+  -
+    type: tracker_field
+    ref: trk_og_language
+    data:
+      name: Langue
+      permname: language
+      tracker: $profileobject:trk_og_events$
+      options:
+        autoassign : 1
+      type: language
+      flags:
+        - searchable
+        - public
+  -
+    type: tracker_field
+    ref: trk_og_eventTitle
+    data:
+      name: Event Title
+      permname: eventTitle
+      tracker: $profileobject:trk_og_events$
+      options:
+        samerow : 1
+      type: text_field
+      flags:
+        - searchable
+        - public
+  -
+    type: tracker_field
+    ref: trk_og_eventSummary
+    data:
+      name: Event Summary
+      permname: eventSummary
+      tracker: $profileobject:trk_og_events$
+      options:
+        height : 6
+        max : 300
+        samerow : 1
+      type: text_area
+      flags:
+        - searchable
+        - public
+
+
+  -
+    type: tracker_field
+    ref: trk_og_eventType
+    data:
+      name: Event Type
+      permname: eventType
+      tracker: $profileobject:trk_og_events$
+      options:
+        parentId: $profileobject:008_og_eventscategories:cat_ogevents_types$
+        inputtype : d
+        selectall : 0
+        descendants : 0
+        help : 0
+        outputtype :
+      type: category
+      flags:
+        - searchable
+        - public
+  -
+    type: tracker_field
+    ref: trk_og_region
+    data:
+      name: Region
+      permname: region 
+      tracker: $profileobject:trk_og_events$
+      options:
+        parentId : $profileobject:008_og_eventscategories:cat_ogevents_region$
+        inputtype : checkbox
+        selectall : 0
+        descendants : 0
+        help : 0
+        outputtype :
+      type: category
+      flags:
+        - searchable
+        - public
+  -
+    type: tracker_field
+    ref: trk_og_eventRecording
+    data:
+      name: Event Recording
+      permname: eventRecording
+      tracker: $profileobject:trk_og_events$
+      options:
+        galleryId : $profileobject:og_event_recordings$
+        filter : 
+        count : 0
+        displayMode : vimeo
+        displayParams :
+        displayParamsForLists :
+        deepGallerySearch : 0
+        replace : n
+        browseGalleryId : 0
+        duplicateGalleryId : 0
+        targetframeid : 
+        previewselector : 
+        indexGeometry : 
+      type: files
+      flags:
+        - searchable
+        - public
+  -
+    type: tracker_field
+    ref: trk_og_eventRecordingCheck
+    data:
+      name: Event Recording Check
+      permname: og_eventRecordingCheck
+      tracker: $profileobject:trk_og_events$
+      options:
+      type: checkbox
+      flags:
+        - searchable
+        - public
+  -
+    type: tracker_field
+    ref: trk_og_group_id
+    data:
+      name: og_group_id
+      permname: og_groupId
+      tracker: $profileobject:trk_og_events$
+      options:
+        parentId: $profileobject:002_og_categories:cat_organicgrps$
+        inputtype : d
+        selectall : 0
+        descendants : 1
+        help : 0
+        outputtype : 
+
+      type: category
+      flags:
+        - searchable
+        - public
+
+////FROM HERE
+  -
+    type: tracker_option
+    ref: trk_og_sort_default_field
+    data:
+      tracker: $profileobject:trk_og_events$
+      name: sort_default_field
+      value: $profileobject:trk_og_eventTitle$
+permissions:
+  Registered:
+    objects:
+      -
+        type: tracker
+        id: $profileobject:trk_og_events$
+        allow: [ view_trackers, view_trackers_pending ]

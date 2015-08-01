@@ -1,0 +1,6 @@
+{addon package="syn/organicgrp" view="groupnavloader" from="events"}
+{HTML()}
+<div class="row notmember">
+<div class="col-xs-12 col-md-8 pull-right mar-bottom-lg"><a href="syn_organicgrp_createevent?organicgroup={{organicgroup}}" class="pull-right btn btn-primary">Create New Event</a></div>
+{HTML}
+{INCLUDETPL(filename="addons/syn_organicgrp/templates/syn-event_search_page.tpl" values="cat:{{cat}}")}{INCLUDETPL}
