@@ -43,7 +43,7 @@
 		            {literal}
 						{filter type="trackeritem"}
 						{filter field="tracker_id" content="4"}
-						{filter content="{/literal}{$result.tracker_field_og_categoryID}{literal}" field="tracker_field_groupId"}
+						{filter content="{/literal}{$result.tracker_field_og_categoryID_text}{literal}" field="tracker_field_groupId"}
 						{output template="themes/leaf/templates/syn-resource_count.tpl"}
 		                {ALTERNATE()}0{ALTERNATE}
 		            {/literal}

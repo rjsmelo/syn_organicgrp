@@ -3,15 +3,7 @@
 	{assign var=grpname value="syn_organicgrp_`$result.object_id`"}
 	{assign var=mgrpname value="syn_organicgrp_managers_`$result.object_id`"}
 	{assign var=pgrpname value="syn_organicgrp_pending_`$result.object_id`"}
-	{if $smarty.get.forumId}
-		{wikiplugin _name="synpagetitle" title="{$prefs.ta_syn_organicgrp_sterm} - {$result.title}" iconsrc="addons/syn_organicgrp/img/4-Collaborate.png" breadcrumb="organicgrp_forum"}{/wikiplugin}
-	{elseif $smarty.get.comments_parentId}
-		{wikiplugin _name="synpagetitle" title="{$prefs.ta_syn_organicgrp_sterm} - {$result.title}" iconsrc="addons/syn_organicgrp/img/4-Collaborate.png" breadcrumb="organicgrp_forum_thread"}{/wikiplugin}
-	{elseif $smarty.get.page eq "syn_organicgrp_{$result.object_id}:_:whiteboard_{$result.object_id}"}
-		{wikiplugin _name="synpagetitle" title="{$prefs.ta_syn_organicgrp_sterm} - {$result.title}" iconsrc="addons/syn_organicgrp/img/4-Collaborate.png" breadcrumb="whiteboard"}{/wikiplugin}
-	{else}
-		{wikiplugin _name="synpagetitle" title="{$prefs.ta_syn_organicgrp_sterm} - {$result.title}" iconsrc="addons/syn_organicgrp/img/4-Collaborate.png"}{/wikiplugin}
-	{/if}
+	<h2>{$prefs.ta_syn_organicgrp_sterm} - {$result.title}</h2>
 	<div class="row">
 		{$result.logo_image}
 	</div>
