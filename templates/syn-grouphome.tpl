@@ -57,7 +57,7 @@
 				</div>
 
 				<div class="col-md-4 mar-bottom">
-					<div class="hide">
+					<div class="">
 						<h3>{tr}New Members{/tr}</h3>
 						{if $result.tracker_field_og_categoryID}
 							{wikiplugin _name="activitystream"}
