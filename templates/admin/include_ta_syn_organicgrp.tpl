@@ -1,5 +1,6 @@
 {remarksbox type="tip" title="{tr}Tip{/tr}"}{tr}Welcome to the Tiki Organic Group Addon{/tr}{/remarksbox}
 <form action="tiki-admin.php?page=ta_syn_organicgrp" method="post">
+	<input type="hidden" name="ticket" value="{$ticket|escape}">
 	<div class="row">
 		<div class="form-group col-lg-12 clearfix">
 			<div class="pull-right">
