@@ -17,7 +17,7 @@
 			{if $result.tracker_field_og_welcome_message}
 				<div class="alert alert-info">{$result.tracker_field_og_welcome_message|nl2br}</div>
 			{/if}
-			<form name="commSearch" method="post" action="./syn_organicgrp_groupsearchpage?organicgroup={$result.object_id}&cat={$result.tracker_field_og_categoryID}&forgetlastsearch=y">
+			<form name="commSearch" method="post" action="./syn_organicgrp_groupsearchpage?organicgroup={$result.object_id}&cat={$result.tracker_field_og_categoryID_text}&forgetlastsearch=y">
 				<div class="form-group">
 					<div class="input-group">
 						<input type="text" name="default[content]" placeholder="{tr _0=$prefs.ta_syn_organicgrp_sterm}Search within this %0{/tr}..." class="searchField form-control">
@@ -32,12 +32,12 @@
 				<div class="col-md-8 mar-bottom projectlist">
 					{$result.tracker_field_og_description|nl2br}<br/>
 					<h3>{tr}Recent Activity{/tr}</h3>
-					{if $result.tracker_field_og_categoryID}
+					{if $result.tracker_field_og_categoryID_text}
 						{wikiplugin _name="activitystream" auto="0"}
 						{literal}
 							{pagination max="10"}
 							{filter field="feed" content="syn_organicgrps"}
-							{filter categories="{/literal}{$result.tracker_field_og_categoryID}{literal}"}
+							{filter categories="{/literal}{$result.tracker_field_og_categoryID_text}{literal}"}
 							{group field=aggregate collect=user}
 						{/literal}
 						{/wikiplugin}
@@ -59,7 +59,7 @@
 				<div class="col-md-4 mar-bottom">
 					<div class="">
 						<h3>{tr}New Members{/tr}</h3>
-						{if $result.tracker_field_og_categoryID}
+						{if $result.tracker_field_og_categoryID_text}
 							{wikiplugin _name="activitystream"}
 							{literal}
 								{pagination max="5"}
@@ -108,7 +108,7 @@
 									{filter type="trackeritem"}
 									{filter content="4" field="tracker_id"}
 									{filter range="tracker_field_endDate" from="now" gap="31536000"}
-									{filter  categories="{/literal}{$result.tracker_field_og_categoryID}{literal}"}
+									{filter  categories="{/literal}{$result.tracker_field_og_categoryID_text}{literal}"}
 									{sort mode="tracker_field_startDate2_asc"}
 									{output template="addons/syn_organicgrp/templates/syn-event_list.tpl"}
 									{FORMAT(name="event_desc")}{display name="tracker_field_eventDescription" format="snippet" length="50"}{FORMAT}
