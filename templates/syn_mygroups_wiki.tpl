@@ -1,5 +1,5 @@
 <div class="col-md-12 mar-bottom-xl mar-top pull-right">
-	<a href="syn_organicgrp_creategroup"  class="btn btn-action pull-right">Create Collaboration</a>
+	<a href="syn_organicgrp_creategroup"  class="btn btn-action pull-right">{tr _0=$prefs.ta_syn_organicgrp_sterm}Create %0{/tr}</a>
 </div>
 <div class="clear"></div>
 <div class="col-md-12">

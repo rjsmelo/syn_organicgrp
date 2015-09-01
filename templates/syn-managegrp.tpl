@@ -10,8 +10,8 @@
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active"><a href="#" data-target="#managemembers" aria-controls="managemembers" role="tab" data-toggle="tab">{tr}Manage Members{/tr}</a></li>
-            <li role="presentation"><a href="#" data-target="#editdetails" aria-controls="editdetails" role="tab" data-toggle="tab">{tr}Edit Collaboration Details{/tr}</a></li>
-			<li role="presentation"><a href="#" data-target="#removecollaboration" aria-controls="removecollaboration" role="tab" data-toggle="tab">{tr}Remove Collaboration{/tr}</a></li>
+            <li role="presentation"><a href="#" data-target="#editdetails" aria-controls="editdetails" role="tab" data-toggle="tab">{tr _0=$prefs.ta_syn_organicgrp_sterm}Edit %0 Details{/tr}</a></li>
+			<li role="presentation"><a href="#" data-target="#removegroup" aria-controls="removegroup" role="tab" data-toggle="tab">{tr _0=$prefs.ta_syn_organicgrp_sterm}Remove %0{/tr}</a></li>
         </ul>
 
         <!-- Tab panes -->
@@ -28,7 +28,7 @@
                 <p class="help-block">{tr}Providing an informative description will enable visitors to quickly determine if they would like to join your group or investigate further.{/tr}</p>
                 {wikiplugin _name="tracker" trackerId="{addonobjectid profile="004_og_tracker" ref="trk_og"}" fields="{addonobjectid profile="004_og_tracker" ref="trk_og_title"}:{addonobjectid profile="004_og_tracker" ref="trk_og_description"}:{addonobjectid profile="004_og_tracker" ref="trk_og_welcome_message"}" tpl="syn-editgroupdetails.tpl" action="{tr}Save Changes{/tr}" url="syn_organicgrp_managegrp?itemId={$f_itemId}"}{/wikiplugin}
 			</div>
-			<div role="tabpanel" class="tab-pane clearfix" id="removecollaboration">
+			<div role="tabpanel" class="tab-pane clearfix" id="removegroup">
 				<h3>{tr _0=$prefs.ta_syn_organicgrp_sterm}Removing %0{/tr}</h3>
 
 				<p>{tr _0=$prefs.ta_syn_organicgrp_sterm}Script to remove %0 is under development. For now, please contact us if you wish to remove the %0{/tr}.

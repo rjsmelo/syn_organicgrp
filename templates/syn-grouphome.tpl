@@ -2,7 +2,7 @@
     {if $smarty.get.congrats eq "y"}
         <div id="congrats-alert" class="alert alert-success alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            You've successfully joined the collaboration!
+            {tr _0=$prefs.ta_syn_organicgrp_sterm}You've successfully joined the %0!{/tr}
         </div>
     {/if}
     <div>
@@ -94,7 +94,7 @@
 								{filter content="{/literal}{$result.tracker_field_og_forum_ID}{literal}" field="parent_object_id"}
 								{sort mode="modification_date_desc"}
 								{output template="addons/syn_organicgrp/templates/syn-forum_list_title.tpl"}
-								{ALTERNATE()}<p class="emptyinfo">{tr}There are currently no Forum posts. To start a new discussion that may interest other Collaboration members,click on "Forums" and add a "New Topic".{/tr}</p>{ALTERNATE}
+								{ALTERNATE()}<p class="emptyinfo">{tr}There are currently no Forum posts. To start a new discussion that may interest other members,click on "Forums" and add a "New Topic".{/tr}</p>{ALTERNATE}
 							{/literal}
 							{/wikiplugin}
 						</div>
@@ -123,7 +123,7 @@
 			</div>
 		{else}
 			{wikiplugin _name = "alert" id="privategrp-alertmsg" dismissable="n" cookies="n"}
-				<p>{tr}This is a private collaboration, so you need to be a member to view the activity. Click on the "Request to Join Collaboration" button to indicate your interest to participate.{/tr}</p>
+				<p>{tr _0=$prefs.ta_syn_organicgrp_sterm}This is a Private %0, so you need to be a member to view the activity. Click on the "Request to Join %0" button to indicate your interest to participate.{/tr}</p>
 			{/wikiplugin}
 		{/if}
 	{/foreach}

@@ -7,8 +7,8 @@ function prefs_ta_syn_organicgrp_list()
 {
 	return array(
 		'ta_syn_organicgrp_on' => array( // This main _on pref is mandatory
-			'name' => tra('Turn on Tiki Organic Groups'),
-			'description' => tra('Activate Tiki Organic Groups Addon'),
+			'name' => tra('Turn on Synergiq Organic Groups'),
+			'description' => tra('Activate Synergiq Organic Groups Addon'),
 			'type' => 'flag',
 			'admin' => 'ta_syn_organicgrp',
 			'tags' => array('basic'),

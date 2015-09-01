@@ -3,28 +3,19 @@
 	{assign var=grpname value="syn_organicgrp_`$result.object_id`"}
 	{assign var=mgrpname value="syn_organicgrp_managers_`$result.object_id`"}
 	{assign var=pgrpname value="syn_organicgrp_pending_`$result.object_id`"}
-	{if $smarty.get.forumId}
-		{wikiplugin _name="synpagetitle" title="{$prefs.ta_syn_organicgrp_sterm} - {$result.title}" iconsrc="addons/syn_organicgrp/img/4-Collaborate.png" breadcrumb="organicgrp_forum"}{/wikiplugin}
-	{elseif $smarty.get.comments_parentId}
-		{wikiplugin _name="synpagetitle" title="{$prefs.ta_syn_organicgrp_sterm} - {$result.title}" iconsrc="addons/syn_organicgrp/img/4-Collaborate.png" breadcrumb="organicgrp_forum_thread"}{/wikiplugin}
-	{elseif $smarty.get.page eq "syn_organicgrp_{$result.object_id}:_:whiteboard_{$result.object_id}"}
-		{wikiplugin _name="synpagetitle" title="{$prefs.ta_syn_organicgrp_sterm} - {$result.title}" iconsrc="addons/syn_organicgrp/img/4-Collaborate.png" breadcrumb="whiteboard"}{/wikiplugin}
-	{else}
-		{wikiplugin _name="synpagetitle" title="{$prefs.ta_syn_organicgrp_sterm} - {$result.title}" iconsrc="addons/syn_organicgrp/img/4-Collaborate.png"}{/wikiplugin}
-	{/if}
+	{$prefs.ta_syn_organicgrp_sterm} - {$result.title}
 	<div class="row">
 		{$result.logo_image}
 	</div>
 
-	<div class="row collab">
+	<div class="row group">
 		<div class="col-xs-12">
 			{if !$mgrpname|in_group}
 				{if $result.tracker_status eq 'o'}
-					{assign var="typeofgrp" value="{$result.tracker_field_privateGroup}"}
+					{assign var="isprivate" value="{$result.tracker_field_privateGroup}"}
 					{wikiplugin _name="subscribegroup" group=$grpname subscribe_action="{tr _0=$prefs.ta_syn_organicgrp_sterm}Join %0{/tr}" postsubscribe_url="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}&congrats=y" unsubscribe_action="{tr _0=$prefs.ta_syn_organicgrp_sterm}Withdraw from %0{/tr}" postunsubscribe_url="syn_organicgrp_joingroups" subscribe="" unsubscribe=""}{/wikiplugin}
-					{if $typeofgrp eq "y"}
+					{if $isprivate eq "y"}
 						{jq}
-						var colvalue = $(".collab div input").val();
 							if(colvalue == 'Join Collaboration') {
 								$(".notmember").addClass("hide");
 								$("#table-forum").addClass("hide");
@@ -36,7 +27,7 @@
 					{wikiplugin _name="subscribegroup" group=$pgrpname subscribe_action="{tr _0=$prefs.ta_syn_organicgrp_sterm}Request to Join %0{/tr}" postsubscribe_url="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}" unsubscribe_action="{tr _0=$prefs.ta_syn_organicgrp_sterm}Cancel Request to Join %0{/tr}" postunsubscribe_url="syn_organicgrp_joingroups" subscribe="" unsubscribe=""}{/wikiplugin}
 					<div class="alert alert-info alert-dismissible" role="alert">
 						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<p>{tr}As this is a private collaboration, permission to join is required before you can view the details of, and participate in, its activities.{/tr}</p>
+						<p>{tr}As this is a private group, permission to join is required before you can view the details of, and participate in, its activities.{/tr}</p>
 					</div>
 					<p>{$result.tracker_field_og_description|nl2br}</p>
 				{elseif $result.tracker_status eq 'p' && $grpname|in_group}
@@ -99,6 +90,5 @@
 {elseif $smarty.get.page eq "syn_organicgrp_{$result.object_id}:_:whiteboard_{$result.object_id}"}
 {jq}
 	$('#white').addClass('active');
-	$("#Collaborate").addClass('active');
 {/jq}
 {/if}
