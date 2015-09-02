@@ -134,6 +134,9 @@ objects:
       permname: og_categoryID
       tracker: $profileobject:trk_og$
       options:
+        inputtype: d
+        descendants: 2
+        recategorize: save
       type: category
       flags:
         - searchable
