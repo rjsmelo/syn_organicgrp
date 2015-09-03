@@ -1,3 +1,4 @@
+<div class="row">
 {foreach item=result from=$results}
 	{assign var=grpname value="syn_organicgrp_`$result.object_id`"}
 	{if $grpname|in_group}
@@ -6,3 +7,4 @@
 	</div>
 	{/if}
 {/foreach}
+</div>
