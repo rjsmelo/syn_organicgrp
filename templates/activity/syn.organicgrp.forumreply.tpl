@@ -1,6 +1,4 @@
-{assign "username" "{$activity.user|userlink}"}
-
-{assign "heading" "{$username} replied to a post in <a href='tiki-view_forum.php?forumId={$activity.forum_id|escape}'>{$activity.topictitle}</a>"}
-{assign "content" "{if $activity.post_content_no_quote}{$activity.post_content_no_quote}{else}{$activity.content}{/if}"}
-
-{include file="./syn.general.activity.tpl" icon="fa-comments-o" heading="{$heading}" content="{$content}"}
+{activityframe 	heading="{$activity.user|userlink} replied to the forum thread {object_link type=$activity.type id=$activity.object}."
+                content="{$activity.content|escape|truncate:100}"
+                icon={icon name=add iclass="fa-2x"}}
+{/activityframe}
