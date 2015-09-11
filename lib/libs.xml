@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<container xmlns="http://symfony.com/schema/dic/services">
+    <services>
+        <service id="tikiaddon.syn.organicgrp.organicgrp" class="tikiaddon\syn\organicgrp\OrganicGroup">
+            <file>%kernel.root_dir%/addons/syn_organicgrp/lib/organicgrplib.php</file>
+        </service>
+    </services>
+</container>
