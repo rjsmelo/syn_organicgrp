@@ -1,4 +1,4 @@
-{wikiplugin _name="addon" package="syn/organicgrp" view="groupnavloader" from="home"}{/wikiplugin}
+{wikiplugin _name="addon" package="syn/organicgrp" view="groupnavloader" from="manage"}{/wikiplugin}
 {assign var=tikiaddon_package value="syn_organicgrp"}
 {assign var=grpname value="syn_organicgrp_`$f_itemId`"}
 {assign var=mgrpname value="syn_organicgrp_managers_`$f_itemId`"}

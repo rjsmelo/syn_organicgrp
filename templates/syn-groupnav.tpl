@@ -46,9 +46,15 @@
 			<li id="home"><a href="syn_organicgrp_grouphomepage?organicgroup={$result.object_id}"><span class="fa fa-home"></span> {tr}Home{/tr}</a></li>
 			<li id="forum"><a href="tiki-view_forum.php?forumId={$result.tracker_field_og_forum_ID}&organicgroup={$result.object_id}"><span class="fa fa-comments"></span> {tr}Forums{/tr}</a></li>
 			<li id="white"><a href="syn_organicgrp_{$result.object_id}:_:whiteboard_{$result.object_id}?organicgroup={$result.object_id}"><span class="fa fa-edit"></span> {tr}Whiteboard{/tr}</a></li>
-			<li id="events"><a href="syn_organicgrp_event?organicgroup={$result.object_id}"><span class="fa fa-calendar"></span> {tr}Events{/tr}</a></li>
-			<li id="files"><a href="syn_organicgrp_groupfiles?organicgroup={$result.object_id}"><span class="fa fa-file"></span> {tr}Files{/tr}</a></li>
-			<li id="live"><a href="syn_organicgrp_liveconferencing?organicgroup={$result.object_id}"><span class="fa fa-laptop"></span> {tr}Live Conferencing{/tr}</a></li>
+			{if $prefs.ta_syn_organicgrp_events_on}
+				<li id="events"><a href="syn_og_events?organicgroup={$result.object_id}"><span class="fa fa-calendar"></span> {tr}Events{/tr}</a></li>
+			{/if}
+			{if $prefs.ta_syn_organicgrp_files_on}
+				<li id="files"><a href="syn_organicgrp_groupfiles?organicgroup={$result.object_id}"><span class="fa fa-file"></span> {tr}Files{/tr}</a></li>
+			{/if}
+			{if $prefs.ta_syn_organicgrp_webinars_on}
+				<li id="live"><a href="syn_organicgrp_liveconferencing?organicgroup={$result.object_id}"><span class="fa fa-laptop"></span> {tr}Live Conferencing{/tr}</a></li>
+			{/if}
 		  	<li id="members"><a href="syn_organicgrp_groupmembers?organicgroup={$result.object_id}"><span class="fa fa-users"></span> {tr}Members{/tr}</a></li>
 			{assign var=mgrpname value="syn_organicgrp_managers_{$smarty.get.organicgroup}"}
 			{if $mgrpname|in_group}
@@ -59,36 +65,35 @@
 	{/if}
 {/foreach}
 
-
-{if $smarty.get.page eq "syn_organicgrp_grouphomepage"}
+{if $result.groupnavfrom eq 'home'}
 {jq}
 	$('#home').addClass('active');
 {/jq}
-{elseif $smarty.get.page eq "tiki-view_forum_thread.php"}
+{elseif $result.groupnavfrom eq 'forum'}
 {jq}
 	$('#forum').addClass('active');
 {/jq}
-{elseif ($smarty.get.page eq "syn_organicgrp_groupfiles") OR ($smarty.get.page eq "syn_organicgrp_sharefile")}
+{elseif $result.groupnavfrom eq 'files'}
 {jq}
 	$('#files').addClass('active');
 {/jq}
-{elseif $smarty.get.page eq "syn_organicgrp_groupmembers"}
+{elseif $result.groupnavfrom eq 'members'}
 {jq}
 	$('#members').addClass('active');
 {/jq}
-{elseif $smarty.get.page eq "syn_organicgrp_managegrp"}
+{elseif $result.groupnavfrom eq 'manage'}
 {jq}
 	$('#manage').addClass('active');
 {/jq}
-{elseif $smarty.get.page eq "syn_organicgrp_liveconferencing"}
+{elseif $result.groupnavfrom eq 'live'}
 {jq}
     $('#live').addClass('active');
 {/jq}
-{elseif ($smarty.get.page eq "syn_organicgrp_event") OR ($smarty.get.page eq "syn_organicgrp_ViewEvent") OR ($smarty.get.page eq "syn_organicgrp_EditEvent") OR ($smarty.get.page eq "syn_organicgrp_createevent")}
+{elseif $result.groupnavfrom eq 'events'}
 {jq}
 	$('#events').addClass('active');
 {/jq}
-{elseif $smarty.get.page eq "syn_organicgrp_{$result.object_id}:_:whiteboard_{$result.object_id}"}
+{elseif $result.groupnavfrom eq 'whiteboard'}
 {jq}
 	$('#white').addClass('active');
 {/jq}
