@@ -16,43 +16,29 @@
 			{if $result.tracker_field_og_welcome_message}
 				<div class="alert alert-info">{$result.tracker_field_og_welcome_message|nl2br}</div>
 			{/if}
-			<form name="commSearch" method="post" action="./syn_organicgrp_groupsearchpage?organicgroup={$result.object_id}&cat={$result.tracker_field_og_categoryID_text}&forgetlastsearch=y">
-				<div class="form-group">
-					<div class="input-group">
-						<input type="text" name="default[content]" placeholder="{tr _0=$prefs.ta_syn_organicgrp_sterm}Search within this %0{/tr}..." class="searchField form-control">
-						<span class="input-group-btn">
-							<input type="submit" value="{tr}Search{/tr}" name="submit" class="btn btn-search">
-						</span>
-					</div>
-				</div>
-			</form>
+			{*<form name="commSearch" method="post" action="./syn_organicgrp_groupsearchpage?organicgroup={$result.object_id}&cat={$result.tracker_field_og_categoryID_text}&forgetlastsearch=y">*}
+				{*<div class="form-group">*}
+					{*<div class="input-group">*}
+						{*<input type="text" name="default[content]" placeholder="{tr _0=$prefs.ta_syn_organicgrp_sterm}Search within this %0{/tr}..." class="searchField form-control">*}
+						{*<span class="input-group-btn">*}
+							{*<input type="submit" value="{tr}Search{/tr}" name="submit" class="btn btn-primary">*}
+						{*</span>*}
+					{*</div>*}
+				{*</div>*}
+			{*</form>*}
 			<div class="clear mar-bottom-lg"></div>
 			<div class="row">
 				<div class="col-md-8 mar-bottom projectlist">
 					{$result.tracker_field_og_description|nl2br}<br/>
 					<h3>{tr}Recent Activity{/tr}</h3>
-					{if $result.tracker_field_og_categoryID_text}
 						{wikiplugin _name="activitystream" auto="0"}
 						{literal}
 							{pagination max="10"}
-							{filter field="feed" content="syn_organicgrps"}
+							{filter field="feed" content="syn_organicgrp"}
 							{filter categories="{/literal}{$result.tracker_field_og_categoryID_text}{literal}"}
 							{group field=aggregate collect=user}
 						{/literal}
 						{/wikiplugin}
-					{else}
-						<div class='alert alert-danger'>You must set the "parent category" of the Organic Group tracker field "og_categoryID" to the "Organic Groups" category.</div>
-					{/if}
-					{jq}
-						$('a').each(function(index, value) {
-							var url = $(this).attr('href');
-							if (typeof url !== 'undefined') {
-								var ogid = '{{$result.object_id}}';
-								var newurl = url.replace('?itemId', '?organicgroup=' + ogid + '&itemId');
-								$(this).attr('href', newurl);
-							}
-						});
-					{/jq}
 				</div>
 				<div class="col-md-4 mar-bottom">
 					<div class="panel panel-default">
