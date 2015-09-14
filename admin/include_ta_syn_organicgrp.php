@@ -11,4 +11,3 @@ if (strpos($_SERVER['SCRIPT_NAME'], basename(__FILE__)) !== false) {
 	exit;
 }
 
-ask_ticket('admin-inc-ta_syn_organicgrp');
