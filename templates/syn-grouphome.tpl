@@ -36,7 +36,6 @@
 							{pagination max="10"}
 							{filter field="feed" content="syn_organicgrp"}
 							{filter categories="{/literal}{$result.tracker_field_og_categoryID_text}{literal}"}
-							{group field=aggregate collect=user}
 						{/literal}
 						{/wikiplugin}
 				</div>
@@ -66,7 +65,6 @@
 								{filter content="0" field="parent_thread_id"}
 								{filter content="{/literal}{$result.tracker_field_og_forum_ID}{literal}" field="parent_object_id"}
 								{sort mode="modification_date_desc"}
-								{output template="addons/syn_organicgrp/templates/syn-forum_list_title.tpl"}
 								{ALTERNATE()}<p class="emptyinfo">{tr}There are currently no Forum posts. To start a new discussion that may interest other members,click on "Forums" and add a "New Topic".{/tr}</p>{ALTERNATE}
 							{/literal}
 							{/wikiplugin}

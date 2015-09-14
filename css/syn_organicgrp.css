@@ -16,10 +16,13 @@
 	font-size: 18px;
 }
 .groupnav-bar {
-	margin-bottom: 10px;
+	margin: 10px 0;
 	padding: 10px 15px;
 	border: 1px solid #ddd;
 	border-radius: 5px;
+}
+.btn-group .btn {
+	margin-right: 10px;
 }
 .syn-og-whiteboard .wp_wysiwyg {
 	margin-bottom: 10px;
