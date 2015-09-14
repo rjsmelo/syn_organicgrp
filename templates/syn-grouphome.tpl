@@ -6,7 +6,6 @@
         </div>
     {/if}
     <div>
-	{*{include file="syn-groupnav.tpl"}*}
 	{wikiplugin _name="addon" package="syn/organicgrp" view="groupnavloader" from="home"}{/wikiplugin}
 <div class="notmember">
 	{foreach item=result from=$results}
@@ -55,34 +54,22 @@
 						});
 					{/jq}
 				</div>
-
 				<div class="col-md-4 mar-bottom">
-					<div class="">
-						<h3>{tr}New Members{/tr}</h3>
-						{if $result.tracker_field_og_categoryID_text}
-							{wikiplugin _name="activitystream"}
+					<div class="panel panel-default">
+						<div class="panel-heading">{tr}New Members{/tr}</div>
+						<div class="panel-body">
+							{wikiplugin _name="list" searchable_only=0}
 							{literal}
 								{pagination max="5"}
 								{filter field="type" exact="user"}
-								{filter field="organicgroupid" exact="{/literal}{$result.object_id}{literal}"}
-								{group field=aggregate collect=user}
+								{filter field="groupname" exact="syn_organicgrp_{/literal}{$result.object_id}{literal}"}
+								{filter field="event_type" exact="syn.organicgrp.groupjoin"}
+								{sort mode="modification_date_ndesc"}
+								{OUTPUT(template="syn-groupnewusers.tpl")}{OUTPUT}
 							{/literal}
 							{/wikiplugin}
-						{else}
-							<div class='alert alert-danger'>You must set the "parent category" of the Organic Group tracker field "og_categoryID" to the "Organic Groups" category.</div>
-						{/if}
-						{jq}
-							$('a').each(function(index, value) {
-								var url = $(this).attr('href');
-								if (typeof url !== 'undefined') {
-									var ogid = '{{$result.object_id}}';
-									var newurl = url.replace('?itemId', '?organicgroup=' + ogid + '&itemId');
-									$(this).attr('href', newurl);
-								}
-							});
-						{/jq}
+						</div>
 					</div>
-
 					<div class="panel panel-default">
 						<div class="panel-heading">{tr}Recent Forum Posts{/tr}</div>
 						<div class="panel-body">
