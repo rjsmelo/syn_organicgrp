@@ -71,7 +71,7 @@ objects:
         (title args.title)
         (aggregate (hash args.type args.object))
         (content args.content)
-        (feed (str syn_organicgrps))
+        (feed (str syn_organicgrp))
         )))
       notes: Forum post created
   -
