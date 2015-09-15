@@ -63,7 +63,7 @@ objects:
       event_type: tiki.forumpost.create
       rule_type: advanced
       rule: |
-        (if (equals 1 1) (event-trigger syn.organicgrp.forumpost (map
+        (if (contains args.name syn_organicgrp_) (event-trigger syn.organicgrp.forumpost (map
         (user args.user)
         (type args.type)
         (object args.object)
@@ -89,7 +89,7 @@ objects:
       event_type: tiki.forumpost.reply
       rule_type: advanced
       rule: |
-        (if (equals 1 1) (event-trigger syn.organicgrp.forumreply (map
+        (if (contains args.name syn_organicgrp_) (event-trigger syn.organicgrp.forumreply (map
         (user args.user)
         (type args.type)
         (object args.object)
