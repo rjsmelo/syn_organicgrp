@@ -1,0 +1,19 @@
+objects:
+  -
+    type: module
+    ref: mod_organic_groups
+    data:
+      name: Organic Groups
+      position: left
+      order: 2
+      cache: 0
+      rows: 10
+      groups:
+      params:
+      custom: |
+        <ul>
+        <li><a href="syn_organicgrp_mygroups">My Groups</a></li>
+        <li><a href="syn_organicgrp_creategroup">Create Group</a></li>
+        <li><a href="syn_organicgrp_joingroups">Join Groups</a></li>
+        </ul>
+      parse:
