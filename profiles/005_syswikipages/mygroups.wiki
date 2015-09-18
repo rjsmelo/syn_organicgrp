@@ -1,5 +1,5 @@
 ~tc~This page is system generated. Do not edit manually~/tc~
-!{showpref pref=ta_syn_organicgrp_pterm} I'm In
+!My {showpref pref=ta_syn_organicgrp_pterm}
 {DIV(class="btn-group")}
   <a href="syn_organicgrp_joingroups"><button type="button" class="btn btn-default">Join {showpref pref=ta_syn_organicgrp_pterm}</button></a><a href="syn_organicgrp_creategroup"><button type="button" class="btn btn-default">Create {showpref pref=ta_syn_organicgrp_sterm}</button></a>
 {DIV}
@@ -13,6 +13,7 @@
  		{filter field="tracker_id" exact="$profileobject:004_og_tracker:trk_og$"}
 		{output template="addons/syn_organicgrp/templates/syn-mygroups.tpl"}
 		{FORMAT(name="og_descrip")}{display name=tracker_field_og_description default="" format=snippet length=200 suffix="..."}{FORMAT}
+		{ALTERNATE()}You are not participating in any {showpref pref=ta_syn_organicgrp_pterm} yet.{ALTERNATE)
 	{CUSTOMSEARCH}
 	{DIV}
 	{DIV(class="col-md-6")}

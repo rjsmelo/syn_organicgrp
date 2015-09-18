@@ -24,6 +24,9 @@
 .btn-group .btn {
 	margin-right: 10px;
 }
+.mygroups .btn-group, .mygroup-search {
+	margin-bottom: 10px;
+}
 .syn-og-whiteboard .wp_wysiwyg {
 	margin-bottom: 10px;
 	padding: 10px 15px;
