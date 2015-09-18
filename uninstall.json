@@ -26,6 +26,5 @@
 	  	{"type":"module", "ref":"mod_organic_groups", "profile":"008_og_module"},
 	    {"type":"wiki_page", "ref":"wiki_whiteboard", "domain":"file://addons/syn_organicgrp/ogprofiles"},
 	    {"type":"forum", "ref":"forum_og", "domain":"file://addons/syn_organicgrp/ogprofiles"}
-
 	]
 }
