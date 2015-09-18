@@ -14,7 +14,6 @@ preferences:
   trackerfield_textarea: y
   trackerfield_text: y
   trackerfield_image: y
-  #trackerfield_category: y
   feature_categories: y
   feature_wiki_argvariable: y
   feature_sefurl: y
@@ -49,6 +48,7 @@ preferences:
   wikiplugininline_tracker: y
   wikiplugin_trackerlist: y
   wikiplugininline_trackerlist: y
+  wikiplugin_wysiwyg: y
   namespace_enabled: y
   namespace_separator: :_:
   feature_community_send_mail_join: y

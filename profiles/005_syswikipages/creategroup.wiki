@@ -1,42 +1,27 @@
 ~tc~This page is system generated. Do not edit manually~/tc~
-{HTML()}
-<div class="row">
-<div class="col-lg-9">
-{HTML}
+{DIV(id="create-group" class="col-lg-9 clearfix")}
 !Create {showpref pref=ta_syn_organicgrp_sterm}
-{DIV()}
-  <a href="syn_organicgrp_joingroups" class="btn btn-default button-bar">Join {showpref pref=ta_syn_organicgrp_pterm}</a><a href="syn_organicgrp_mygroups" class="btn btn-default">{showpref pref=ta_syn_organicgrp_pterm} I'm In</a>
-{DIV}
+<a href="syn_organicgrp_joingroups" class="btn btn-default button-bar">Join {showpref pref=ta_syn_organicgrp_pterm}</a><a href="syn_organicgrp_mygroups" class="btn btn-default">{showpref pref=ta_syn_organicgrp_pterm} I'm In</a>
 {TABS(name="group_create_tabs" tabs="Public (open to all)|Private (needs approval to join)" toggle="y")}
-{HTML()}
-<div class="col-lg-12" id="loading">
-{HTML}
+{DIV(class="col-lg-12 clearfix")}
 !!Create a New Public {showpref pref=ta_syn_organicgrp_sterm}
 {DATACHANNEL(channel="syn_organicgrp_newpublicgroup" buttonLabel="Create" id="loading" emptyCache="all" returnErrorURI="syn_organicgrp_creategroupfail" returnURI="syn_organicgrp_grouphomepage?organicgroup=%trkitem_og%&notify=y")}groupname,Name
 groupdescription,Description
 welcomeMessage,Welcome Message
 creator,hidden={{user}}{DATACHANNEL}
-{HTML()}
-</div>
-{HTML}
+{DIV}
 /////
-{HTML()}
-<div class="col-lg-12"  id="loading">
-{HTML}
+{DIV(class="col-lg-12 clearfix")}
 !!Create a New Private {showpref pref=ta_syn_organicgrp_sterm}
 {DATACHANNEL(channel="syn_organicgrp_newprivategroup" buttonLabel="Create" emptyCache="all" returnErrorURI="syn_organicgrp_creategroupfail" returnURI="syn_organicgrp_grouphomepage?organicgroup=%trkitem_og%&notify=y")}groupname,Name
 groupdescription,Description
 welcomeMessage,Welcome Message
 creator,hidden={{user}}{DATACHANNEL}
-{HTML()}
-</div>
-{HTML}
+{DIV}
 {TABS}
-{HTML()}
-</div>
-</div>
-<div class="modal">
-	<div class="modal-dialog">
+{DIV}
+{DIV(class="modal")}
+	{DIV(class="modal-dialog")}
 		<div class="modal-content">
 			<div class="modal-header">
 				<h4 class="modal-title">Loading...</h4>
@@ -47,12 +32,11 @@ creator,hidden={{user}}{DATACHANNEL}
 				</div>
 			</div>
 		</div>
-	</div>
-</div>
-{HTML}
+	{DIV}
+{DIV}
 
 {JQ()}
-$( "#loading input[type='submit']" ).click(function() {
+$( "#create-group input[type='submit']" ).click(function() {
 $(".modal").show();
 });
 {JQ}
