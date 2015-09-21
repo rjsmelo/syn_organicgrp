@@ -8,7 +8,7 @@ class OrganicGroup {
 	{
 
 	}
-	function getCatbyOrganicGroupId($organicgrp) {
+	function getCatByOrganicGroupId($organicgrp) {
 		$catlib = \TikiLib::lib("categ");
 		$catId = $catlib->get_category_id("syn_organicgrp_".$organicgrp);
 		return $catId;
