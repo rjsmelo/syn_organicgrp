@@ -19,8 +19,10 @@
 		{"type":"activity", "ref":"act_forumpost_rec", "profile":"007_groupcoreactivities"},
 		{"type":"activity", "ref":"act_forumreply", "profile":"007_groupcoreactivities"},
 		{"type":"activity", "ref":"act_forumreply_rec", "profile":"007_groupcoreactivities"},
-		{"type":"activity", "ref":"act_wikiupdate", "profile":"007_groupcoreactivities"},
-		{"type":"activity", "ref":"act_wikiupdate_rec", "profile":"007_groupcoreactivities"},
+		{"type":"activity", "ref":"act_whiteboardupdate", "profile":"007_groupcoreactivities"},
+		{"type":"activity", "ref":"act_whiteboardupdate_rec", "profile":"007_groupcoreactivities"},
+		{"type":"activity", "ref":"act_groupcreate", "profile":"007_groupcoreactivities"},
+		{"type":"activity", "ref":"act_groupcreate_rec", "profile":"007_groupcoreactivities"},
 	  	{"type":"module", "ref":"mod_organic_groups", "profile":"008_og_module"},
 	    {"type":"wiki_page", "ref":"wiki_whiteboard", "domain":"file://addons/syn_organicgrp/ogprofiles"},
 	    {"type":"forum", "ref":"forum_og", "domain":"file://addons/syn_organicgrp/ogprofiles"}

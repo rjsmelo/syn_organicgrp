@@ -33,11 +33,11 @@ function libaccess($data, $params)
 				return false;
 			}
 			return $oglib->getOrganicGroupIdByCat($category);
-		case "getCatbyOrganicGroupId":
+		case "getCatByOrganicGroupId":
 			if (empty($organicgrp)) {
 				return false;
 			}
-			return $oglib->getCatbyOrganicGroupId($organicgrp);
+			return $oglib->getCatByOrganicGroupId($organicgrp);
 	}
 
 	return "Library function not found";

@@ -1,4 +1,7 @@
 ~tc~This page is system generated. Do not edit manually~/tc~
 {addon package="syn/organicgrp" view="groupnavloader" from="members"}
 !!Members
-{memberlist groups="syn_organicgrp_{{organicgroup}}" readOnly="y"}
+{LIST()}
+{filter type=user}
+{filter groups="syn_organicgrp_{{organicgroup}}"}
+{LIST}

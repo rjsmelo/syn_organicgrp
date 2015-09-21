@@ -13,7 +13,7 @@
  		{filter field="tracker_id" exact="$profileobject:004_og_tracker:trk_og$"}
 		{output template="addons/syn_organicgrp/templates/syn-mygroups.tpl"}
 		{FORMAT(name="og_descrip")}{display name=tracker_field_og_description default="" format=snippet length=200 suffix="..."}{FORMAT}
-		{ALTERNATE()}You are not participating in any {showpref pref=ta_syn_organicgrp_pterm} yet.{ALTERNATE)
+		{ALTERNATE()}You are not participating in any {showpref pref=ta_syn_organicgrp_pterm} yet.{ALTERNATE}
 	{CUSTOMSEARCH}
 	{DIV}
 	{DIV(class="col-md-6")}
