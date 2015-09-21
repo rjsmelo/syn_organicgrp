@@ -3,35 +3,15 @@
 <div class="row">
 <div class="col-lg-9">
 {HTML}
-!Create {showpref pref=ta_syn_organicgrp_sterm}
-{DIV()}
-  <a href="syn_organicgrp_joingroups" class="btn btn-default button-bar">Join {showpref pref=ta_syn_organicgrp_pterm}</a><a href="syn_organicgrp_mygroups" class="btn btn-default">{showpref pref=ta_syn_organicgrp_pterm} I'm In</a>
-{DIV}
-{TABS(name="group_create_tabs" tabs="Public (open to all)|Private (needs approval to join)" toggle="y")}
-{HTML()}
-<div class="col-lg-12" id="loading">
-{HTML}
-!!Create a New Public {showpref pref=ta_syn_organicgrp_sterm}
-{DATACHANNEL(channel="syn_organicgrp_newpublicgroup" buttonLabel="Create" id="loading" emptyCache="all" returnErrorURI="syn_organicgrp_creategroupfail" returnURI="syn_organicgrp_grouphomepage?organicgroup=%trkitem_og%&notify=y")}groupname,Name
+!!Create a New {showpref pref=ta_syn_organicgrp_sterm}
+{DATACHANNEL(channel="syn_organicgrp_newpublicgroup" buttonLabel="Create" id="loading" emptyCache="all" returnErrorURI="syn_organicgrp_creategroupfail" returnURI="syn_organicgrp_grouphomepage?organicgroup=%trkitem_og%&notify=y" template="addons/syn_organicgrp/templates/syn-groupcreate-form.tpl")}groupname,Name
+publicprivate,Visibility
 groupdescription,Description
 welcomeMessage,Welcome Message
 creator,hidden={{user}}{DATACHANNEL}
 {HTML()}
 </div>
 {HTML}
-/////
-{HTML()}
-<div class="col-lg-12"  id="loading">
-{HTML}
-!!Create a New Private {showpref pref=ta_syn_organicgrp_sterm}
-{DATACHANNEL(channel="syn_organicgrp_newprivategroup" buttonLabel="Create" emptyCache="all" returnErrorURI="syn_organicgrp_creategroupfail" returnURI="syn_organicgrp_grouphomepage?organicgroup=%trkitem_og%&notify=y")}groupname,Name
-groupdescription,Description
-welcomeMessage,Welcome Message
-creator,hidden={{user}}{DATACHANNEL}
-{HTML()}
-</div>
-{HTML}
-{TABS}
 {HTML()}
 </div>
 </div>
