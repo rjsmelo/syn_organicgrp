@@ -4,7 +4,7 @@
 <div class="col-lg-9">
 {HTML}
 !!Create a New {showpref pref=ta_syn_organicgrp_sterm}
-{DATACHANNEL(channel="syn_organicgrp_newpublicgroup" buttonLabel="Create" id="loading" emptyCache="all" returnErrorURI="syn_organicgrp_creategroupfail" returnURI="syn_organicgrp_grouphomepage?organicgroup=%trkitem_og%&notify=y" template="addons/syn_organicgrp/templates/syn-groupcreate-form.tpl")}groupname,Name
+{DATACHANNEL(channel="syn_organicgrp_newgroup" buttonLabel="Create" id="loading" emptyCache="all" returnErrorURI="syn_organicgrp_creategroupfail" returnURI="syn_organicgrp_grouphomepage?organicgroup=%trkitem_og%&notify=y" template="addons/syn_organicgrp/templates/syn-groupcreate-form.tpl")}groupname,Name
 publicprivate,Visibility
 groupdescription,Description
 welcomeMessage,Welcome Message

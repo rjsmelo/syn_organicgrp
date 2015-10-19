@@ -1,0 +1,5 @@
+---
+mappings:
+ Member: syn_organicgrp_$profileobject:trkitem_og$
+ Leader: syn_organicgrp_managers_$profileobject:trkitem_og$
+ Pending: syn_organicgrp_pending_$profileobject:trkitem_og$

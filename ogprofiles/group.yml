@@ -1,0 +1,81 @@
+---
+objects:
+ -
+  type: tracker_item
+  ref: trkitem_og
+  data:
+   tracker: $profileobject:addons/syn_organicgrp/profiles:004_og_tracker:trk_og$
+   status:
+    - !include addons/syn_organicgrp/ogprofiles/data_status_public.yml $profilerequest:publicprivate$private$ eq public
+    - !include addons/syn_organicgrp/ogprofiles/data_status_private.yml
+   values:
+    - [ $profileobject:addons/syn_organicgrp/profiles:004_og_tracker:trk_og_title$, $profilerequest:groupname$Sample$ ]
+    - [ $profileobject:addons/syn_organicgrp/profiles:004_og_tracker:trk_og_description$, $profilerequest:groupdescription$A description for this group has not yet been written.$ ]
+    - [ $profileobject:addons/syn_organicgrp/profiles:004_og_tracker:trk_og_welcome_message$, $profilerequest:welcomeMessage$A message for this group has not yet been written.$ ]
+    - [ $profileobject:addons/syn_organicgrp/profiles:004_og_tracker:trk_og_creator$, $profilerequest:creator$Sample$]
+    - [ $profileobject:addons/syn_organicgrp/profiles:004_og_tracker:trk_og_lang$, en ]
+ -
+  type: file_gallery
+  ref: fg_og
+  data:
+   name: syn_organicgrp_$profileobject:trkitem_og$
+   owner: $profilerequest:creator$Sample$
+   flags: [ public ]
+   parent: $profileobject:addons/syn_organicgrp/profiles:003_groupfilegallery:fg_groupgalleries$
+ -
+  type: forum
+  ref: forum_og
+  data:
+   name: syn_organicgrp_$profileobject:trkitem_og$
+   forum_language: en
+   moderator_group: syn_organicgrp_managers_$profileobject:trkitem_og$
+   attachments: allowed
+   attachments_store: dir
+   attachments_store_dir: files/forums/
+   attachments_max_size: 62914560
+   enable: [ ui_avatar ]
+ -
+  type: wiki_page
+  ref: wiki_whiteboard
+  data:
+    name: syn_organicgrp_$profileobject:trkitem_og$:_:whiteboard_$profileobject:trkitem_og$
+    hide_title: y
+    content: wikicontent:ogwhiteboard
+ -
+  type: category
+  ref: cat_og
+  data:
+   name: syn_organicgrp_$profileobject:trkitem_og$
+   parent:
+    - !include addons/syn_organicgrp/ogprofiles/cat_og_data_parent_public.yml $profilerequest:publicprivate$private$ eq public
+    - !include addons/syn_organicgrp/ogprofiles/cat_og_data_parent_private.yml
+   items:
+    - [ file gallery, $profileobject:fg_og$ ]
+    - [ wiki_page, $profileobject:wiki_whiteboard$ ]
+    - [ forum, $profileobject:forum_og$ ]
+ -
+  type: tracker_item
+  data:
+   mode: update
+   itemId: $profileobject:trkitem_og$
+   tracker: $profileobject:addons/syn_organicgrp/profiles:004_og_tracker:trk_og$
+   status:
+    - !include addons/syn_organicgrp/ogprofiles/data_status_public.yml $profilerequest:publicprivate$private$ eq public
+    - !include addons/syn_organicgrp/ogprofiles/data_status_private.yml
+   values:
+    - [ $profileobject:addons/syn_organicgrp/profiles:004_og_tracker:trk_og_title$, $profilerequest:groupname$Sample$ ]
+    - [ $profileobject:addons/syn_organicgrp/profiles:004_og_tracker:trk_og_description$, $profilerequest:groupdescription$A description for this group has not yet been written.$ ]
+    - [ $profileobject:addons/syn_organicgrp/profiles:004_og_tracker:trk_og_welcome_message$, $profilerequest:welcomeMessage$A message for this group has not yet been written.$ ]
+    - [ $profileobject:addons/syn_organicgrp/profiles:004_og_tracker:trk_og_creator$, $profilerequest:creator$Sample$]
+    - [ $profileobject:addons/syn_organicgrp/profiles:004_og_tracker:trk_og_lang$, en ]
+    - [ $profileobject:addons/syn_organicgrp/profiles:004_og_tracker:trk_og_file_gallery_ID$, $profileobject:fg_og$ ]
+    - [ $profileobject:addons/syn_organicgrp/profiles:004_og_tracker:trk_og_forum_ID$, $profileobject:forum_og$ ]
+    - [ $profileobject:addons/syn_organicgrp/profiles:004_og_tracker:trk_og_categoryID$, $profileobject:cat_og$ ]
+
+mappings:
+ - !include addons/syn_organicgrp/ogprofiles/mappings_public.yml $profilerequest:publicprivate$private$ eq public
+ - !include addons/syn_organicgrp/ogprofiles/mappings_private.yml
+permissions:
+ - !include addons/syn_organicgrp/ogprofiles/permissions_public.yml $profilerequest:publicprivate$private$ eq public
+ - !include addons/syn_organicgrp/ogprofiles/permissions_private.yml
+

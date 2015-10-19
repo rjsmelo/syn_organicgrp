@@ -56,9 +56,7 @@ preferences:
   #namespace_force_links: y #This feature is optional
   #Warning: profile domain is limited to 50 characters
   #need way to append to a pref and check if the line exists already otherwise dupl lines exist
-  profile_channels: |
-    syn_organicgrp_newpublicgroup,file://addons/syn_organicgrp/ogprofiles,publicgroup,Registered
-    syn_organicgrp_newprivategroup,file://addons/syn_organicgrp/ogprofiles,privategroup,Registered
+  profile_channels: syn_organicgrp_newgroup,file://addons/syn_organicgrp/ogprofiles,group,Registered
 permissions:
   Registered:
     allow: [ subscribe_groups ]
